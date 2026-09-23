@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <!-- Subtle glow filter for the lime accent -->
+    <filter id="lime-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#C7FF3D" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- 
+    GymBuddy Stylized 'G' Emblem: 
+    Muscular Flexing Bicep (White) + Kinetic Forward Hook (Electric Lime #C7FF3D) 
+  -->
+  <g id="gymbuddy-emblem">
+    <!-- White Flexed Arm & Fist (Upper & Left quadrant of 'G') -->
+    <path
+      d="M260 110C240 110 205 125 185 160C165 195 160 235 175 270C182 285 192 295 205 295C215 295 225 285 220 270C210 240 215 210 230 185C245 165 265 155 285 158C300 160 312 170 315 185C318 198 310 210 295 215C270 222 250 240 240 265C235 280 245 295 260 295C270 295 278 288 285 278C300 255 315 240 335 230C348 223 355 210 350 195C342 170 328 145 305 128C292 118 276 110 260 110ZM295 125C305 125 315 132 320 140C325 148 322 155 315 155C305 155 295 145 290 138C288 132 290 125 295 125Z"
+      fill="#FFFFFF"
+    />
+
+    <!-- Dynamic Bicep Peak & Arm Body Curve for exact contour -->
+    <path
+      d="M210 280C170 250 160 190 185 140C210 95 265 80 310 95C335 105 345 120 340 140C335 155 320 165 305 160C280 150 240 160 220 190C205 215 205 245 218 270C222 278 218 285 210 280Z"
+      fill="#FFFFFF"
+    />
+
+    <!-- Electric Lime Dynamic Arrow/Shelf Hook (Lower right quadrant of 'G') -->
+    <path
+      d="M245 305C285 305 320 295 345 270C365 250 375 220 375 190C375 180 365 175 355 175C345 175 340 182 340 192C338 215 328 238 310 252C292 265 270 272 245 272C235 272 228 278 228 288C228 298 235 305 245 305ZM350 215L270 215C260 215 252 222 252 232C252 242 260 250 270 250L335 250C330 268 315 282 295 288C285 292 282 305 290 310C325 305 355 280 365 245C368 232 362 215 350 215Z"
+      fill="#C7FF3D"
+      filter="url(#lime-glow)"
+    />
+  </g>
+</svg>

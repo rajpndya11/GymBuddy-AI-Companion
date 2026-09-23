@@ -1,0 +1,6 @@
+{
+  "name": "GymBuddy - AI Fitness Companion for Beginners",
+  "description": "Know what to do. Know how to do it. Keep going. AI-powered personal gym companion for beginners with warmup-to-stretch guided workouts, visual form cues, and nutrition.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

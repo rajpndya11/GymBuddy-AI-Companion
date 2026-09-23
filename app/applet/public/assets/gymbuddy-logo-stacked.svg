@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#C7FF3D" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Deep Black Canvas -->
+  <rect width="512" height="512" fill="#0A0A0A" rx="40" />
+
+  <!-- Center Emblem -->
+  <g transform="translate(146, 50) scale(1.1)">
+    <!-- White Muscular Flexing Arm Contour -->
+    <path
+      d="M 68 142
+         C 48 122, 38 92, 44 65
+         C 50 38, 74 22, 104 22
+         C 126 22, 146 32, 156 46
+         C 160 52, 157 59, 149 61
+         C 140 64, 134 58, 126 53
+         C 118 47, 108 44, 98 46
+         C 80 50, 68 66, 68 84
+         C 68 96, 74 108, 84 116
+         C 96 98, 114 86, 136 82
+         C 146 80, 154 86, 154 94
+         C 154 102, 146 109, 136 112
+         C 118 117, 104 128, 94 144
+         C 88 153, 76 151, 68 142
+         Z"
+      fill="#FFFFFF"
+    />
+    <path
+      d="M 102 28
+         C 80 28, 56 46, 50 72
+         C 44 98, 54 124, 72 140
+         C 58 122, 54 96, 62 72
+         C 70 48, 88 38, 108 38
+         C 124 38, 138 44, 148 54
+         C 154 60, 158 56, 156 48
+         C 146 35, 126 28, 102 28
+         Z"
+      fill="#FFFFFF"
+      opacity="0.9"
+    />
+    <!-- Lime Kinetic Shelf & Crossbar -->
+    <path
+      d="M 92 152
+         C 112 160, 134 158, 150 144
+         C 166 130, 172 108, 172 88
+         C 172 80, 165 75, 156 75
+         C 148 75, 142 80, 142 88
+         C 142 100, 136 112, 126 120
+         C 116 128, 104 130, 92 128
+         L 86 142
+         Z"
+      fill="#C7FF3D"
+      filter="url(#neon-glow)"
+    />
+    <path
+      d="M 166 84
+         L 118 84
+         C 110 84, 104 90, 104 98
+         C 104 106, 110 112, 118 112
+         L 148 112
+         C 142 126, 130 136, 116 140
+         C 108 143, 108 152, 115 155
+         C 138 150, 158 132, 166 104
+         C 168 96, 168 90, 166 84
+         Z"
+      fill="#C7FF3D"
+      filter="url(#neon-glow)"
+    />
+  </g>
+
+  <!-- Centered Typography: GymBuddy -->
+  <text x="256" y="340" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="64" letter-spacing="-1">
+    <tspan fill="#FFFFFF">Gym</tspan><tspan fill="#C7FF3D">Buddy</tspan>
+  </text>
+
+  <!-- Tagline: AI FITNESS COMPANION -->
+  <text x="256" y="380" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-weight="600" font-size="16" fill="#D4D4D4" letter-spacing="6">
+    AI FITNESS COMPANION
+  </text>
+</svg>
