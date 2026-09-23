@@ -2,12 +2,12 @@
 
 @layer base {
   * {
-    border-color: #262626;
+    border-color: #2A2F3F;
     -webkit-tap-highlight-color: transparent;
   }
   body {
-    background-color: #050505;
-    color: #F5F5F5;
+    background-color: #0B0D14;
+    color: #FFFFFF;
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   }
 }
@@ -30,11 +30,19 @@
 
 @keyframes pulseGlow {
   0%, 100% {
-    box-shadow: 0 0 15px rgba(199, 255, 61, 0.25);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
   }
   50% {
-    box-shadow: 0 0 25px rgba(199, 255, 61, 0.45);
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.6);
   }
+}
+
+.pulse-purple {
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+.pulse-cyan {
+  animation: pulseGlow 2.5s infinite ease-in-out;
 }
 
 .pulse-lime {
@@ -55,9 +63,9 @@
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #262626;
+  background: #2A2F3F;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3a3a3a;
+  background: #3B4259;
 }

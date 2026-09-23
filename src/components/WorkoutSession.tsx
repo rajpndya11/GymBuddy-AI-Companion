@@ -199,12 +199,12 @@ export const WorkoutSession: React.FC<WorkoutSessionProps> = ({
   };
 
   return (
-    <div className="relative w-full max-w-md mx-auto min-h-screen bg-[#050505] text-[#F5F5F5] pb-10 flex flex-col">
+    <div className="relative w-full max-w-md mx-auto min-h-screen bg-[#0B0D14] text-[#FFFFFF] pb-10 flex flex-col">
       {/* Top Sticky Header */}
-      <div className="sticky top-0 z-30 bg-[#0A0A0A]/95 backdrop-blur-md px-4 py-3 border-b border-[#222] flex items-center justify-between">
+      <div className="sticky top-0 z-30 bg-[#0B0D14]/95 backdrop-blur-md px-4 py-3 border-b border-[#2A2F3F] flex items-center justify-between">
         <button
           onClick={() => setShowExitConfirm(true)}
-          className="p-1.5 rounded-xl bg-[#171717] hover:bg-[#252525] text-[#8A8A8A] hover:text-[#F5F5F5] transition-colors"
+          className="p-1.5 rounded-xl bg-[#131826] hover:bg-[#1E2438] text-[#A1A8B8] hover:text-[#FFFFFF] border border-[#2A2F3F] transition-colors"
           aria-label="Exit Workout"
         >
           <X className="w-4 h-4" />
@@ -216,17 +216,17 @@ export const WorkoutSession: React.FC<WorkoutSessionProps> = ({
             <span
               className={`w-2 h-2 rounded-full ${
                 isWarmupPhase
-                  ? 'bg-[#FFB547]'
+                  ? 'bg-[#8B5CF6]'
                   : isStretchPhase
-                  ? 'bg-[#A78BFA]'
-                  : 'bg-[#C7FF3D]'
+                  ? 'bg-[#C4B5FD]'
+                  : 'bg-[#8B5CF6]'
               }`}
             />
-            <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#F5F5F5]">
+            <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#FFFFFF]">
               {getPhaseDisplay()}
             </span>
           </div>
-          <span className="text-[10px] text-[#8A8A8A] mt-0.5">
+          <span className="text-[10px] text-[#A1A8B8] mt-0.5">
             Step {currentIndex + 1} of {fullExerciseSequence.length}
           </span>
         </div>
@@ -234,7 +234,7 @@ export const WorkoutSession: React.FC<WorkoutSessionProps> = ({
         {/* Workout Sequence Overview Drawer Trigger */}
         <button
           onClick={() => setShowOverviewDrawer(true)}
-          className="p-1.5 rounded-xl bg-[#171717] hover:bg-[#252525] text-[#8A8A8A] hover:text-[#F5F5F5] transition-colors"
+          className="p-1.5 rounded-xl bg-[#131826] hover:bg-[#1E2438] text-[#A1A8B8] hover:text-[#FFFFFF] border border-[#2A2F3F] transition-colors"
           aria-label="View Workout Sequence"
         >
           <ListOrdered className="w-4 h-4" />
@@ -248,16 +248,16 @@ export const WorkoutSession: React.FC<WorkoutSessionProps> = ({
           const isCurrent = idx === currentIndex;
           const color =
             item.phase === 'warmup'
-              ? 'bg-[#FFB547]'
+              ? 'bg-[#8B5CF6]'
               : item.phase === 'stretch'
-              ? 'bg-[#A78BFA]'
-              : 'bg-[#C7FF3D]';
+              ? 'bg-[#C4B5FD]'
+              : 'bg-[#8B5CF6]';
 
           return (
             <div
               key={idx}
               className={`h-1.5 flex-1 rounded-full transition-all duration-300 ${
-                isDone ? color : isCurrent ? `${color} opacity-90 scale-y-125` : 'bg-[#222]'
+                isDone ? color : isCurrent ? `${color} opacity-90 scale-y-125 shadow-sm shadow-purple-500/50` : 'bg-[#0B0D14]'
               }`}
             />
           );
@@ -268,43 +268,43 @@ export const WorkoutSession: React.FC<WorkoutSessionProps> = ({
       <div className="px-4 py-3 flex-1 flex flex-col">
         {/* Phase Transition Banner */}
         {isWarmupPhase && (
-          <div className="mb-3 px-3 py-1.5 rounded-xl bg-[#FFB547]/10 border border-[#FFB547]/20 flex items-center justify-between text-xs">
+          <div className="mb-3 px-3 py-1.5 rounded-xl bg-[#8B5CF6]/10 border border-[#8B5CF6]/20 flex items-center justify-between text-xs">
             <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#FFB547]" />
-              <span className="text-[#FFB547] font-semibold">Phase 1: Warmup & Joint Mobility</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#8B5CF6]" />
+              <span className="text-[#8B5CF6] font-semibold">Phase 1: Warmup & Joint Mobility</span>
             </div>
-            <span className="text-[10px] text-[#A3A3A3]">Prime muscles before heavy sets</span>
+            <span className="text-[10px] text-[#A1A8B8]">Prime muscles before heavy sets</span>
           </div>
         )}
 
         {isMainPhase && (
-          <div className="mb-3 px-3 py-1.5 rounded-xl bg-[#C7FF3D]/10 border border-[#C7FF3D]/20 flex items-center justify-between text-xs">
+          <div className="mb-3 px-3 py-1.5 rounded-xl bg-[#8B5CF6]/10 border border-[#8B5CF6]/20 flex items-center justify-between text-xs">
             <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#C7FF3D]" />
-              <span className="text-[#C7FF3D] font-semibold">Phase 2: Main Working Exercises</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#8B5CF6]" />
+              <span className="text-[#8B5CF6] font-semibold">Phase 2: Main Working Exercises</span>
             </div>
-            <span className="text-[10px] text-[#A3A3A3]">Strength & Muscle building</span>
+            <span className="text-[10px] text-[#A1A8B8]">Strength & Muscle building</span>
           </div>
         )}
 
         {isStretchPhase && (
-          <div className="mb-3 px-3 py-1.5 rounded-xl bg-[#A78BFA]/10 border border-[#A78BFA]/20 flex items-center justify-between text-xs">
+          <div className="mb-3 px-3 py-1.5 rounded-xl bg-[#C4B5FD]/10 border border-[#C4B5FD]/20 flex items-center justify-between text-xs">
             <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#A78BFA]" />
-              <span className="text-[#A78BFA] font-semibold">Phase 3: Post-Workout Stretches</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C4B5FD]" />
+              <span className="text-[#C4B5FD] font-semibold">Phase 3: Post-Workout Stretches</span>
             </div>
-            <span className="text-[10px] text-[#A3A3A3]">Decompress & speed recovery</span>
+            <span className="text-[10px] text-[#A1A8B8]">Decompress & speed recovery</span>
           </div>
         )}
 
         {/* Exercise Title Header */}
         <div className="mb-3 flex items-start justify-between">
           <div>
-            <h2 className="text-2xl font-black text-[#F5F5F5] tracking-tight">
+            <h2 className="text-2xl font-black text-[#FFFFFF] tracking-tight">
               {currentExercise.name}
             </h2>
             <div className="flex items-center gap-2 mt-1">
-              <span className="text-xs text-[#8A8A8A]">
+              <span className="text-xs text-[#A1A8B8]">
                 {currentExercise.targetMuscles.join(' · ')}
               </span>
             </div>
@@ -319,12 +319,12 @@ export const WorkoutSession: React.FC<WorkoutSessionProps> = ({
         {/* INTERACTIVE CONTROLS SECTION */}
         {isMainPhase ? (
           /* Main Lift: Sets, Weight, Reps adjusters */
-          <div className="bg-[#121212] border border-[#242424] rounded-2xl p-4 mb-4">
-            <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#222]">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#8A8A8A]">
+          <div className="bg-[#131826] border border-[#2A2F3F] rounded-2xl p-4 mb-4">
+            <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#2A2F3F]">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#A1A8B8]">
                 ACTIVE SET
               </span>
-              <span className="text-xs font-bold text-[#C7FF3D] px-2.5 py-0.5 rounded-md bg-[#C7FF3D]/15 border border-[#C7FF3D]/25">
+              <span className="text-xs font-bold text-[#8B5CF6] px-2.5 py-0.5 rounded-md bg-[#8B5CF6]/15 border border-[#8B5CF6]/25">
                 SET {currentSet} OF {currentExercise.setsCount}
               </span>
             </div>
@@ -332,23 +332,23 @@ export const WorkoutSession: React.FC<WorkoutSessionProps> = ({
             {/* Adjusters Row */}
             <div className="grid grid-cols-2 gap-3 mb-4">
               {/* Weight Adjuster */}
-              <div className="bg-[#171717] border border-[#262626] rounded-xl p-3 flex flex-col items-center">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#8A8A8A] mb-1">
+              <div className="bg-[#131826] border border-[#2A2F3F] rounded-xl p-3 flex flex-col items-center">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#A1A8B8] mb-1">
                   Weight (KG)
                 </span>
                 <div className="flex items-center justify-between w-full">
                   <button
                     onClick={() => setTargetWeight((w) => Math.max(0, w - 2.5))}
-                    className="w-8 h-8 rounded-lg bg-[#222] hover:bg-[#303030] text-[#F5F5F5] flex items-center justify-center font-bold text-sm btn-press"
+                    className="w-8 h-8 rounded-lg bg-[#0B0D14] hover:bg-[#163359] text-[#FFFFFF] flex items-center justify-center font-bold text-sm btn-press"
                   >
                     <Minus className="w-3.5 h-3.5" />
                   </button>
-                  <span className="text-xl font-black text-[#F5F5F5] font-mono">
+                  <span className="text-xl font-black text-[#FFFFFF] font-mono">
                     {targetWeight}
                   </span>
                   <button
                     onClick={() => setTargetWeight((w) => w + 2.5)}
-                    className="w-8 h-8 rounded-lg bg-[#222] hover:bg-[#303030] text-[#F5F5F5] flex items-center justify-center font-bold text-sm btn-press"
+                    className="w-8 h-8 rounded-lg bg-[#0B0D14] hover:bg-[#163359] text-[#FFFFFF] flex items-center justify-center font-bold text-sm btn-press"
                   >
                     <Plus className="w-3.5 h-3.5" />
                   </button>
@@ -356,23 +356,23 @@ export const WorkoutSession: React.FC<WorkoutSessionProps> = ({
               </div>
 
               {/* Reps Adjuster */}
-              <div className="bg-[#171717] border border-[#262626] rounded-xl p-3 flex flex-col items-center">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#8A8A8A] mb-1">
+              <div className="bg-[#131826] border border-[#2A2F3F] rounded-xl p-3 flex flex-col items-center">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#A1A8B8] mb-1">
                   Reps Target
                 </span>
                 <div className="flex items-center justify-between w-full">
                   <button
                     onClick={() => setTargetReps((r) => Math.max(1, r - 1))}
-                    className="w-8 h-8 rounded-lg bg-[#222] hover:bg-[#303030] text-[#F5F5F5] flex items-center justify-center font-bold text-sm btn-press"
+                    className="w-8 h-8 rounded-lg bg-[#0B0D14] hover:bg-[#163359] text-[#FFFFFF] flex items-center justify-center font-bold text-sm btn-press"
                   >
                     <Minus className="w-3.5 h-3.5" />
                   </button>
-                  <span className="text-xl font-black text-[#F5F5F5] font-mono">
+                  <span className="text-xl font-black text-[#FFFFFF] font-mono">
                     {targetReps}
                   </span>
                   <button
                     onClick={() => setTargetReps((r) => r + 1)}
-                    className="w-8 h-8 rounded-lg bg-[#222] hover:bg-[#303030] text-[#F5F5F5] flex items-center justify-center font-bold text-sm btn-press"
+                    className="w-8 h-8 rounded-lg bg-[#0B0D14] hover:bg-[#163359] text-[#FFFFFF] flex items-center justify-center font-bold text-sm btn-press"
                   >
                     <Plus className="w-3.5 h-3.5" />
                   </button>
@@ -386,8 +386,8 @@ export const WorkoutSession: React.FC<WorkoutSessionProps> = ({
               disabled={isCompletingSet}
               className={`w-full py-4 px-6 rounded-2xl font-extrabold text-sm flex items-center justify-center gap-2 transition-all duration-300 shadow-xl ${
                 isCompletingSet
-                  ? 'bg-[#22C55E] text-white scale-[1.02]'
-                  : 'bg-[#C7FF3D] hover:bg-[#baf22b] text-black btn-press'
+                  ? 'bg-[#10B981] text-white scale-[1.02]'
+                  : 'bg-[#8B5CF6] hover:bg-[#7C3AED] text-black shadow-purple-500/20 btn-press font-black'
               }`}
             >
               {isCompletingSet ? (
@@ -407,16 +407,16 @@ export const WorkoutSession: React.FC<WorkoutSessionProps> = ({
           </div>
         ) : (
           /* Warmup or Stretch Phase: Timed Hold / Mobility Completion */
-          <div className="bg-[#121212] border border-[#242424] rounded-2xl p-4 mb-4">
-            <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#222]">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#8A8A8A]">
+          <div className="bg-[#131826] border border-[#2A2F3F] rounded-2xl p-4 mb-4">
+            <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#2A2F3F]">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#A1A8B8]">
                 {isWarmupPhase ? 'DYNAMIC MOBILITY DRILL' : 'RECOVERY STRETCH HOLD'}
               </span>
               <span
                 className={`text-xs font-bold px-2.5 py-0.5 rounded-md ${
                   isWarmupPhase
-                    ? 'text-[#FFB547] bg-[#FFB547]/15 border border-[#FFB547]/25'
-                    : 'text-[#A78BFA] bg-[#A78BFA]/15 border border-[#A78BFA]/25'
+                    ? 'text-[#8B5CF6] bg-[#8B5CF6]/15 border border-[#8B5CF6]/25'
+                    : 'text-[#C4B5FD] bg-[#C4B5FD]/15 border border-[#C4B5FD]/25'
                 }`}
               >
                 {currentExercise.durationSeconds || 45} SEC TARGET
@@ -424,21 +424,21 @@ export const WorkoutSession: React.FC<WorkoutSessionProps> = ({
             </div>
 
             {/* Timed countdown card */}
-            <div className="flex items-center justify-between bg-[#171717] border border-[#262626] rounded-xl p-3 mb-4">
+            <div className="flex items-center justify-between bg-[#131826] border border-[#2A2F3F] rounded-xl p-3 mb-4">
               <div className="flex items-center gap-3">
                 <button
                   onClick={() => setIsTimedRunning(!isTimedRunning)}
-                  className="w-10 h-10 rounded-xl bg-[#252525] hover:bg-[#303030] text-[#F5F5F5] flex items-center justify-center transition-colors btn-press"
+                  className="w-10 h-10 rounded-xl bg-[#0B0D14] hover:bg-[#163359] text-[#FFFFFF] flex items-center justify-center transition-colors btn-press"
                 >
                   {isTimedRunning ? (
-                    <span className="text-xs font-bold text-[#FF5C5C]">PAUSE</span>
+                    <span className="text-xs font-bold text-[#EF4444]">PAUSE</span>
                   ) : (
-                    <span className="text-xs font-bold text-[#C7FF3D]">START</span>
+                    <span className="text-xs font-bold text-[#8B5CF6]">START</span>
                   )}
                 </button>
                 <div>
-                  <div className="text-xs font-semibold text-[#8A8A8A]">Hold / Rep Timer</div>
-                  <div className="text-2xl font-black font-mono text-[#F5F5F5]">
+                  <div className="text-xs font-semibold text-[#A1A8B8]">Hold / Rep Timer</div>
+                  <div className="text-2xl font-black font-mono text-[#FFFFFF]">
                     00:{timedSecondsLeft < 10 ? `0${timedSecondsLeft}` : timedSecondsLeft}
                   </div>
                 </div>
@@ -446,7 +446,7 @@ export const WorkoutSession: React.FC<WorkoutSessionProps> = ({
 
               <button
                 onClick={() => setTimedSecondsLeft(currentExercise.durationSeconds || 45)}
-                className="p-2 rounded-lg bg-[#222] text-[#8A8A8A] hover:text-[#F5F5F5]"
+                className="p-2 rounded-lg bg-[#0B0D14] text-[#A1A8B8] hover:text-[#FFFFFF]"
                 aria-label="Reset Timer"
               >
                 <RotateCcw className="w-4 h-4" />
@@ -459,8 +459,8 @@ export const WorkoutSession: React.FC<WorkoutSessionProps> = ({
               disabled={isCompletingSet}
               className={`w-full py-4 px-6 rounded-2xl font-extrabold text-sm flex items-center justify-center gap-2 transition-all duration-300 shadow-xl ${
                 isWarmupPhase
-                  ? 'bg-[#FFB547] hover:bg-[#f5a733] text-black btn-press'
-                  : 'bg-[#A78BFA] hover:bg-[#9976f7] text-black btn-press'
+                  ? 'bg-[#8B5CF6] hover:bg-[#7C3AED] text-white btn-press font-black'
+                  : 'bg-[#C4B5FD] hover:bg-[#6366F1] text-white btn-press font-black'
               }`}
             >
               {isCompletingSet ? (
@@ -477,13 +477,13 @@ export const WorkoutSession: React.FC<WorkoutSessionProps> = ({
 
         {/* Alternative Exercise Suggestion */}
         {currentExercise.alternative && (
-          <div className="bg-[#141414] border border-[#262626] rounded-xl p-3 flex items-start justify-between gap-3 text-xs">
+          <div className="bg-[#131826] border border-[#2A2F3F] rounded-xl p-3 flex items-start justify-between gap-3 text-xs">
             <div className="flex items-start gap-2">
-              <Sparkles className="w-4 h-4 text-[#A78BFA] shrink-0 mt-0.5" />
+              <Sparkles className="w-4 h-4 text-[#8B5CF6] shrink-0 mt-0.5" />
               <div>
-                <span className="text-[#A78BFA] font-bold">Swap Option: </span>
-                <span className="text-[#F5F5F5] font-semibold">{currentExercise.alternative.name}</span>
-                <p className="text-[11px] text-[#8A8A8A] mt-0.5">
+                <span className="text-[#8B5CF6] font-bold">Swap Option: </span>
+                <span className="text-[#FFFFFF] font-semibold">{currentExercise.alternative.name}</span>
+                <p className="text-[11px] text-[#A1A8B8] mt-0.5">
                   {currentExercise.alternative.reason}
                 </p>
               </div>
@@ -493,7 +493,7 @@ export const WorkoutSession: React.FC<WorkoutSessionProps> = ({
                 // Update name
                 currentExercise.name = currentExercise.alternative!.name;
               }}
-              className="text-[10px] font-bold text-[#C7FF3D] hover:underline shrink-0 bg-[#222] px-2 py-1 rounded-md"
+              className="text-[10px] font-bold text-[#8B5CF6] hover:underline shrink-0 bg-[#131826] border border-[#2A2F3F] px-2 py-1 rounded-md"
             >
               Use Swap
             </button>
@@ -515,17 +515,17 @@ export const WorkoutSession: React.FC<WorkoutSessionProps> = ({
       {/* Full Workout Overview Drawer Modal */}
       {showOverviewDrawer && (
         <div className="fixed inset-0 z-50 flex flex-col justify-end bg-black/80 backdrop-blur-sm animate-fade-in">
-          <div className="w-full max-w-md mx-auto bg-[#141414] border-t border-[#262626] rounded-t-3xl p-5 max-h-[80vh] flex flex-col">
-            <div className="flex items-center justify-between pb-3 border-b border-[#262626]">
+          <div className="w-full max-w-md mx-auto bg-[#131826] border-t border-[#2A2F3F] rounded-t-3xl p-5 max-h-[80vh] flex flex-col">
+            <div className="flex items-center justify-between pb-3 border-b border-[#2A2F3F]">
               <div>
-                <h3 className="text-base font-bold text-[#F5F5F5]">Today's Complete Flow</h3>
-                <p className="text-xs text-[#8A8A8A]">
+                <h3 className="text-base font-bold text-[#FFFFFF]">Today's Complete Flow</h3>
+                <p className="text-xs text-[#A1A8B8]">
                   Warmup → Main Lifts → Recovery Stretch
                 </p>
               </div>
               <button
                 onClick={() => setShowOverviewDrawer(false)}
-                className="p-1.5 rounded-lg bg-[#222] text-[#8A8A8A] hover:text-[#F5F5F5]"
+                className="p-1.5 rounded-lg bg-[#131826] border border-[#2A2F3F] text-[#A1A8B8] hover:text-[#FFFFFF]"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -544,33 +544,33 @@ export const WorkoutSession: React.FC<WorkoutSessionProps> = ({
                     }}
                     className={`w-full p-3 rounded-xl border flex items-center justify-between text-left transition-colors ${
                       isCurrent
-                        ? 'bg-[#222] border-[#C7FF3D]'
+                        ? 'bg-[#8B5CF6]/10 border-[#8B5CF6]'
                         : isDone
-                        ? 'bg-[#101010] border-[#222] opacity-70'
-                        : 'bg-[#141414] border-[#222] hover:bg-[#1A1A1A]'
+                        ? 'bg-[#0B0D14] border-[#2A2F3F] opacity-70'
+                        : 'bg-[#131826] border-[#2A2F3F] hover:bg-[#0B0D14]'
                     }`}
                   >
                     <div className="flex items-center gap-2.5">
                       <span
                         className={`w-6 h-6 rounded-md flex items-center justify-center text-[10px] font-bold ${
                           isDone
-                            ? 'bg-[#C7FF3D] text-black'
+                            ? 'bg-[#8B5CF6] text-black'
                             : isCurrent
-                            ? 'bg-[#C7FF3D]/20 text-[#C7FF3D]'
-                            : 'bg-[#262626] text-[#8A8A8A]'
+                            ? 'bg-[#8B5CF6]/20 text-[#8B5CF6]'
+                            : 'bg-[#0B0D14] text-[#A1A8B8]'
                         }`}
                       >
                         {isDone ? '✓' : idx + 1}
                       </span>
                       <div>
-                        <div className="text-xs font-bold text-[#F5F5F5]">{item.name}</div>
-                        <div className="text-[10px] text-[#8A8A8A]">
+                        <div className="text-xs font-bold text-[#FFFFFF]">{item.name}</div>
+                        <div className="text-[10px] text-[#A1A8B8]">
                           {item.phase.toUpperCase()} · {item.targetMuscles[0]}
                         </div>
                       </div>
                     </div>
 
-                    <ChevronRight className="w-4 h-4 text-[#8A8A8A]" />
+                    <ChevronRight className="w-4 h-4 text-[#A1A8B8]" />
                   </button>
                 );
               })}
@@ -582,22 +582,22 @@ export const WorkoutSession: React.FC<WorkoutSessionProps> = ({
       {/* Cancel Workout Confirmation Modal */}
       {showExitConfirm && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm">
-          <div className="w-full max-w-xs bg-[#141414] border border-[#2E2E2E] rounded-2xl p-5 text-center shadow-2xl">
-            <h4 className="text-base font-bold text-[#F5F5F5] mb-1">Pause Workout?</h4>
-            <p className="text-xs text-[#8A8A8A] mb-5">
+          <div className="w-full max-w-xs bg-[#131826] border border-[#2A2F3F] rounded-2xl p-5 text-center shadow-2xl">
+            <h4 className="text-base font-bold text-[#FFFFFF] mb-1">Pause Workout?</h4>
+            <p className="text-xs text-[#A1A8B8] mb-5">
               You've logged {totalSetsLogged} sets so far. You can return or end the session.
             </p>
 
             <div className="space-y-2">
               <button
                 onClick={() => setShowExitConfirm(false)}
-                className="w-full py-3 rounded-xl bg-[#C7FF3D] text-black font-bold text-xs btn-press"
+                className="w-full py-3 rounded-xl bg-[#8B5CF6] hover:bg-[#7C3AED] text-white font-black text-xs btn-press shadow-md shadow-purple-500/20"
               >
                 Keep Going
               </button>
               <button
                 onClick={onCancel}
-                className="w-full py-2.5 rounded-xl bg-[#222] text-[#FF5C5C] font-semibold text-xs hover:bg-[#2A2A2A] btn-press"
+                className="w-full py-2.5 rounded-xl bg-[#131826] border border-[#2A2F3F] text-[#EF4444] font-semibold text-xs hover:bg-[#0B0D14] btn-press"
               >
                 End Session Early
               </button>

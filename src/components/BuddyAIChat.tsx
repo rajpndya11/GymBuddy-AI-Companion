@@ -121,25 +121,25 @@ export const BuddyAIChat: React.FC<BuddyAIChatProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex flex-col justify-end bg-black/80 backdrop-blur-sm animate-fade-in">
-      <div className="w-full max-w-md mx-auto bg-[#121212] border-t border-[#262626] rounded-t-3xl flex flex-col h-[82vh] shadow-2xl">
+      <div className="w-full max-w-md mx-auto bg-[#131826] border-t border-[#2A2F3F] rounded-t-3xl flex flex-col h-[82vh] shadow-2xl">
         {/* Chat Header */}
-        <div className="flex items-center justify-between p-4 border-b border-[#222]">
+        <div className="flex items-center justify-between p-4 border-b border-[#2A2F3F]">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-full bg-[#141414] border border-[#262626] flex items-center justify-center shadow-sm">
+            <div className="w-8 h-8 rounded-full bg-[#131826] border border-[#2A2F3F] flex items-center justify-center shadow-sm">
               <Logo size="xs" variant="icon" glow={true} />
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="text-sm font-bold text-[#F5F5F5]">Buddy AI</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#C7FF3D] animate-ping" />
+                <span className="text-sm font-bold text-[#FFFFFF]">Buddy AI</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#8B5CF6] animate-ping" />
               </div>
-              <span className="text-[10px] text-[#8A8A8A]">Your friendly gym companion</span>
+              <span className="text-[10px] text-[#A1A8B8]">Your friendly gym companion</span>
             </div>
           </div>
 
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg bg-[#1C1C1C] text-[#8A8A8A] hover:text-[#F5F5F5] transition-colors"
+            className="p-1.5 rounded-lg bg-[#131826] border border-[#2A2F3F] text-[#A1A8B8] hover:text-[#FFFFFF] transition-colors"
             aria-label="Close chat"
           >
             <X className="w-4 h-4" />
@@ -158,8 +158,8 @@ export const BuddyAIChat: React.FC<BuddyAIChatProps> = ({
               <div
                 className={`max-w-[85%] p-3.5 rounded-2xl text-xs leading-relaxed ${
                   m.sender === 'user'
-                    ? 'bg-[#C7FF3D] text-black font-semibold rounded-tr-sm'
-                    : 'bg-[#1A1A1A] border border-[#282828] text-[#E5E7EB] rounded-tl-sm'
+                    ? 'bg-[#8B5CF6] text-black font-semibold rounded-tr-sm shadow-md shadow-purple-500/20'
+                    : 'bg-[#131826] border border-[#2A2F3F] text-[#FFFFFF] rounded-tl-sm'
                 }`}
               >
                 {m.text}
@@ -174,7 +174,7 @@ export const BuddyAIChat: React.FC<BuddyAIChatProps> = ({
                     }
                     onClose();
                   }}
-                  className="mt-2 text-xs font-bold bg-[#C7FF3D]/15 border border-[#C7FF3D]/40 text-[#C7FF3D] hover:bg-[#C7FF3D]/25 px-3 py-1.5 rounded-xl transition-all flex items-center gap-1.5 btn-press"
+                  className="mt-2 text-xs font-bold bg-[#8B5CF6]/15 border border-[#8B5CF6]/40 text-[#8B5CF6] hover:bg-[#8B5CF6]/25 px-3 py-1.5 rounded-xl transition-all flex items-center gap-1.5 btn-press"
                 >
                   <Zap className="w-3.5 h-3.5" />
                   <span>{m.actionCta.label}</span>
@@ -185,12 +185,12 @@ export const BuddyAIChat: React.FC<BuddyAIChatProps> = ({
         </div>
 
         {/* Suggested Quick Prompts */}
-        <div className="px-4 py-2 border-t border-[#1C1C1C] overflow-x-auto no-scrollbar flex gap-2">
+        <div className="px-4 py-2 border-t border-[#2A2F3F] overflow-x-auto no-scrollbar flex gap-2">
           {suggestedPrompts.map((p, idx) => (
             <button
               key={idx}
               onClick={() => handleSendMessage(p)}
-              className="text-[11px] font-medium whitespace-nowrap bg-[#171717] hover:bg-[#202020] border border-[#282828] text-[#D1D5DB] px-3 py-1.5 rounded-full transition-colors shrink-0"
+              className="text-[11px] font-medium whitespace-nowrap bg-[#131826] hover:bg-[#1E2438] border border-[#2A2F3F] text-[#A1A8B8] px-3 py-1.5 rounded-full transition-colors shrink-0"
             >
               {p}
             </button>
@@ -198,7 +198,7 @@ export const BuddyAIChat: React.FC<BuddyAIChatProps> = ({
         </div>
 
         {/* Chat Input Bar */}
-        <div className="p-3 border-t border-[#222] bg-[#0E0E0E]">
+        <div className="p-3 border-t border-[#2A2F3F] bg-[#0B0D14]">
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -211,12 +211,12 @@ export const BuddyAIChat: React.FC<BuddyAIChatProps> = ({
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
               placeholder="Ask Buddy anything (e.g. form, weights)..."
-              className="flex-1 bg-[#171717] border border-[#2A2A2A] rounded-2xl px-4 py-3 text-xs text-[#F5F5F5] placeholder-[#666] focus:outline-none focus:border-[#C7FF3D]"
+              className="flex-1 bg-[#131826] border border-[#2A2F3F] rounded-2xl px-4 py-3 text-xs text-[#FFFFFF] placeholder-[#64748B] focus:outline-none focus:border-[#8B5CF6]"
             />
             <button
               type="submit"
               disabled={!inputText.trim()}
-              className="p-3 rounded-2xl bg-[#C7FF3D] disabled:opacity-40 text-black transition-opacity btn-press"
+              className="p-3 rounded-2xl bg-[#8B5CF6] disabled:opacity-40 text-black transition-opacity btn-press shadow-md shadow-purple-500/20"
               aria-label="Send message"
             >
               <Send className="w-4 h-4 stroke-[2.5]" />

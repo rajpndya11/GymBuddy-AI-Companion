@@ -80,13 +80,13 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] text-[#F5F5F5] flex flex-col justify-between max-w-md mx-auto p-5 pb-10">
+    <div className="min-h-screen bg-[#0B0D14] text-[#FFFFFF] flex flex-col justify-between max-w-md mx-auto p-5 pb-10">
       {/* Top Bar with Step counter */}
       <div className="pt-2">
         <div className="flex items-center justify-between mb-4">
           <Logo size="sm" showTagline={false} />
           {step <= totalQuestions && (
-            <span className="text-xs font-mono font-bold text-[#8A8A8A]">
+            <span className="text-xs font-mono font-bold text-[#A1A8B8]">
               0{step} / 10
             </span>
           )}
@@ -94,9 +94,9 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
 
         {/* Segmented step bar */}
         {step <= totalQuestions && (
-          <div className="w-full bg-[#1A1A1A] h-1.5 rounded-full overflow-hidden mb-6">
+          <div className="w-full bg-[#131826] h-1.5 rounded-full overflow-hidden mb-6">
             <div
-              className="bg-[#C7FF3D] h-full transition-all duration-300 rounded-full"
+              className="bg-[#8B5CF6] h-full transition-all duration-300 rounded-full shadow-sm shadow-purple-500/50"
               style={{ width: `${(step / totalQuestions) * 100}%` }}
             />
           </div>
@@ -107,13 +107,13 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
       <div className="flex-1 flex flex-col justify-center my-4 animate-fade-in">
         {step === 1 && (
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-[#C7FF3D]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#8B5CF6]">
               LET'S GET TO KNOW YOU
             </span>
-            <h2 className="text-3xl font-black text-[#F5F5F5] tracking-tight mt-1 mb-2">
+            <h2 className="text-3xl font-black text-[#FFFFFF] tracking-tight mt-1 mb-2">
               What should I call you?
             </h2>
-            <p className="text-xs text-[#8A8A8A] mb-6">
+            <p className="text-xs text-[#A1A8B8] mb-6">
               Your name helps me personalise your coaching cues and sessions.
             </p>
             <input
@@ -127,10 +127,10 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
               }}
               placeholder="e.g. Alex, Sam, Jordan..."
               autoFocus
-              className="w-full bg-[#121212] border border-[#2A2A2A] focus:border-[#C7FF3D] rounded-2xl p-4 text-xl font-bold text-[#F5F5F5] placeholder-[#555] focus:outline-none transition-colors"
+              className="w-full bg-[#131826] border border-[#2A2F3F] focus:border-[#8B5CF6] rounded-2xl p-4 text-xl font-bold text-[#FFFFFF] placeholder-[#475569] focus:outline-none transition-colors"
             />
             {step === 1 && !name.trim() && (
-              <p className="text-[11px] text-[#888] mt-2 italic">
+              <p className="text-[11px] text-[#A1A8B8] mt-2 italic">
                 Please type your name or nickname to personalize your companion.
               </p>
             )}
@@ -139,13 +139,13 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
 
         {step === 2 && (
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-[#C7FF3D]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#8B5CF6]">
               BIOMETRIC FOUNDATION
             </span>
-            <h2 className="text-3xl font-black text-[#F5F5F5] tracking-tight mt-1 mb-2">
+            <h2 className="text-3xl font-black text-[#FFFFFF] tracking-tight mt-1 mb-2">
               How old are you?
             </h2>
-            <p className="text-xs text-[#8A8A8A] mb-6">
+            <p className="text-xs text-[#A1A8B8] mb-6">
               This helps me calibrate recovery times and heart rate targets.
             </p>
             <div className="flex items-center gap-4">
@@ -154,22 +154,22 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
                 value={age}
                 onChange={(e) => setAge(parseInt(e.target.value, 10) || 0)}
                 placeholder="24"
-                className="w-32 bg-[#121212] border border-[#2A2A2A] focus:border-[#C7FF3D] rounded-2xl p-4 text-3xl font-black text-[#F5F5F5] text-center font-mono focus:outline-none"
+                className="w-32 bg-[#131826] border border-[#2A2F3F] focus:border-[#8B5CF6] rounded-2xl p-4 text-3xl font-black text-[#FFFFFF] text-center font-mono focus:outline-none"
               />
-              <span className="text-lg font-bold text-[#8A8A8A]">years young</span>
+              <span className="text-lg font-bold text-[#A1A8B8]">years young</span>
             </div>
           </div>
         )}
 
         {step === 3 && (
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-[#C7FF3D]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#8B5CF6]">
               IDENTITY
             </span>
-            <h2 className="text-3xl font-black text-[#F5F5F5] tracking-tight mt-1 mb-2">
+            <h2 className="text-3xl font-black text-[#FFFFFF] tracking-tight mt-1 mb-2">
               How do you identify?
             </h2>
-            <p className="text-xs text-[#8A8A8A] mb-6">
+            <p className="text-xs text-[#A1A8B8] mb-6">
               Used strictly to personalize metabolic rate benchmarks.
             </p>
             <div className="space-y-2.5">
@@ -182,12 +182,12 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
                   }}
                   className={`w-full p-4 rounded-2xl border text-left font-bold text-sm transition-all flex items-center justify-between ${
                     gender === opt
-                      ? 'bg-[#1C1C1C] border-[#C7FF3D] text-[#C7FF3D]'
-                      : 'bg-[#121212] border-[#222] text-[#F5F5F5] hover:border-[#333]'
+                      ? 'bg-[#8B5CF6]/10 border-[#8B5CF6] text-[#8B5CF6]'
+                      : 'bg-[#131826] border-[#2A2F3F] text-[#FFFFFF] hover:border-[#224A7F]'
                   }`}
                 >
                   <span>{opt}</span>
-                  {gender === opt && <Check className="w-4 h-4 text-[#C7FF3D]" />}
+                  {gender === opt && <Check className="w-4 h-4 text-[#8B5CF6]" />}
                 </button>
               ))}
             </div>
@@ -196,10 +196,10 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
 
         {step === 4 && (
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-[#C7FF3D]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#8B5CF6]">
               BODY METRICS
             </span>
-            <h2 className="text-3xl font-black text-[#F5F5F5] tracking-tight mt-1 mb-2">
+            <h2 className="text-3xl font-black text-[#FFFFFF] tracking-tight mt-1 mb-2">
               How tall are you?
             </h2>
             <div className="flex gap-2 my-4">
@@ -207,8 +207,8 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
                 onClick={() => setHeightUnit('cm')}
                 className={`px-3 py-1 text-xs font-bold rounded-lg border ${
                   heightUnit === 'cm'
-                    ? 'bg-[#C7FF3D] text-black border-[#C7FF3D]'
-                    : 'bg-[#171717] text-[#8A8A8A] border-[#2E2E2E]'
+                    ? 'bg-[#8B5CF6] text-black border-[#8B5CF6]'
+                    : 'bg-[#131826] text-[#A1A8B8] border-[#2A2F3F]'
                 }`}
               >
                 CM
@@ -217,8 +217,8 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
                 onClick={() => setHeightUnit('ft')}
                 className={`px-3 py-1 text-xs font-bold rounded-lg border ${
                   heightUnit === 'ft'
-                    ? 'bg-[#C7FF3D] text-black border-[#C7FF3D]'
-                    : 'bg-[#171717] text-[#8A8A8A] border-[#2E2E2E]'
+                    ? 'bg-[#8B5CF6] text-black border-[#8B5CF6]'
+                    : 'bg-[#131826] text-[#A1A8B8] border-[#2A2F3F]'
                 }`}
               >
                 Feet / In
@@ -230,19 +230,19 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
                 value={height}
                 onChange={(e) => setHeight(parseInt(e.target.value, 10) || 0)}
                 placeholder="175"
-                className="w-36 bg-[#121212] border border-[#2A2A2A] focus:border-[#C7FF3D] rounded-2xl p-4 text-3xl font-black text-[#F5F5F5] text-center font-mono focus:outline-none"
+                className="w-36 bg-[#131826] border border-[#2A2F3F] focus:border-[#8B5CF6] rounded-2xl p-4 text-3xl font-black text-[#FFFFFF] text-center font-mono focus:outline-none"
               />
-              <span className="text-lg font-bold text-[#8A8A8A]">{heightUnit}</span>
+              <span className="text-lg font-bold text-[#A1A8B8]">{heightUnit}</span>
             </div>
           </div>
         )}
 
         {step === 5 && (
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-[#C7FF3D]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#8B5CF6]">
               CURRENT BASELINE
             </span>
-            <h2 className="text-3xl font-black text-[#F5F5F5] tracking-tight mt-1 mb-2">
+            <h2 className="text-3xl font-black text-[#FFFFFF] tracking-tight mt-1 mb-2">
               What's your current weight?
             </h2>
             <div className="flex gap-2 my-4">
@@ -250,8 +250,8 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
                 onClick={() => setWeightUnit('kg')}
                 className={`px-3 py-1 text-xs font-bold rounded-lg border ${
                   weightUnit === 'kg'
-                    ? 'bg-[#C7FF3D] text-black border-[#C7FF3D]'
-                    : 'bg-[#171717] text-[#8A8A8A] border-[#2E2E2E]'
+                    ? 'bg-[#8B5CF6] text-black border-[#8B5CF6]'
+                    : 'bg-[#131826] text-[#A1A8B8] border-[#2A2F3F]'
                 }`}
               >
                 KG
@@ -260,8 +260,8 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
                 onClick={() => setWeightUnit('lb')}
                 className={`px-3 py-1 text-xs font-bold rounded-lg border ${
                   weightUnit === 'lb'
-                    ? 'bg-[#C7FF3D] text-black border-[#C7FF3D]'
-                    : 'bg-[#171717] text-[#8A8A8A] border-[#2E2E2E]'
+                    ? 'bg-[#8B5CF6] text-black border-[#8B5CF6]'
+                    : 'bg-[#131826] text-[#A1A8B8] border-[#2A2F3F]'
                 }`}
               >
                 LB
@@ -273,22 +273,22 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
                 value={weight}
                 onChange={(e) => setWeight(parseInt(e.target.value, 10) || 0)}
                 placeholder="64"
-                className="w-36 bg-[#121212] border border-[#2A2A2A] focus:border-[#C7FF3D] rounded-2xl p-4 text-3xl font-black text-[#F5F5F5] text-center font-mono focus:outline-none"
+                className="w-36 bg-[#131826] border border-[#2A2F3F] focus:border-[#8B5CF6] rounded-2xl p-4 text-3xl font-black text-[#FFFFFF] text-center font-mono focus:outline-none"
               />
-              <span className="text-lg font-bold text-[#8A8A8A]">{weightUnit}</span>
+              <span className="text-lg font-bold text-[#A1A8B8]">{weightUnit}</span>
             </div>
           </div>
         )}
 
         {step === 6 && (
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-[#C7FF3D]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#8B5CF6]">
               PRIMARY OBJECTIVE
             </span>
-            <h2 className="text-3xl font-black text-[#F5F5F5] tracking-tight mt-1 mb-2">
+            <h2 className="text-3xl font-black text-[#FFFFFF] tracking-tight mt-1 mb-2">
               What are you working towards?
             </h2>
-            <p className="text-xs text-[#8A8A8A] mb-5">
+            <p className="text-xs text-[#A1A8B8] mb-5">
               Select one primary focus. We'll tailor rep ranges and progression logic.
             </p>
             <div className="space-y-2.5">
@@ -307,15 +307,15 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
                   }}
                   className={`w-full p-4 rounded-2xl border text-left transition-all ${
                     goal === item.title
-                      ? 'bg-[#1A1A1A] border-[#C7FF3D]'
-                      : 'bg-[#121212] border-[#222] hover:border-[#333]'
+                      ? 'bg-[#8B5CF6]/10 border-[#8B5CF6]'
+                      : 'bg-[#131826] border-[#2A2F3F] hover:border-[#224A7F]'
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-base font-bold text-[#F5F5F5]">{item.title}</span>
-                    {goal === item.title && <Check className="w-4 h-4 text-[#C7FF3D]" />}
+                    <span className="text-base font-bold text-[#FFFFFF]">{item.title}</span>
+                    {goal === item.title && <Check className="w-4 h-4 text-[#8B5CF6]" />}
                   </div>
-                  <p className="text-xs text-[#8A8A8A] mt-0.5">{item.desc}</p>
+                  <p className="text-xs text-[#A1A8B8] mt-0.5">{item.desc}</p>
                 </button>
               ))}
             </div>
@@ -324,13 +324,13 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
 
         {step === 7 && (
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-[#C7FF3D]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#8B5CF6]">
               EXPERIENCE
             </span>
-            <h2 className="text-3xl font-black text-[#F5F5F5] tracking-tight mt-1 mb-2">
+            <h2 className="text-3xl font-black text-[#FFFFFF] tracking-tight mt-1 mb-2">
               How comfortable are you in the gym?
             </h2>
-            <p className="text-xs text-[#8A8A8A] mb-5">
+            <p className="text-xs text-[#A1A8B8] mb-5">
               GymBuddy specializes in guiding beginners from day one.
             </p>
             <div className="space-y-2.5">
@@ -356,15 +356,15 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
                   }}
                   className={`w-full p-4 rounded-2xl border text-left transition-all ${
                     experience === item.lvl
-                      ? 'bg-[#1A1A1A] border-[#C7FF3D]'
-                      : 'bg-[#121212] border-[#222] hover:border-[#333]'
+                      ? 'bg-[#8B5CF6]/10 border-[#8B5CF6]'
+                      : 'bg-[#131826] border-[#2A2F3F] hover:border-[#224A7F]'
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-base font-bold text-[#F5F5F5]">{item.lvl}</span>
-                    {experience === item.lvl && <Check className="w-4 h-4 text-[#C7FF3D]" />}
+                    <span className="text-base font-bold text-[#FFFFFF]">{item.lvl}</span>
+                    {experience === item.lvl && <Check className="w-4 h-4 text-[#8B5CF6]" />}
                   </div>
-                  <p className="text-xs text-[#8A8A8A] mt-0.5">{item.sub}</p>
+                  <p className="text-xs text-[#A1A8B8] mt-0.5">{item.sub}</p>
                 </button>
               ))}
             </div>
@@ -373,13 +373,13 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
 
         {step === 8 && (
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-[#C7FF3D]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#8B5CF6]">
               WEEKLY SCHEDULE
             </span>
-            <h2 className="text-3xl font-black text-[#F5F5F5] tracking-tight mt-1 mb-2">
+            <h2 className="text-3xl font-black text-[#FFFFFF] tracking-tight mt-1 mb-2">
               How often can you realistically train?
             </h2>
-            <p className="text-xs text-[#8A8A8A] mb-5">
+            <p className="text-xs text-[#A1A8B8] mb-5">
               Consistency beats intensity. Start with a realistic commitment.
             </p>
             <div className="grid grid-cols-2 gap-3">
@@ -397,12 +397,12 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
                   }}
                   className={`p-4 rounded-2xl border text-left transition-all flex flex-col justify-between ${
                     scheduleDays === item.days
-                      ? 'bg-[#1A1A1A] border-[#C7FF3D]'
-                      : 'bg-[#121212] border-[#222] hover:border-[#333]'
+                      ? 'bg-[#8B5CF6]/10 border-[#8B5CF6]'
+                      : 'bg-[#131826] border-[#2A2F3F] hover:border-[#224A7F]'
                   }`}
                 >
-                  <span className="text-base font-bold text-[#F5F5F5]">{item.label}</span>
-                  <span className="text-[11px] text-[#8A8A8A] mt-2">{item.sub}</span>
+                  <span className="text-base font-bold text-[#FFFFFF]">{item.label}</span>
+                  <span className="text-[11px] text-[#A1A8B8] mt-2">{item.sub}</span>
                 </button>
               ))}
             </div>
@@ -411,13 +411,13 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
 
         {step === 9 && (
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-[#C7FF3D]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#8B5CF6]">
               TIME COMMITMENT
             </span>
-            <h2 className="text-3xl font-black text-[#F5F5F5] tracking-tight mt-1 mb-2">
+            <h2 className="text-3xl font-black text-[#FFFFFF] tracking-tight mt-1 mb-2">
               How much time do you usually have?
             </h2>
-            <p className="text-xs text-[#8A8A8A] mb-5">
+            <p className="text-xs text-[#A1A8B8] mb-5">
               Workouts include quick warmups, main lifts, and recovery stretches.
             </p>
             <div className="space-y-2.5">
@@ -430,12 +430,12 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
                   }}
                   className={`w-full p-4 rounded-2xl border text-left font-bold text-sm transition-all flex items-center justify-between ${
                     duration === dur
-                      ? 'bg-[#1A1A1A] border-[#C7FF3D] text-[#C7FF3D]'
-                      : 'bg-[#121212] border-[#222] text-[#F5F5F5] hover:border-[#333]'
+                      ? 'bg-[#8B5CF6]/10 border-[#8B5CF6] text-[#8B5CF6]'
+                      : 'bg-[#131826] border-[#2A2F3F] text-[#FFFFFF] hover:border-[#224A7F]'
                   }`}
                 >
                   <span>{dur}</span>
-                  {duration === dur && <Check className="w-4 h-4 text-[#C7FF3D]" />}
+                  {duration === dur && <Check className="w-4 h-4 text-[#8B5CF6]" />}
                 </button>
               ))}
             </div>
@@ -444,13 +444,13 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
 
         {step === 10 && (
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-[#C7FF3D]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#8B5CF6]">
               EQUIPMENT
             </span>
-            <h2 className="text-3xl font-black text-[#F5F5F5] tracking-tight mt-1 mb-2">
+            <h2 className="text-3xl font-black text-[#FFFFFF] tracking-tight mt-1 mb-2">
               What do you have access to?
             </h2>
-            <p className="text-xs text-[#8A8A8A] mb-5">
+            <p className="text-xs text-[#A1A8B8] mb-5">
               Exercises adapt to available machines and free weights.
             </p>
             <div className="space-y-2.5">
@@ -468,15 +468,15 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
                   }}
                   className={`w-full p-4 rounded-2xl border text-left transition-all ${
                     equipment === item.title
-                      ? 'bg-[#1A1A1A] border-[#C7FF3D]'
-                      : 'bg-[#121212] border-[#222] hover:border-[#333]'
+                      ? 'bg-[#8B5CF6]/10 border-[#8B5CF6]'
+                      : 'bg-[#131826] border-[#2A2F3F] hover:border-[#224A7F]'
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-base font-bold text-[#F5F5F5]">{item.title}</span>
-                    {equipment === item.title && <Check className="w-4 h-4 text-[#C7FF3D]" />}
+                    <span className="text-base font-bold text-[#FFFFFF]">{item.title}</span>
+                    {equipment === item.title && <Check className="w-4 h-4 text-[#8B5CF6]" />}
                   </div>
-                  <p className="text-xs text-[#8A8A8A] mt-0.5">{item.sub}</p>
+                  <p className="text-xs text-[#A1A8B8] mt-0.5">{item.sub}</p>
                 </button>
               ))}
             </div>
@@ -486,45 +486,45 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
         {/* STEP 11: PERSONALISATION SUMMARY */}
         {step === 11 && (
           <div className="text-center animate-fade-in">
-            <div className="w-14 h-14 rounded-2xl bg-[#1C1C1C] border border-[#C7FF3D] flex items-center justify-center mx-auto mb-3 shadow-lg">
-              <Sparkles className="w-7 h-7 text-[#C7FF3D]" />
+            <div className="w-14 h-14 rounded-2xl bg-[#131826] border border-[#8B5CF6] flex items-center justify-center mx-auto mb-3 shadow-lg shadow-purple-500/20">
+              <Sparkles className="w-7 h-7 text-[#8B5CF6]" />
             </div>
 
-            <span className="text-xs font-bold uppercase tracking-widest text-[#C7FF3D]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#8B5CF6]">
               YOUR GYMBUDDY PROFILE
             </span>
-            <h2 className="text-2xl font-black text-[#F5F5F5] tracking-tight mt-1 mb-1">
+            <h2 className="text-2xl font-black text-[#FFFFFF] tracking-tight mt-1 mb-1">
               {name || 'Athlete'}
             </h2>
-            <p className="text-xs text-[#8A8A8A] mb-5">
+            <p className="text-xs text-[#A1A8B8] mb-5">
               {age} years · {height} {heightUnit} · {weight} {weightUnit}
             </p>
 
             {/* Profile Recap Cards */}
-            <div className="bg-[#121212] border border-[#242424] rounded-2xl p-4 text-left space-y-3 mb-6">
+            <div className="bg-[#131826] border border-[#2A2F3F] rounded-2xl p-4 text-left space-y-3 mb-6">
               <div className="flex justify-between items-center text-xs">
-                <span className="text-[#8A8A8A]">Goal</span>
-                <span className="font-bold text-[#C7FF3D]">{goal}</span>
+                <span className="text-[#A1A8B8]">Goal</span>
+                <span className="font-bold text-[#8B5CF6]">{goal}</span>
               </div>
-              <div className="flex justify-between items-center text-xs border-t border-[#1C1C1C] pt-2">
-                <span className="text-[#8A8A8A]">Experience</span>
-                <span className="font-bold text-[#F5F5F5]">{experience}</span>
+              <div className="flex justify-between items-center text-xs border-t border-[#2A2F3F] pt-2">
+                <span className="text-[#A1A8B8]">Experience</span>
+                <span className="font-bold text-[#FFFFFF]">{experience}</span>
               </div>
-              <div className="flex justify-between items-center text-xs border-t border-[#1C1C1C] pt-2">
-                <span className="text-[#8A8A8A]">Training Frequency</span>
-                <span className="font-bold text-[#F5F5F5]">{scheduleDays} days / week</span>
+              <div className="flex justify-between items-center text-xs border-t border-[#2A2F3F] pt-2">
+                <span className="text-[#A1A8B8]">Training Frequency</span>
+                <span className="font-bold text-[#FFFFFF]">{scheduleDays} days / week</span>
               </div>
-              <div className="flex justify-between items-center text-xs border-t border-[#1C1C1C] pt-2">
-                <span className="text-[#8A8A8A]">Session Duration</span>
-                <span className="font-bold text-[#F5F5F5]">{duration}</span>
+              <div className="flex justify-between items-center text-xs border-t border-[#2A2F3F] pt-2">
+                <span className="text-[#A1A8B8]">Session Duration</span>
+                <span className="font-bold text-[#FFFFFF]">{duration}</span>
               </div>
-              <div className="flex justify-between items-center text-xs border-t border-[#1C1C1C] pt-2">
-                <span className="text-[#8A8A8A]">Equipment Access</span>
-                <span className="font-bold text-[#F5F5F5]">{equipment}</span>
+              <div className="flex justify-between items-center text-xs border-t border-[#2A2F3F] pt-2">
+                <span className="text-[#A1A8B8]">Equipment Access</span>
+                <span className="font-bold text-[#FFFFFF]">{equipment}</span>
               </div>
             </div>
 
-            <p className="text-xs text-[#D1D5DB] leading-relaxed mb-4">
+            <p className="text-xs text-[#A1A8B8] leading-relaxed mb-4">
               “I’ve got everything I need. Your session is configured with mobility warmups, primary lifts, and recovery stretches.”
             </p>
           </div>
@@ -532,11 +532,11 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
       </div>
 
       {/* BOTTOM NAV / ACTION BUTTONS */}
-      <div className="pt-4 border-t border-[#1C1C1C] flex items-center gap-3">
+      <div className="pt-4 border-t border-[#2A2F3F] flex items-center gap-3">
         {step > 1 && (
           <button
             onClick={handleBack}
-            className="p-4 rounded-2xl bg-[#141414] hover:bg-[#1E1E1E] border border-[#2A2A2A] text-[#8A8A8A] hover:text-[#F5F5F5] transition-colors btn-press"
+            className="p-4 rounded-2xl bg-[#131826] hover:bg-[#1E2438] border border-[#2A2F3F] text-[#A1A8B8] hover:text-[#FFFFFF] transition-colors btn-press"
             aria-label="Back"
           >
             <ArrowLeft className="w-5 h-5" />
@@ -549,8 +549,8 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
             disabled={step === 1 && !name.trim()}
             className={`flex-1 py-4 px-6 rounded-2xl font-extrabold text-sm flex items-center justify-center gap-2 shadow-lg transition-all btn-press ${
               step === 1 && !name.trim()
-                ? 'bg-[#222] text-[#666] cursor-not-allowed border border-[#333]'
-                : 'bg-[#C7FF3D] hover:bg-[#b8f52c] text-black'
+                ? 'bg-[#131826] text-[#A1A8B8] cursor-not-allowed border border-[#2A2F3F]'
+                : 'bg-[#8B5CF6] hover:bg-[#7C3AED] text-black shadow-purple-500/20'
             }`}
           >
             <span>{step === 1 && !name.trim() ? 'Enter Name to Continue' : 'Continue'}</span>
@@ -559,7 +559,7 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
         ) : (
           <button
             onClick={finishOnboarding}
-            className="flex-1 py-4 px-6 rounded-2xl bg-[#C7FF3D] hover:bg-[#b8f52c] text-black font-black text-sm flex items-center justify-center gap-2 shadow-xl transition-all btn-press"
+            className="flex-1 py-4 px-6 rounded-2xl bg-[#8B5CF6] hover:bg-[#7C3AED] text-white font-black text-sm flex items-center justify-center gap-2 shadow-xl shadow-purple-500/25 transition-all btn-press"
           >
             <span>CREATE MY WORKOUT</span>
             <ArrowRight className="w-4 h-4 stroke-[3]" />

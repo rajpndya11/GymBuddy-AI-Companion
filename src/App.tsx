@@ -116,7 +116,7 @@ export default function App() {
   // 1. If not onboarded or no profile exists, immediately present interactive onboarding flow
   if (!userProfile || !userProfile.onboarded) {
     return (
-      <div className="min-h-screen bg-[#050505] text-[#F5F5F5] flex justify-center">
+      <div className="min-h-screen bg-[#0B0D14] text-[#FFFFFF] flex justify-center">
         <Onboarding
           onComplete={(newProfile) => {
             setUserProfile(newProfile);
@@ -131,7 +131,7 @@ export default function App() {
   // 2. If actively working out, show focused WorkoutSession screen
   if (isInWorkoutSession) {
     return (
-      <div className="min-h-screen bg-[#050505] text-[#F5F5F5] flex justify-center">
+      <div className="min-h-screen bg-[#0B0D14] text-[#FFFFFF] flex justify-center">
         <WorkoutSession
           routine={activeRoutine}
           onFinishWorkout={handleFinishWorkout}
@@ -144,7 +144,7 @@ export default function App() {
   // 3. If finished workout, show WorkoutComplete celebration screen
   if (completedSummary) {
     return (
-      <div className="min-h-screen bg-[#050505] text-[#F5F5F5] flex justify-center">
+      <div className="min-h-screen bg-[#0B0D14] text-[#FFFFFF] flex justify-center">
         <WorkoutComplete
           summary={completedSummary}
           onViewProgress={() => {
@@ -161,18 +161,18 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-[#050505] text-[#F5F5F5] flex flex-col items-center justify-between">
+    <div className="min-h-screen bg-[#0B0D14] text-[#FFFFFF] flex flex-col items-center justify-between">
       {/* Desktop App Shell Wrapper (mobile-first 390px-440px centered frame on large screens) */}
-      <div className="w-full max-w-md min-h-screen flex flex-col bg-[#050505] border-x border-[#1A1A1A] shadow-2xl relative">
+      <div className="w-full max-w-md min-h-screen flex flex-col bg-[#0B0D14] border-x border-[#2A2F3F] shadow-2xl relative">
         {/* Top Minimal App Header */}
-        <header className="px-4 py-3 bg-[#0A0A0A]/90 backdrop-blur-md sticky top-0 z-30 border-b border-[#1A1A1A] flex items-center justify-between">
+        <header className="px-4 py-3 bg-[#0B0D14]/90 backdrop-blur-md sticky top-0 z-30 border-b border-[#2A2F3F] flex items-center justify-between">
           <Logo size="sm" showWordmark={true} />
 
           <div className="flex items-center gap-2">
             {/* Quick Session Launcher CTA in top bar */}
             <button
               onClick={handleStartWorkout}
-              className="px-3 py-1.5 rounded-xl bg-[#C7FF3D] hover:bg-[#bbf02e] text-black font-extrabold text-xs flex items-center gap-1.5 shadow-md btn-press"
+              className="px-3.5 py-1.5 rounded-full bg-[#8B5CF6] hover:bg-[#7C3AED] text-white font-bold text-xs flex items-center gap-1.5 shadow-md shadow-purple-500/25 btn-press"
             >
               <Dumbbell className="w-3.5 h-3.5" />
               <span>Workout</span>
@@ -197,91 +197,91 @@ export default function App() {
             <div className="p-4 pb-24 space-y-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <span className="text-[11px] font-bold uppercase tracking-widest text-[#C7FF3D]">
+                  <span className="text-[11px] font-bold uppercase tracking-widest text-[#8B5CF6]">
                     FULL CONTINUOUS SESSION
                   </span>
-                  <h1 className="text-2xl font-black text-[#F5F5F5]">
+                  <h1 className="text-2xl font-black text-[#FFFFFF]">
                     Today’s Workout
                   </h1>
                 </div>
-                <span className="text-xs text-[#8A8A8A]">
+                <span className="text-xs text-[#A1A8B8]">
                   ~{activeRoutine.estimatedMinutes} min
                 </span>
               </div>
 
               {/* Reminder banner: Warmup + Main + Stretch included */}
-              <div className="bg-[#121212] border border-[#242424] rounded-2xl p-3.5 flex items-center gap-3 text-xs">
-                <div className="w-2 h-2 rounded-full bg-[#C7FF3D] animate-ping" />
-                <span className="text-[#D1D5DB]">
+              <div className="bg-[#131826] border border-[#2A2F3F] rounded-2xl p-3.5 flex items-center gap-3 text-xs">
+                <div className="w-2 h-2 rounded-full bg-[#8B5CF6] animate-ping" />
+                <span className="text-[#FFFFFF]">
                   Integrated sequence: starts with <strong>warmups</strong>, transitions into{' '}
                   <strong>main lifts</strong>, and finishes with <strong>cool-down stretches</strong>.
                 </span>
               </div>
 
               {/* Routine Card */}
-              <div className="bg-[#141414] border border-[#262626] rounded-3xl p-5">
-                <h2 className="text-xl font-bold text-[#F5F5F5]">{activeRoutine.title}</h2>
-                <p className="text-xs text-[#8A8A8A] mt-1 mb-4">{activeRoutine.subtitle}</p>
+              <div className="bg-[#131826] border border-[#2A2F3F] rounded-3xl p-5 shadow-xl">
+                <h2 className="text-xl font-bold text-[#FFFFFF]">{activeRoutine.title}</h2>
+                <p className="text-xs text-[#A1A8B8] mt-1 mb-4">{activeRoutine.subtitle}</p>
 
                 {/* Exercises list preview */}
                 <div className="space-y-2 mb-5">
                   {/* Warmups */}
-                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#FFB547] mt-2">
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#F59E0B] mt-2">
                     Phase 1: Warmup & Mobility ({activeRoutine.warmupItems.length} Drills)
                   </div>
                   {activeRoutine.warmupItems.map((w, idx) => (
                     <div
                       key={w.id}
-                      className="p-2.5 rounded-xl bg-[#171717] border border-[#222] flex items-center justify-between text-xs"
+                      className="p-2.5 rounded-xl bg-[#0B0D14] border border-[#2A2F3F] flex items-center justify-between text-xs"
                     >
                       <div className="flex items-center gap-2">
-                        <span className="text-[#FFB547] font-bold">0{idx + 1}</span>
-                        <span className="text-[#E5E7EB] font-medium">{w.name}</span>
+                        <span className="text-[#F59E0B] font-bold">0{idx + 1}</span>
+                        <span className="text-[#FFFFFF] font-medium">{w.name}</span>
                       </div>
-                      <span className="text-[10px] text-[#8A8A8A]">{w.durationSeconds}s hold</span>
+                      <span className="text-[10px] text-[#A1A8B8]">{w.durationSeconds}s hold</span>
                     </div>
                   ))}
 
                   {/* Main Lifts */}
-                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#C7FF3D] mt-3">
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#8B5CF6] mt-3">
                     Phase 2: Main Working Exercises ({activeRoutine.mainItems.length} Lifts)
                   </div>
                   {activeRoutine.mainItems.map((m, idx) => (
                     <div
                       key={m.id}
-                      className="p-2.5 rounded-xl bg-[#171717] border border-[#222] flex items-center justify-between text-xs"
+                      className="p-2.5 rounded-xl bg-[#0B0D14] border border-[#2A2F3F] flex items-center justify-between text-xs"
                     >
                       <div className="flex items-center gap-2">
-                        <span className="text-[#C7FF3D] font-bold">0{idx + 1}</span>
-                        <span className="text-[#E5E7EB] font-medium">{m.name}</span>
+                        <span className="text-[#8B5CF6] font-bold">0{idx + 1}</span>
+                        <span className="text-[#FFFFFF] font-medium">{m.name}</span>
                       </div>
-                      <span className="text-[10px] text-[#8A8A8A]">
+                      <span className="text-[10px] text-[#A1A8B8]">
                         {m.setsCount} sets × {m.targetReps} reps
                       </span>
                     </div>
                   ))}
 
                   {/* Stretches */}
-                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#A78BFA] mt-3">
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#C4B5FD] mt-3">
                     Phase 3: Cool-Down Stretches ({activeRoutine.stretchItems.length} Stretches)
                   </div>
                   {activeRoutine.stretchItems.map((s, idx) => (
                     <div
                       key={s.id}
-                      className="p-2.5 rounded-xl bg-[#171717] border border-[#222] flex items-center justify-between text-xs"
+                      className="p-2.5 rounded-xl bg-[#0B0D14] border border-[#2A2F3F] flex items-center justify-between text-xs"
                     >
                       <div className="flex items-center gap-2">
-                        <span className="text-[#A78BFA] font-bold">0{idx + 1}</span>
-                        <span className="text-[#E5E7EB] font-medium">{s.name}</span>
+                        <span className="text-[#C4B5FD] font-bold">0{idx + 1}</span>
+                        <span className="text-[#FFFFFF] font-medium">{s.name}</span>
                       </div>
-                      <span className="text-[10px] text-[#8A8A8A]">{s.durationSeconds}s hold</span>
+                      <span className="text-[10px] text-[#A1A8B8]">{s.durationSeconds}s hold</span>
                     </div>
                   ))}
                 </div>
 
                 <button
                   onClick={handleStartWorkout}
-                  className="w-full py-4 rounded-2xl bg-[#C7FF3D] hover:bg-[#b8f52c] text-black font-extrabold text-sm shadow-xl btn-press"
+                  className="w-full py-4 rounded-2xl bg-[#8B5CF6] hover:bg-[#7C3AED] text-white font-bold text-sm shadow-xl shadow-purple-500/20 btn-press"
                 >
                   START COMPLETE WORKOUT →
                 </button>
@@ -315,10 +315,10 @@ export default function App() {
         {/* Floating "✦ Ask Buddy" AI Button */}
         <button
           onClick={() => setIsBuddyChatOpen(true)}
-          className="fixed bottom-20 right-5 sm:right-[calc(50%-180px)] z-40 bg-[#171717] hover:bg-[#222] text-[#F5F5F5] border border-[#2E2E2E] shadow-2xl px-3.5 py-2.5 rounded-full flex items-center gap-2 font-bold text-xs transition-all hover:scale-105 active:scale-95"
+          className="fixed bottom-20 right-5 sm:right-[calc(50%-180px)] z-40 bg-[#131826] hover:bg-[#1E2438] text-[#FFFFFF] border border-[#2A2F3F] hover:border-[#8B5CF6] shadow-2xl px-3.5 py-2.5 rounded-full flex items-center gap-2 font-bold text-xs transition-all hover:scale-105 active:scale-95"
         >
-          <div className="w-2 h-2 rounded-full bg-[#C7FF3D] animate-ping" />
-          <Sparkles className="w-3.5 h-3.5 text-[#C7FF3D]" />
+          <div className="w-2 h-2 rounded-full bg-[#8B5CF6] animate-ping" />
+          <Sparkles className="w-3.5 h-3.5 text-[#8B5CF6]" />
           <span>Ask Buddy</span>
         </button>
 
@@ -332,13 +332,13 @@ export default function App() {
         />
 
         {/* MOBILE BOTTOM NAVIGATION BAR */}
-        <nav className="sticky bottom-0 z-30 bg-[#0A0A0A]/95 backdrop-blur-md border-t border-[#1C1C1C] px-3 py-2">
+        <nav className="sticky bottom-0 z-30 bg-[#0B0D14]/95 backdrop-blur-md border-t border-[#2A2F3F] px-3 py-2">
           <div className="flex items-center justify-between max-w-sm mx-auto">
             {/* 1. Home */}
             <button
               onClick={() => setActiveTab('home')}
               className={`flex flex-col items-center flex-1 py-1 transition-colors ${
-                activeTab === 'home' ? 'text-[#C7FF3D]' : 'text-[#8A8A8A] hover:text-[#D4D4D4]'
+                activeTab === 'home' ? 'text-[#8B5CF6]' : 'text-[#A1A8B8] hover:text-[#A1A8B8]'
               }`}
             >
               <Home className="w-5 h-5" />
@@ -349,7 +349,7 @@ export default function App() {
             <button
               onClick={() => setActiveTab('workout')}
               className={`flex flex-col items-center flex-1 py-1 transition-colors ${
-                activeTab === 'workout' ? 'text-[#C7FF3D]' : 'text-[#8A8A8A] hover:text-[#D4D4D4]'
+                activeTab === 'workout' ? 'text-[#8B5CF6]' : 'text-[#A1A8B8] hover:text-[#A1A8B8]'
               }`}
             >
               <Dumbbell className="w-5 h-5" />
@@ -360,7 +360,7 @@ export default function App() {
             <button
               onClick={() => setActiveTab('diet')}
               className={`flex flex-col items-center flex-1 py-1 transition-colors ${
-                activeTab === 'diet' ? 'text-[#C7FF3D]' : 'text-[#8A8A8A] hover:text-[#D4D4D4]'
+                activeTab === 'diet' ? 'text-[#8B5CF6]' : 'text-[#A1A8B8] hover:text-[#A1A8B8]'
               }`}
             >
               <Utensils className="w-5 h-5" />
@@ -371,7 +371,7 @@ export default function App() {
             <button
               onClick={() => setActiveTab('progress')}
               className={`flex flex-col items-center flex-1 py-1 transition-colors ${
-                activeTab === 'progress' ? 'text-[#C7FF3D]' : 'text-[#8A8A8A] hover:text-[#D4D4D4]'
+                activeTab === 'progress' ? 'text-[#8B5CF6]' : 'text-[#A1A8B8] hover:text-[#A1A8B8]'
               }`}
             >
               <TrendingUp className="w-5 h-5" />
@@ -382,7 +382,7 @@ export default function App() {
             <button
               onClick={() => setActiveTab('profile')}
               className={`flex flex-col items-center flex-1 py-1 transition-colors ${
-                activeTab === 'profile' ? 'text-[#C7FF3D]' : 'text-[#8A8A8A] hover:text-[#D4D4D4]'
+                activeTab === 'profile' ? 'text-[#8B5CF6]' : 'text-[#A1A8B8] hover:text-[#A1A8B8]'
               }`}
             >
               <User className="w-5 h-5" />

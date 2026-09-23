@@ -287,7 +287,7 @@ export const MUSCLE_VOLUME_DATA: MuscleVolumeTarget[] = [
     optimalMax: 18,
     recoveryPercent: 95,
     status: 'optimal',
-    color: '#C7FF3D'
+    color: '#8B5CF6'
   },
   {
     group: 'Back (Lats & Traps)',
@@ -296,7 +296,7 @@ export const MUSCLE_VOLUME_DATA: MuscleVolumeTarget[] = [
     optimalMax: 20,
     recoveryPercent: 88,
     status: 'optimal',
-    color: '#38BDF8'
+    color: '#C4B5FD'
   },
   {
     group: 'Legs (Quads & Hamstrings)',

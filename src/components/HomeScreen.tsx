@@ -61,14 +61,14 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
   };
 
   return (
-    <div className="w-full max-w-md mx-auto p-4 pb-24 text-[#F5F5F5] animate-fade-in space-y-4">
+    <div className="w-full max-w-md mx-auto p-4 pb-24 text-[#FFFFFF] animate-fade-in space-y-4">
       {/* Top Header */}
       <div className="flex items-center justify-between pt-1">
         <div>
-          <span className="text-xs font-semibold text-[#8A8A8A] block">
+          <span className="text-xs font-semibold text-[#A1A8B8] block">
             {todayFormatted}
           </span>
-          <h1 className="text-2xl font-black text-[#F5F5F5] tracking-tight">
+          <h1 className="text-2xl font-black text-[#FFFFFF] tracking-tight">
             Good morning, {userProfile.name || 'Athlete'} 👋
           </h1>
         </div>
@@ -76,26 +76,26 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
         {/* Profile Avatar button */}
         <button
           onClick={() => onNavigateTab('profile')}
-          className="w-10 h-10 rounded-full bg-[#171717] border border-[#2E2E2E] flex items-center justify-center text-[#F5F5F5] hover:border-[#C7FF3D] transition-colors"
+          className="w-10 h-10 rounded-full bg-[#0B0D14] border border-[#2A2F3F] flex items-center justify-center text-[#8B5CF6] hover:border-[#8B5CF6] transition-colors shadow-sm"
           aria-label="Profile"
         >
-          <User className="w-4 h-4 text-[#C7FF3D]" />
+          <User className="w-4 h-4 text-[#8B5CF6]" />
         </button>
       </div>
 
       {/* Cohort Demo Switcher Pill (for instant testing) */}
       {onSelectCohort && (
-        <div className="bg-[#121212] border border-[#222] rounded-xl p-2 flex items-center justify-between text-[11px]">
-          <span className="text-[#8A8A8A] font-semibold pl-1">Cohort State:</span>
+        <div className="bg-[#131826] border border-[#2A2F3F] rounded-xl p-2 flex items-center justify-between text-[11px]">
+          <span className="text-[#A1A8B8] font-semibold pl-1">Cohort State:</span>
           <div className="flex gap-1">
             {(['new', 'returning', 'consistent', 'inactive'] as UserCohort[]).map((c) => (
               <button
                 key={c}
                 onClick={() => onSelectCohort(c)}
-                className={`px-2 py-0.5 rounded-md font-bold uppercase text-[10px] transition-all ${
+                className={`px-2 py-0.5 rounded-md font-extrabold uppercase text-[10px] transition-all ${
                   userProfile.cohort === c
-                    ? 'bg-[#C7FF3D] text-black shadow-sm'
-                    : 'text-[#8A8A8A] hover:text-[#F5F5F5]'
+                    ? 'bg-[#8B5CF6] text-white shadow-sm shadow-purple-500/25'
+                    : 'text-[#A1A8B8] hover:text-[#FFFFFF]'
                 }`}
               >
                 {c}
@@ -106,90 +106,90 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
       )}
 
       {/* Dynamic Status / Question */}
-      <div className="text-sm text-[#A3A3A3] font-medium">
+      <div className="text-sm text-[#A1A8B8] font-medium">
         {getGreetingMessage()}
       </div>
 
       {/* MAIN WORKOUT CARD (Hero Element) */}
-      <div className="relative bg-gradient-to-b from-[#141414] to-[#101010] border border-[#262626] rounded-3xl p-5 shadow-2xl overflow-hidden">
+      <div className="relative bg-gradient-to-b bg-[#131826] border border-[#2A2F3F] rounded-3xl p-5 shadow-2xl overflow-hidden">
         {/* Subtle accent blur corner */}
-        <div className="absolute top-0 right-0 w-32 h-32 bg-[#C7FF3D]/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-36 h-36 bg-[#8B5CF6]/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="flex items-center justify-between mb-3">
-          <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#C7FF3D] flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-[#C7FF3D] animate-pulse" />
+          <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#8B5CF6] flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-[#8B5CF6] animate-pulse" />
             TODAY'S WORKOUT
           </span>
-          <span className="text-xs font-semibold text-[#8A8A8A] bg-[#1C1C1C] px-2.5 py-0.5 rounded-full border border-[#2A2A2A]">
+          <span className="text-xs font-semibold text-[#A1A8B8] bg-[#0B0D14] px-2.5 py-0.5 rounded-full border border-[#2A2F3F]">
             ~{activeRoutine.estimatedMinutes} min
           </span>
         </div>
 
-        <h2 className="text-2xl font-black text-[#F5F5F5] tracking-tight">
+        <h2 className="text-2xl font-black text-[#FFFFFF] tracking-tight">
           {activeRoutine.title}
         </h2>
-        <p className="text-xs text-[#8A8A8A] mt-1 mb-4">
+        <p className="text-xs text-[#A1A8B8] mt-1 mb-4">
           {activeRoutine.subtitle}
         </p>
 
         {/* 3-Phase Breakdown inside the workout */}
-        <div className="bg-[#171717] border border-[#262626] rounded-2xl p-3 mb-5 grid grid-cols-3 gap-2 text-center text-xs">
+        <div className="bg-[#131826] border border-[#2A2F3F] rounded-2xl p-3 mb-5 grid grid-cols-3 gap-2 text-center text-xs">
           <div className="flex flex-col">
-            <span className="text-[10px] font-bold text-[#FFB547] uppercase">1. Warmup</span>
-            <span className="text-sm font-bold text-[#F5F5F5]">
+            <span className="text-[10px] font-bold text-[#F59E0B] uppercase">1. Warmup</span>
+            <span className="text-sm font-bold text-[#FFFFFF]">
               {activeRoutine.warmupItems.length} Drills
             </span>
           </div>
-          <div className="flex flex-col border-x border-[#282828]">
-            <span className="text-[10px] font-bold text-[#C7FF3D] uppercase">2. Main</span>
-            <span className="text-sm font-bold text-[#F5F5F5]">
+          <div className="flex flex-col border-x border-[#2A2F3F]">
+            <span className="text-[10px] font-bold text-[#8B5CF6] uppercase">2. Main</span>
+            <span className="text-sm font-bold text-[#FFFFFF]">
               {activeRoutine.mainItems.length} Lifts
             </span>
           </div>
           <div className="flex flex-col">
-            <span className="text-[10px] font-bold text-[#A78BFA] uppercase">3. Stretch</span>
-            <span className="text-sm font-bold text-[#F5F5F5]">
+            <span className="text-[10px] font-bold text-[#818CF8] uppercase">3. Stretch</span>
+            <span className="text-sm font-bold text-[#FFFFFF]">
               {activeRoutine.stretchItems.length} Stretches
             </span>
           </div>
         </div>
 
         {/* Progress indicator */}
-        <div className="flex items-center justify-between text-xs text-[#8A8A8A] mb-2">
+        <div className="flex items-center justify-between text-xs text-[#A1A8B8] mb-2">
           <span>Flow Progress</span>
-          <span className="font-mono text-[#F5F5F5]">0 / {totalExercisesCount} exercises</span>
+          <span className="font-mono text-[#FFFFFF]">0 / {totalExercisesCount} exercises</span>
         </div>
-        <div className="w-full bg-[#222] h-1.5 rounded-full overflow-hidden mb-5">
-          <div className="w-0 bg-[#C7FF3D] h-full rounded-full" />
+        <div className="w-full bg-[#0B0D14] h-1.5 rounded-full overflow-hidden mb-5">
+          <div className="w-0 bg-gradient-to-r from-[#8B5CF6] to-[#C4B5FD] h-full rounded-full" />
         </div>
 
         {/* Exercise Video Previews */}
         <div className="mb-5">
-          <div className="flex items-center justify-between text-xs text-[#8A8A8A] mb-2">
+          <div className="flex items-center justify-between text-xs text-[#A1A8B8] mb-2">
             <span className="flex items-center gap-1">
-              <Film className="w-3.5 h-3.5 text-[#C7FF3D]" />
+              <Film className="w-3.5 h-3.5 text-[#8B5CF6]" />
               <span>Real Video Form Demonstrations</span>
             </span>
-            <span className="text-[10px] text-[#C7FF3D]">Tap to study form</span>
+            <span className="text-[10px] text-[#8B5CF6] font-semibold">Tap to study form</span>
           </div>
           <div className="flex gap-1.5 overflow-x-auto pb-1 scrollbar-none">
             {activeRoutine.mainItems.map((ex) => (
               <button
                 key={ex.id}
                 onClick={() => setPreviewExercise(ex)}
-                className="px-2.5 py-1.5 rounded-xl bg-[#1A1A1A] hover:bg-[#252525] border border-[#2D2D2D] text-left shrink-0 transition-colors flex items-center gap-1.5 text-xs text-neutral-200"
+                className="px-2.5 py-1.5 rounded-xl bg-[#0B0D14] hover:bg-[#1E2438] border border-[#2A2F3F] text-left shrink-0 transition-colors flex items-center gap-1.5 text-xs text-[#FFFFFF]"
               >
-                <Film className="w-3 h-3 text-[#C7FF3D]" />
+                <Film className="w-3 h-3 text-[#8B5CF6]" />
                 <span className="font-semibold">{ex.name}</span>
               </button>
             ))}
           </div>
         </div>
 
-        {/* Primary CTA (Signature Acid Lime) */}
+        {/* Primary CTA (Signature Cyan) */}
         <button
           onClick={onStartWorkout}
-          className="w-full py-4 px-6 rounded-2xl bg-[#C7FF3D] hover:bg-[#b8f52c] text-black font-black text-sm flex items-center justify-center gap-2 shadow-xl transition-all btn-press"
+          className="w-full py-4 px-6 rounded-2xl bg-[#8B5CF6] hover:bg-[#7C3AED] text-white font-black text-sm flex items-center justify-center gap-2 shadow-xl shadow-purple-500/20 transition-all btn-press"
         >
           <span>START WORKOUT</span>
           <ArrowRight className="w-4 h-4 stroke-[3]" />
@@ -198,18 +198,18 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
 
       {/* Real Exercise Video Demonstration Modal */}
       {previewExercise && (
-        <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="w-full max-w-md bg-[#101010] border border-[#2B2B2B] rounded-3xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
-            <div className="p-3.5 bg-[#141414] border-b border-[#262626] flex items-center justify-between">
+        <div className="fixed inset-0 z-50 bg-[#0B0D14]/85 backdrop-blur-md flex items-center justify-center p-4">
+          <div className="w-full max-w-md bg-[#131826] border border-[#2A2F3F] rounded-3xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+            <div className="p-3.5 bg-[#0B0D14] border-b border-[#2A2F3F] flex items-center justify-between">
               <div>
-                <span className="text-[10px] font-mono uppercase text-[#C7FF3D] tracking-wider block">
+                <span className="text-[10px] font-mono uppercase text-[#8B5CF6] tracking-wider block">
                   {previewExercise.videoUrl ? 'Video Demonstration & Form Guide' : 'Biomechanical Movement Guide'}
                 </span>
                 <h3 className="text-base font-black text-white">{previewExercise.name}</h3>
               </div>
               <button
                 onClick={() => setPreviewExercise(null)}
-                className="p-2 rounded-xl bg-[#1E1E1E] text-neutral-400 hover:text-white"
+                className="p-2 rounded-xl bg-[#1E2438] text-[#A1A8B8] hover:text-white"
                 aria-label="Close"
               >
                 <X className="w-4 h-4" />
@@ -223,33 +223,42 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
       )}
 
       {/* AI INSIGHT CARD */}
-      <div className="bg-[#121212] border border-[#242424] rounded-2xl p-4 flex items-start gap-3">
-        <div className="w-8 h-8 rounded-xl bg-[#A78BFA]/15 border border-[#A78BFA]/30 flex items-center justify-center shrink-0 mt-0.5">
-          <Sparkles className="w-4 h-4 text-[#A78BFA]" />
-        </div>
-        <div>
-          <div className="flex items-center gap-2">
-            <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#A78BFA]">
-              ✦ GYMBUDDY AI
-            </span>
-            <span className="text-[10px] text-[#8A8A8A]">Adaptive Coach</span>
+      <div className="bg-[#131826] border border-[#2A2F3F] rounded-2xl p-4 flex items-center justify-between gap-3">
+        <div className="flex items-start gap-3">
+          <div className="w-9 h-9 rounded-xl bg-[#8B5CF6]/10 border border-[#8B5CF6]/25 flex items-center justify-center shrink-0 mt-0.5">
+            <Sparkles className="w-4 h-4 text-[#8B5CF6]" />
           </div>
-          <p className="text-xs text-[#D4D4D4] mt-1 leading-relaxed">
-            “{getAIInsight()}”
-          </p>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#8B5CF6]">
+                ✦ GYMBUDDY AI
+              </span>
+              <span className="text-[10px] text-[#A1A8B8]">Adaptive Coach</span>
+            </div>
+            <p className="text-xs text-[#A1A8B8] mt-1 leading-relaxed">
+              “{getAIInsight()}”
+            </p>
+          </div>
         </div>
+        <button
+          onClick={onOpenBuddyChat}
+          className="px-3 py-1.5 rounded-full bg-[#0B0D14] hover:bg-[#1E2438] border border-[#2A2F3F] text-[11px] font-bold text-[#8B5CF6] shrink-0 flex items-center gap-1 transition-colors"
+        >
+          <Sparkles className="w-3 h-3 text-[#8B5CF6]" />
+          <span>Ask Buddy</span>
+        </button>
       </div>
 
       {/* WEEKLY CONSISTENCY TRACKER */}
-      <div className="bg-[#121212] border border-[#242424] rounded-2xl p-4">
+      <div className="bg-[#131826] border border-[#2A2F3F] rounded-2xl p-4">
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
-            <Calendar className="w-4 h-4 text-[#C7FF3D]" />
-            <span className="text-xs font-bold uppercase tracking-wider text-[#F5F5F5]">
+            <Calendar className="w-4 h-4 text-[#8B5CF6]" />
+            <span className="text-xs font-bold uppercase tracking-wider text-[#FFFFFF]">
               THIS WEEK
             </span>
           </div>
-          <span className="text-xs font-bold text-[#C7FF3D]">3 / 4 workouts</span>
+          <span className="text-xs font-bold text-[#8B5CF6]">3 / 4 workouts</span>
         </div>
 
         {/* 7 Days tracker */}
@@ -267,8 +276,8 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               key={idx}
               className={`p-2 rounded-xl flex flex-col items-center justify-center border transition-all ${
                 item.completed
-                  ? 'bg-[#C7FF3D]/15 border-[#C7FF3D]/40 text-[#C7FF3D]'
-                  : 'bg-[#171717] border-[#262626] text-[#666]'
+                  ? 'bg-[#8B5CF6]/15 border-[#8B5CF6]/40 text-[#8B5CF6]'
+                  : 'bg-[#0B0D14] border-[#2A2F3F] text-[#475569]'
               }`}
             >
               <span className="text-[10px] font-bold uppercase mb-1">{item.day}</span>
@@ -282,47 +291,47 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
 
       {/* PROGRESS SNAPSHOT METRICS */}
       <div className="grid grid-cols-3 gap-2.5">
-        <div className="bg-[#121212] border border-[#242424] rounded-2xl p-3 flex flex-col items-center text-center">
-          <span className="text-3xl font-black text-[#F5F5F5] font-mono">
+        <div className="bg-[#131826] border border-[#2A2F3F] rounded-2xl p-3 flex flex-col items-center text-center">
+          <span className="text-3xl font-black text-[#FFFFFF] font-mono">
             {userProfile.completedWorkoutsCount < 10
               ? `0${userProfile.completedWorkoutsCount}`
               : userProfile.completedWorkoutsCount}
           </span>
-          <span className="text-[10px] uppercase font-semibold text-[#8A8A8A] mt-1">
+          <span className="text-[10px] uppercase font-semibold text-[#A1A8B8] mt-1">
             Workouts
           </span>
         </div>
 
-        <div className="bg-[#121212] border border-[#242424] rounded-2xl p-3 flex flex-col items-center text-center">
-          <span className="text-3xl font-black text-[#C7FF3D] font-mono">82%</span>
-          <span className="text-[10px] uppercase font-semibold text-[#8A8A8A] mt-1">
+        <div className="bg-[#131826] border border-[#2A2F3F] rounded-2xl p-3 flex flex-col items-center text-center">
+          <span className="text-3xl font-black text-[#8B5CF6] font-mono">82%</span>
+          <span className="text-[10px] uppercase font-semibold text-[#A1A8B8] mt-1">
             Consistency
           </span>
         </div>
 
-        <div className="bg-[#121212] border border-[#242424] rounded-2xl p-3 flex flex-col items-center text-center">
-          <span className="text-3xl font-black text-[#F5F5F5] font-mono">+12%</span>
-          <span className="text-[10px] uppercase font-semibold text-[#8A8A8A] mt-1">
+        <div className="bg-[#131826] border border-[#2A2F3F] rounded-2xl p-3 flex flex-col items-center text-center">
+          <span className="text-3xl font-black text-[#FFFFFF] font-mono">+12%</span>
+          <span className="text-[10px] uppercase font-semibold text-[#A1A8B8] mt-1">
             Strength
           </span>
         </div>
       </div>
 
       {/* QUICK FLOATING ASSISTANT BANNER */}
-      <div className="bg-gradient-to-r from-[#171717] to-[#141414] border border-[#2A2A2A] rounded-2xl p-3.5 flex items-center justify-between">
+      <div className="bg-gradient-to-r bg-[#131826] border border-[#2A2F3F] rounded-2xl p-3.5 flex items-center justify-between">
         <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-full bg-[#C7FF3D] text-black font-black flex items-center justify-center text-sm shadow-sm">
+          <div className="w-8 h-8 rounded-full bg-[#8B5CF6] text-white font-black flex items-center justify-center text-sm shadow-sm">
             ✦
           </div>
           <div>
-            <div className="text-xs font-bold text-[#F5F5F5]">Need real-time advice?</div>
-            <div className="text-[10px] text-[#8A8A8A]">Ask about weight, form, or energy</div>
+            <div className="text-xs font-bold text-[#FFFFFF]">Need real-time advice?</div>
+            <div className="text-[10px] text-[#A1A8B8]">Ask about weight, form, or energy</div>
           </div>
         </div>
 
         <button
           onClick={onOpenBuddyChat}
-          className="px-3.5 py-1.5 rounded-xl bg-[#222] hover:bg-[#2C2C2C] border border-[#333] text-xs font-bold text-[#C7FF3D] transition-colors btn-press"
+          className="px-3.5 py-1.5 rounded-xl bg-[#0B0D14] hover:bg-[#1E2438] border border-[#2A2F3F] text-xs font-bold text-[#8B5CF6] transition-colors btn-press"
         >
           Ask Buddy →
         </button>

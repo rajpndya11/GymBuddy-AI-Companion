@@ -195,7 +195,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
         return {
           label: 'ECCENTRIC DESCENT (2.5s)',
           sub: 'Lower bar with 45° tucked elbows to sternum',
-          color: 'text-[#38BDF8]',
+          color: 'text-[#C4B5FD]',
           breath: 'Deep diaphragmatic inhale',
           elbowAngle: Math.round(165 - (progress / 0.45) * 80) + '°',
           jointName: 'ELBOW'
@@ -214,7 +214,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
       return {
         label: 'CONCENTRIC DRIVE (1.2s)',
         sub: 'Press up & slightly back along J-curve to lockout',
-        color: 'text-[#C7FF3D]',
+        color: 'text-[#8B5CF6]',
         breath: 'Forceful exhale through sticking point',
         elbowAngle: Math.round(85 + ((progress - 0.6) / 0.4) * 80) + '°',
         jointName: 'ELBOW'
@@ -227,7 +227,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
         return {
           label: 'ECCENTRIC DESCENT (2.5s)',
           sub: 'Hips back, knees track over toes to parallel',
-          color: 'text-[#38BDF8]',
+          color: 'text-[#C4B5FD]',
           breath: 'Belly inhale & brace core',
           kneeAngle: Math.round(175 - (progress / 0.45) * 87) + '°',
           jointName: 'KNEE'
@@ -246,7 +246,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
       return {
         label: 'CONCENTRIC DRIVE (1.2s)',
         sub: 'Drive floor away through midfoot to full lockout',
-        color: 'text-[#C7FF3D]',
+        color: 'text-[#8B5CF6]',
         breath: 'Exhale as you stand tall',
         kneeAngle: Math.round(88 + ((progress - 0.58) / 0.42) * 87) + '°',
         jointName: 'KNEE'
@@ -259,7 +259,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
         return {
           label: 'CONCENTRIC PULL (1.5s)',
           sub: 'Depress scapula, drive elbows down to ribs',
-          color: 'text-[#C7FF3D]',
+          color: 'text-[#8B5CF6]',
           breath: 'Exhale as chest elevates',
           elbowAngle: Math.round(175 - (progress / 0.4) * 110) + '°',
           jointName: 'ELBOW'
@@ -278,7 +278,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
       return {
         label: 'ECCENTRIC DESCENT (2.0s)',
         sub: 'Control lower body back to dead hang',
-        color: 'text-[#38BDF8]',
+        color: 'text-[#C4B5FD]',
         breath: 'Inhale as arms lengthen',
         elbowAngle: Math.round(65 + ((progress - 0.55) / 0.45) * 110) + '°',
         jointName: 'ELBOW'
@@ -291,7 +291,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
         return {
           label: 'VERTICAL CONCENTRIC DRIVE',
           sub: 'Press barbell straight up overhead',
-          color: 'text-[#C7FF3D]',
+          color: 'text-[#8B5CF6]',
           breath: 'Exhale through concentric drive',
           elbowAngle: Math.round(80 + (progress / 0.45) * 95) + '°',
           jointName: 'ELBOW'
@@ -310,7 +310,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
       return {
         label: 'ECCENTRIC DESCENT',
         sub: 'Control descent down to collarbone',
-        color: 'text-[#38BDF8]',
+        color: 'text-[#C4B5FD]',
         breath: 'Inhale on controlled return',
         elbowAngle: Math.round(175 - ((progress - 0.6) / 0.4) * 95) + '°',
         jointName: 'ELBOW'
@@ -323,7 +323,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
         return {
           label: 'CONCENTRIC ROW DRIVE',
           sub: 'Pull bar to navel, drive elbows behind ribs',
-          color: 'text-[#C7FF3D]',
+          color: 'text-[#8B5CF6]',
           breath: 'Exhale as bar reaches waist',
           elbowAngle: Math.round(170 - (progress / 0.45) * 95) + '°',
           jointName: 'ELBOW'
@@ -342,7 +342,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
       return {
         label: 'ECCENTRIC RETURN',
         sub: 'Lower bar under control without rounding back',
-        color: 'text-[#38BDF8]',
+        color: 'text-[#C4B5FD]',
         breath: 'Inhale as arms extend',
         elbowAngle: Math.round(75 + ((progress - 0.6) / 0.4) * 95) + '°',
         jointName: 'ELBOW'
@@ -355,7 +355,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
         return {
           label: 'CONCENTRIC BICEP CURL',
           sub: 'Elbows stationary at ribs, supinate wrists',
-          color: 'text-[#C7FF3D]',
+          color: 'text-[#8B5CF6]',
           breath: 'Exhale as dumbbell ascends',
           elbowAngle: Math.round(170 - (progress / 0.45) * 125) + '°',
           jointName: 'ELBOW'
@@ -374,7 +374,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
       return {
         label: 'ECCENTRIC NEGATIVE (2.5s)',
         sub: 'Resist gravity smoothly down to arms length',
-        color: 'text-[#38BDF8]',
+        color: 'text-[#C4B5FD]',
         breath: 'Inhale on controlled descent',
         elbowAngle: Math.round(45 + ((progress - 0.6) / 0.4) * 125) + '°',
         jointName: 'ELBOW'
@@ -386,7 +386,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
       return {
         label: 'SCAPULAR MOBILITY ROTATION',
         sub: 'Smooth continuous 360° shoulder articulation',
-        color: 'text-[#C7FF3D]',
+        color: 'text-[#8B5CF6]',
         breath: progress < 0.5 ? 'Inhale: Expand chest' : 'Exhale: Arms forward',
         jointName: 'SHOULDER',
         elbowAngle: Math.round((progress * 360) % 360) + '° ARC'
@@ -398,7 +398,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
       return {
         label: isCow ? 'COW EXTENSION (INHALE)' : 'CAT THORACIC ARCH (EXHALE)',
         sub: isCow ? 'Drop belly, lift chin & anterior pelvic tilt' : 'Round spine, tuck pelvis & chin to chest',
-        color: isCow ? 'text-[#C7FF3D]' : 'text-[#FFB547]',
+        color: isCow ? 'text-[#8B5CF6]' : 'text-[#FFB547]',
         breath: isCow ? 'Deep diaphragmatic inhale' : 'Forceful abdominal exhale',
         jointName: 'SPINE',
         elbowAngle: isCow ? 'EXTENDED (+15°)' : 'FLEXED (-25°)'
@@ -421,7 +421,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
     return {
       label: progress < 0.5 ? 'CONCENTRIC PHASE' : 'ECCENTRIC PHASE',
       sub: 'Maintain spinal neutrality and controlled cadence',
-      color: 'text-[#C7FF3D]',
+      color: 'text-[#8B5CF6]',
       breath: progress < 0.5 ? 'Exhale on drive' : 'Inhale on return',
       jointName: 'JOINT',
       elbowAngle: 'ACTIVE'
@@ -454,10 +454,10 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
           </feMerge>
         </filter>
         <marker id="arrow-lime" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
-          <path d="M 0 0 L 6 3 L 0 6 Z" fill="#C7FF3D" />
+          <path d="M 0 0 L 6 3 L 0 6 Z" fill="#8B5CF6" />
         </marker>
         <marker id="arrow-cyan" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
-          <path d="M 0 0 L 6 3 L 0 6 Z" fill="#38BDF8" />
+          <path d="M 0 0 L 6 3 L 0 6 Z" fill="#C4B5FD" />
         </marker>
       </defs>
     );
@@ -489,11 +489,11 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
           {/* Bar Path Trace Line */}
           {showBarPath && (
             <g opacity="0.65">
-              <path d="M 185,95 Q 190,130 197,165" fill="none" stroke="#C7FF3D" strokeWidth="2" strokeDasharray="3 3" />
-              <circle cx="185" cy="95" r="3" fill="#38BDF8" />
-              <circle cx="197" cy="165" r="3" fill="#C7FF3D" />
-              <text x="210" y="100" fill="#38BDF8" fontSize="8" fontWeight="bold">LOCKOUT (165°)</text>
-              <text x="215" y="170" fill="#C7FF3D" fontSize="8" fontWeight="bold">STERNUM TOUCH (85°)</text>
+              <path d="M 185,95 Q 190,130 197,165" fill="none" stroke="#8B5CF6" strokeWidth="2" strokeDasharray="3 3" />
+              <circle cx="185" cy="95" r="3" fill="#C4B5FD" />
+              <circle cx="197" cy="165" r="3" fill="#8B5CF6" />
+              <text x="210" y="100" fill="#C4B5FD" fontSize="8" fontWeight="bold">LOCKOUT (165°)</text>
+              <text x="215" y="170" fill="#8B5CF6" fontSize="8" fontWeight="bold">STERNUM TOUCH (85°)</text>
             </g>
           )}
 
@@ -508,7 +508,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
             <path
               d="M 160,180 Q 185,174 210,182"
               fill="none"
-              stroke="#C7FF3D"
+              stroke="#8B5CF6"
               strokeWidth="14"
               opacity={pecGlow}
               strokeLinecap="round"
@@ -519,18 +519,18 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
           {/* Legs & Planted Feet (Driving into floor) */}
           <line x1="230" y1="195" x2="270" y2="215" stroke="#525252" strokeWidth="6" strokeLinecap="round" />
           <line x1="270" y1="215" x2="275" y2="265" stroke="#525252" strokeWidth="6" strokeLinecap="round" />
-          <rect x="270" y="260" width="22" height="6" rx="2" fill="#C7FF3D" />
+          <rect x="270" y="260" width="22" height="6" rx="2" fill="#8B5CF6" />
 
           {/* Arm Kinetics: Shoulder -> Elbow -> Hands/Bar */}
           <line x1="165" y1="180" x2={elbowX} y2={elbowY} stroke="#E5E5E5" strokeWidth="5" strokeLinecap="round" />
           <line x1={elbowX} y1={elbowY} x2={barX} y2={barY} stroke="#E5E5E5" strokeWidth="5" strokeLinecap="round" />
           
           {/* Elbow Joint Indicator with Live Degree Arc */}
-          <circle cx={elbowX} cy={elbowY} r="5" fill="#38BDF8" />
+          <circle cx={elbowX} cy={elbowY} r="5" fill="#C4B5FD" />
           {showJointAngles && (
             <g>
-              <circle cx={elbowX} cy={elbowY} r="14" fill="none" stroke="#38BDF8" strokeWidth="1.5" strokeDasharray="3 2" />
-              <text x={elbowX - 25} y={elbowY + 4} fill="#38BDF8" fontSize="9" fontWeight="bold">
+              <circle cx={elbowX} cy={elbowY} r="14" fill="none" stroke="#C4B5FD" strokeWidth="1.5" strokeDasharray="3 2" />
+              <text x={elbowX - 25} y={elbowY + 4} fill="#C4B5FD" fontSize="9" fontWeight="bold">
                 {Math.round(85 + (1 - cycle) * 80)}°
               </text>
             </g>
@@ -538,18 +538,18 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
 
           {/* Barbell & Plates */}
           <line x1={barX} y1={barY - 35} x2={barX} y2={barY + 35} stroke="#F5F5F5" strokeWidth="6" strokeLinecap="round" />
-          <rect x={barX - 6} y={barY - 32} width="12" height="64" rx="3" fill="#C7FF3D" stroke="#111" strokeWidth="1.5" filter="url(#neon-glow)" />
-          <circle cx={barX} cy={barY} r="6" fill="#111" stroke="#C7FF3D" strokeWidth="2" />
+          <rect x={barX - 6} y={barY - 32} width="12" height="64" rx="3" fill="#8B5CF6" stroke="#111" strokeWidth="1.5" filter="url(#neon-glow)" />
+          <circle cx={barX} cy={barY} r="6" fill="#111" stroke="#8B5CF6" strokeWidth="2" />
 
           {/* Concentric Force Vectors on drive */}
           {cycle < 0.5 && (
             <g>
-              <line x1={barX} y1={barY} x2={barX - 8} y2={barY - 30} stroke="#C7FF3D" strokeWidth="3" markerEnd="url(#arrow-lime)" />
+              <line x1={barX} y1={barY} x2={barX - 8} y2={barY - 30} stroke="#8B5CF6" strokeWidth="3" markerEnd="url(#arrow-lime)" />
             </g>
           )}
 
           {/* HUD Header */}
-          <text x="200" y="25" fill="#C7FF3D" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
+          <text x="200" y="25" fill="#8B5CF6" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
             BARBELL BENCH PRESS • J-CURVE TRAJECTORY
           </text>
         </svg>
@@ -576,25 +576,25 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
           {/* Direct Midfoot Plumb Line (Gravity Vector) */}
           {showBarPath && (
             <g opacity="0.65">
-              <line x1={barX} y1="70" x2={barX} y2="265" stroke="#38BDF8" strokeWidth="1" strokeDasharray="4 3" />
-              <circle cx={barX} cy="265" r="4" fill="#38BDF8" />
-              <text x={barX + 8} y="262" fill="#38BDF8" fontSize="8" fontWeight="bold">MIDFOOT BALANCE</text>
-              <line x1="140" y1="210" x2="260" y2="210" stroke="#C7FF3D" strokeWidth="1" strokeDasharray="3 3" opacity="0.4" />
-              <text x="270" y="213" fill="#C7FF3D" fontSize="8" fontWeight="bold">PARALLEL PLANE</text>
+              <line x1={barX} y1="70" x2={barX} y2="265" stroke="#C4B5FD" strokeWidth="1" strokeDasharray="4 3" />
+              <circle cx={barX} cy="265" r="4" fill="#C4B5FD" />
+              <text x={barX + 8} y="262" fill="#C4B5FD" fontSize="8" fontWeight="bold">MIDFOOT BALANCE</text>
+              <line x1="140" y1="210" x2="260" y2="210" stroke="#8B5CF6" strokeWidth="1" strokeDasharray="3 3" opacity="0.4" />
+              <text x="270" y="213" fill="#8B5CF6" fontSize="8" fontWeight="bold">PARALLEL PLANE</text>
             </g>
           )}
 
           {/* Planted Feet */}
           <line x1="180" y1="265" x2="220" y2="265" stroke="#737373" strokeWidth="6" strokeLinecap="round" />
-          <circle cx="195" cy="265" r="4" fill="#C7FF3D" />
+          <circle cx="195" cy="265" r="4" fill="#8B5CF6" />
 
           {/* Lower Leg (Shin) */}
           <line x1="195" y1="265" x2={kneeX} y2={kneeY} stroke="#F5F5F5" strokeWidth="5" strokeLinecap="round" />
-          <circle cx={kneeX} cy={kneeY} r="5" fill="#38BDF8" />
+          <circle cx={kneeX} cy={kneeY} r="5" fill="#C4B5FD" />
 
           {/* Thigh (Femur) */}
           <line x1={kneeX} y1={kneeY} x2={hipX} y2={hipY} stroke="#F5F5F5" strokeWidth="6" strokeLinecap="round" />
-          <circle cx={hipX} cy={hipY} r="6" fill="#C7FF3D" />
+          <circle cx={hipX} cy={hipY} r="6" fill="#8B5CF6" />
 
           {/* Muscle Heatmap: Quadriceps & Glute Activation */}
           {showMuscleHeatmap && (
@@ -604,13 +604,13 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
                 y1={kneeY}
                 x2={hipX}
                 y2={hipY}
-                stroke="#C7FF3D"
+                stroke="#8B5CF6"
                 strokeWidth="12"
                 opacity={0.3 + cycle * 0.7}
                 strokeLinecap="round"
                 filter="url(#neon-glow)"
               />
-              <circle cx={hipX - 6} cy={hipY + 4} r="12" fill="#C7FF3D" opacity={0.25 + cycle * 0.6} filter="url(#neon-glow)" />
+              <circle cx={hipX - 6} cy={hipY + 4} r="12" fill="#8B5CF6" opacity={0.25 + cycle * 0.6} filter="url(#neon-glow)" />
             </g>
           )}
 
@@ -621,27 +621,27 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
           {/* Barbell across traps (for Squat) */}
           {type === 'squat' && (
             <g>
-              <circle cx={barX} cy={barY + 15} r="9" fill="#111" stroke="#C7FF3D" strokeWidth="2" filter="url(#neon-glow)" />
-              <rect x={barX - 10} y={barY - 5} width="20" height="40" rx="4" fill="#C7FF3D" opacity="0.85" />
+              <circle cx={barX} cy={barY + 15} r="9" fill="#111" stroke="#8B5CF6" strokeWidth="2" filter="url(#neon-glow)" />
+              <rect x={barX - 10} y={barY - 5} width="20" height="40" rx="4" fill="#8B5CF6" opacity="0.85" />
             </g>
           )}
 
           {/* Counter-balance arms (for Air Squat) */}
           {type === 'hip-squat' && (
-            <line x1={barX} y1={barY + 25} x2={260} y2={barY + 15} stroke="#38BDF8" strokeWidth="4" strokeLinecap="round" />
+            <line x1={barX} y1={barY + 25} x2={260} y2={barY + 15} stroke="#C4B5FD" strokeWidth="4" strokeLinecap="round" />
           )}
 
           {/* Live Joint Degree Arcs */}
           {showJointAngles && (
             <g>
-              <circle cx={kneeX} cy={kneeY} r="16" fill="none" stroke="#38BDF8" strokeWidth="1.5" strokeDasharray="3 2" />
-              <text x={kneeX + 18} y={kneeY + 4} fill="#38BDF8" fontSize="9" fontWeight="bold">
+              <circle cx={kneeX} cy={kneeY} r="16" fill="none" stroke="#C4B5FD" strokeWidth="1.5" strokeDasharray="3 2" />
+              <text x={kneeX + 18} y={kneeY + 4} fill="#C4B5FD" fontSize="9" fontWeight="bold">
                 {Math.round(175 - cycle * 87)}°
               </text>
             </g>
           )}
 
-          <text x="200" y="25" fill="#C7FF3D" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
+          <text x="200" y="25" fill="#8B5CF6" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
             BARBELL SQUAT • VERTICAL MIDFOOT DRIVE
           </text>
         </svg>
@@ -663,8 +663,8 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
           {commonDefs}
           {/* Pull-up Bar Rig */}
           <line x1="80" y1="45" x2="320" y2="45" stroke="#737373" strokeWidth="6" strokeLinecap="round" />
-          <circle cx="130" cy="45" r="5" fill="#C7FF3D" />
-          <circle cx="270" cy="45" r="5" fill="#C7FF3D" />
+          <circle cx="130" cy="45" r="5" fill="#8B5CF6" />
+          <circle cx="270" cy="45" r="5" fill="#8B5CF6" />
 
           {/* Forearms & Arms */}
           <line x1="130" y1="45" x2={elbowX} y2={elbowY} stroke="#F5F5F5" strokeWidth="5" strokeLinecap="round" />
@@ -677,13 +677,13 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
           <circle cx="200" cy={bodyY - 25} r="17" fill="#1C1C1C" stroke="#F5F5F5" strokeWidth="2.5" />
           {/* Chin clearance line */}
           {cycle > 0.8 && (
-            <text x="200" y="32" fill="#C7FF3D" textAnchor="middle" fontSize="9" fontWeight="bold">
+            <text x="200" y="32" fill="#8B5CF6" textAnchor="middle" fontSize="9" fontWeight="bold">
               CHIN CLEARS BAR (PEAK)
             </text>
           )}
 
           {/* Torso */}
-          <rect x="170" y={bodyY - 5} width="60" height="85" rx="10" fill="#181818" stroke="#38BDF8" strokeWidth="2.5" />
+          <rect x="170" y={bodyY - 5} width="60" height="85" rx="10" fill="#181818" stroke="#C4B5FD" strokeWidth="2.5" />
 
           {/* Muscle Heatmap: Latissimus Dorsi Expansion */}
           {showMuscleHeatmap && (
@@ -691,7 +691,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
               <path
                 d={`M 172,${bodyY + 10} Q 155,${bodyY + 45} 176,${bodyY + 70}`}
                 fill="none"
-                stroke="#C7FF3D"
+                stroke="#8B5CF6"
                 strokeWidth="10"
                 opacity={0.3 + cycle * 0.7}
                 strokeLinecap="round"
@@ -700,7 +700,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
               <path
                 d={`M 228,${bodyY + 10} Q 245,${bodyY + 45} 224,${bodyY + 70}`}
                 fill="none"
-                stroke="#C7FF3D"
+                stroke="#8B5CF6"
                 strokeWidth="10"
                 opacity={0.3 + cycle * 0.7}
                 strokeLinecap="round"
@@ -715,20 +715,20 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
 
           {/* Upward Pull Force Vectors */}
           {cycle > 0.3 && cycle < 0.8 && (
-            <line x1="200" y1={bodyY + 40} x2="200" y2={bodyY + 5} stroke="#C7FF3D" strokeWidth="3" markerEnd="url(#arrow-lime)" />
+            <line x1="200" y1={bodyY + 40} x2="200" y2={bodyY + 5} stroke="#8B5CF6" strokeWidth="3" markerEnd="url(#arrow-lime)" />
           )}
 
           {/* Elbow Degree Arc */}
           {showJointAngles && (
             <g>
-              <circle cx={elbowX} cy={elbowY} r="14" fill="none" stroke="#38BDF8" strokeWidth="1.5" strokeDasharray="3 2" />
-              <text x={elbowX - 28} y={elbowY + 4} fill="#38BDF8" fontSize="9" fontWeight="bold">
+              <circle cx={elbowX} cy={elbowY} r="14" fill="none" stroke="#C4B5FD" strokeWidth="1.5" strokeDasharray="3 2" />
+              <text x={elbowX - 28} y={elbowY + 4} fill="#C4B5FD" fontSize="9" fontWeight="bold">
                 {Math.round(175 - cycle * 110)}°
               </text>
             </g>
           )}
 
-          <text x="200" y="25" fill="#C7FF3D" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
+          <text x="200" y="25" fill="#8B5CF6" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
             STRICT PULL-UP • SCAPULAR RETRACTION & LAT DRIVE
           </text>
         </svg>
@@ -755,13 +755,13 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
 
           {/* Seated Torso & Head */}
           <circle cx="200" cy="105" r="17" fill="#181818" stroke="#F5F5F5" strokeWidth="2" />
-          <rect x="175" y="125" width="50" height="75" rx="8" fill="#181818" stroke="#38BDF8" strokeWidth="2.5" />
+          <rect x="175" y="125" width="50" height="75" rx="8" fill="#181818" stroke="#C4B5FD" strokeWidth="2.5" />
 
           {/* Deltoid Muscle Heatmap */}
           {showMuscleHeatmap && (
             <g>
-              <circle cx="165" cy="130" r="10" fill="#C7FF3D" opacity={0.3 + cycle * 0.7} filter="url(#neon-glow)" />
-              <circle cx="235" cy="130" r="10" fill="#C7FF3D" opacity={0.3 + cycle * 0.7} filter="url(#neon-glow)" />
+              <circle cx="165" cy="130" r="10" fill="#8B5CF6" opacity={0.3 + cycle * 0.7} filter="url(#neon-glow)" />
+              <circle cx="235" cy="130" r="10" fill="#8B5CF6" opacity={0.3 + cycle * 0.7} filter="url(#neon-glow)" />
             </g>
           )}
 
@@ -774,25 +774,25 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
 
           {/* Barbell & Plates */}
           <line x1="110" y1={barY} x2="290" y2={barY} stroke="#F5F5F5" strokeWidth="5.5" strokeLinecap="round" />
-          <rect x="100" y={barY - 20} width="12" height="40" rx="3" fill="#C7FF3D" stroke="#111" strokeWidth="1.5" filter="url(#neon-glow)" />
-          <rect x="288" y={barY - 20} width="12" height="40" rx="3" fill="#C7FF3D" stroke="#111" strokeWidth="1.5" filter="url(#neon-glow)" />
+          <rect x="100" y={barY - 20} width="12" height="40" rx="3" fill="#8B5CF6" stroke="#111" strokeWidth="1.5" filter="url(#neon-glow)" />
+          <rect x="288" y={barY - 20} width="12" height="40" rx="3" fill="#8B5CF6" stroke="#111" strokeWidth="1.5" filter="url(#neon-glow)" />
 
           {/* Overhead Vertical Alignment Guide */}
           {showBarPath && (
-            <line x1="200" y1="50" x2="200" y2="150" stroke="#38BDF8" strokeWidth="1" strokeDasharray="3 3" opacity="0.6" />
+            <line x1="200" y1="50" x2="200" y2="150" stroke="#C4B5FD" strokeWidth="1" strokeDasharray="3 3" opacity="0.6" />
           )}
 
           {/* Elbow Degree Indicator */}
           {showJointAngles && (
             <g>
-              <circle cx={elbowX} cy={elbowY} r="13" fill="none" stroke="#38BDF8" strokeWidth="1.5" strokeDasharray="3 2" />
-              <text x={elbowX - 28} y={elbowY + 4} fill="#38BDF8" fontSize="9" fontWeight="bold">
+              <circle cx={elbowX} cy={elbowY} r="13" fill="none" stroke="#C4B5FD" strokeWidth="1.5" strokeDasharray="3 2" />
+              <text x={elbowX - 28} y={elbowY + 4} fill="#C4B5FD" fontSize="9" fontWeight="bold">
                 {Math.round(80 + cycle * 95)}°
               </text>
             </g>
           )}
 
-          <text x="200" y="25" fill="#C7FF3D" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
+          <text x="200" y="25" fill="#8B5CF6" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
             SEATED OVERHEAD PRESS • VERTICAL STACKED BAR PATH
           </text>
         </svg>
@@ -817,7 +817,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
           {/* Feet & Legs hinged at 45 deg */}
           <line x1="220" y1="265" x2="235" y2="210" stroke="#525252" strokeWidth="5.5" strokeLinecap="round" />
           <line x1="235" y1="210" x2="250" y2="160" stroke="#525252" strokeWidth="5.5" strokeLinecap="round" />
-          <circle cx="250" cy="160" r="6" fill="#C7FF3D" />
+          <circle cx="250" cy="160" r="6" fill="#8B5CF6" />
 
           {/* Flat 45 deg Torso */}
           <line x1="250" y1="160" x2="165" y2="120" stroke="#F5F5F5" strokeWidth="8" strokeLinecap="round" />
@@ -828,7 +828,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
             <path
               d="M 245,155 Q 210,135 180,125"
               fill="none"
-              stroke="#C7FF3D"
+              stroke="#8B5CF6"
               strokeWidth="12"
               opacity={0.3 + cycle * 0.7}
               strokeLinecap="round"
@@ -842,24 +842,24 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
 
           {/* Barbell & Plates */}
           <line x1={barX} y1={barY - 30} x2={barX} y2={barY + 30} stroke="#F5F5F5" strokeWidth="5.5" strokeLinecap="round" />
-          <circle cx={barX} cy={barY} r="9" fill="#111" stroke="#C7FF3D" strokeWidth="2" filter="url(#neon-glow)" />
+          <circle cx={barX} cy={barY} r="9" fill="#111" stroke="#8B5CF6" strokeWidth="2" filter="url(#neon-glow)" />
 
           {/* Pull Vector */}
           {cycle > 0.3 && (
-            <line x1={barX} y1={barY} x2={barX + 18} y2={barY - 20} stroke="#C7FF3D" strokeWidth="3" markerEnd="url(#arrow-lime)" />
+            <line x1={barX} y1={barY} x2={barX + 18} y2={barY - 20} stroke="#8B5CF6" strokeWidth="3" markerEnd="url(#arrow-lime)" />
           )}
 
           {/* Joint Degree Angle */}
           {showJointAngles && (
             <g>
-              <circle cx={elbowX} cy={elbowY} r="13" fill="none" stroke="#38BDF8" strokeWidth="1.5" strokeDasharray="3 2" />
-              <text x={elbowX + 16} y={elbowY + 4} fill="#38BDF8" fontSize="9" fontWeight="bold">
+              <circle cx={elbowX} cy={elbowY} r="13" fill="none" stroke="#C4B5FD" strokeWidth="1.5" strokeDasharray="3 2" />
+              <text x={elbowX + 16} y={elbowY + 4} fill="#C4B5FD" fontSize="9" fontWeight="bold">
                 {Math.round(170 - cycle * 95)}°
               </text>
             </g>
           )}
 
-          <text x="200" y="25" fill="#C7FF3D" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
+          <text x="200" y="25" fill="#8B5CF6" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
             BENT-OVER BARBELL ROW • 45° HINGE & ELBOW DRIVE
           </text>
         </svg>
@@ -891,7 +891,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
 
           {/* Stationary Upper Arm (Elbow Pinned) */}
           <line x1="190" y1="105" x2={armPivotX} y2={armPivotY} stroke="#F5F5F5" strokeWidth="6" strokeLinecap="round" />
-          <circle cx={armPivotX} cy={armPivotY} r="5" fill="#38BDF8" />
+          <circle cx={armPivotX} cy={armPivotY} r="5" fill="#C4B5FD" />
 
           {/* Moving Forearm */}
           <line x1={armPivotX} y1={armPivotY} x2={handX} y2={handY} stroke="#F5F5F5" strokeWidth="5" strokeLinecap="round" />
@@ -903,7 +903,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
               cy={armPivotY - 25}
               rx={6 + cycle * 6}
               ry={16}
-              fill="#C7FF3D"
+              fill="#8B5CF6"
               opacity={0.3 + cycle * 0.7}
               transform={`rotate(-10, ${armPivotX}, ${armPivotY - 25})`}
               filter="url(#neon-glow)"
@@ -911,20 +911,20 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
           )}
 
           {/* Dumbbell */}
-          <circle cx={handX} cy={handY} r="6" fill="#111" stroke="#C7FF3D" strokeWidth="2" />
-          <line x1={handX - 12} y1={handY} x2={handX + 12} y2={handY} stroke="#C7FF3D" strokeWidth="5" strokeLinecap="round" filter="url(#neon-glow)" />
+          <circle cx={handX} cy={handY} r="6" fill="#111" stroke="#8B5CF6" strokeWidth="2" />
+          <line x1={handX - 12} y1={handY} x2={handX + 12} y2={handY} stroke="#8B5CF6" strokeWidth="5" strokeLinecap="round" filter="url(#neon-glow)" />
 
           {/* Joint Degree Angle */}
           {showJointAngles && (
             <g>
-              <circle cx={armPivotX} cy={armPivotY} r="14" fill="none" stroke="#38BDF8" strokeWidth="1.5" strokeDasharray="3 2" />
-              <text x={armPivotX + 16} y={armPivotY + 4} fill="#38BDF8" fontSize="9" fontWeight="bold">
+              <circle cx={armPivotX} cy={armPivotY} r="14" fill="none" stroke="#C4B5FD" strokeWidth="1.5" strokeDasharray="3 2" />
+              <text x={armPivotX + 16} y={armPivotY + 4} fill="#C4B5FD" fontSize="9" fontWeight="bold">
                 {Math.round(170 - cycle * 125)}°
               </text>
             </g>
           )}
 
-          <text x="200" y="25" fill="#C7FF3D" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
+          <text x="200" y="25" fill="#8B5CF6" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
             DUMBBELL BICEP CURL • ZERO ELBOW DRIFT ISOLATION
           </text>
         </svg>
@@ -944,18 +944,18 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
           {commonDefs}
           <line x1="260" y1="30" x2="260" y2="265" stroke="#333" strokeWidth="6" />
           <circle cx="260" cy="50" r="10" fill="#222" stroke="#737373" strokeWidth="2" />
-          <line x1="260" y1="50" x2={handX} y2={handY} stroke="#C7FF3D" strokeWidth="2" strokeDasharray="4 2" />
+          <line x1="260" y1="50" x2={handX} y2={handY} stroke="#8B5CF6" strokeWidth="2" strokeDasharray="4 2" />
 
           <circle cx="150" cy="80" r="16" fill="#1C1C1C" stroke="#F5F5F5" strokeWidth="2" />
           <line x1="150" y1="96" x2="160" y2="190" stroke="#F5F5F5" strokeWidth="5" strokeLinecap="round" />
 
           {/* Stationary Upper Arm */}
           <line x1="155" y1="108" x2="185" y2="155" stroke="#F5F5F5" strokeWidth="5" strokeLinecap="round" />
-          <circle cx="185" cy="155" r="5" fill="#38BDF8" />
+          <circle cx="185" cy="155" r="5" fill="#C4B5FD" />
 
           {/* Forearm Extension */}
           <line x1="185" y1="155" x2={handX} y2={handY} stroke="#F5F5F5" strokeWidth="5" strokeLinecap="round" />
-          <circle cx={handX} cy={handY} r="5" fill="#C7FF3D" />
+          <circle cx={handX} cy={handY} r="5" fill="#8B5CF6" />
 
           {/* Tricep Lateral Head Heatmap */}
           {showMuscleHeatmap && (
@@ -964,7 +964,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
               y1="112"
               x2="182"
               y2="148"
-              stroke="#C7FF3D"
+              stroke="#8B5CF6"
               strokeWidth="9"
               opacity={0.3 + cycle * 0.7}
               strokeLinecap="round"
@@ -975,14 +975,14 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
           {/* Joint Degree Angle */}
           {showJointAngles && (
             <g>
-              <circle cx="185" cy="155" r="13" fill="none" stroke="#38BDF8" strokeWidth="1.5" strokeDasharray="3 2" />
-              <text x="145" y="158" fill="#38BDF8" fontSize="9" fontWeight="bold">
+              <circle cx="185" cy="155" r="13" fill="none" stroke="#C4B5FD" strokeWidth="1.5" strokeDasharray="3 2" />
+              <text x="145" y="158" fill="#C4B5FD" fontSize="9" fontWeight="bold">
                 {Math.round(90 + cycle * 90)}°
               </text>
             </g>
           )}
 
-          <text x="200" y="25" fill="#C7FF3D" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
+          <text x="200" y="25" fill="#8B5CF6" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
             TRICEP PUSHDOWN • 90° TO 180° FULL LOCKOUT
           </text>
         </svg>
@@ -1005,28 +1005,28 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
           {commonDefs}
           <line x1="80" y1="270" x2="320" y2="270" stroke="#262626" strokeWidth="2" strokeDasharray="4 4" />
           
-          <circle cx="265" cy="130" r={circleRadius} stroke="#C7FF3D" strokeWidth="1" strokeDasharray="3 3" opacity="0.4" fill="none" />
-          <circle cx="135" cy="130" r={circleRadius} stroke="#C7FF3D" strokeWidth="1" strokeDasharray="3 3" opacity="0.4" fill="none" />
+          <circle cx="265" cy="130" r={circleRadius} stroke="#8B5CF6" strokeWidth="1" strokeDasharray="3 3" opacity="0.4" fill="none" />
+          <circle cx="135" cy="130" r={circleRadius} stroke="#8B5CF6" strokeWidth="1" strokeDasharray="3 3" opacity="0.4" fill="none" />
 
-          <circle cx="200" cy="72" r="18" fill="#1C1C1C" stroke="#C7FF3D" strokeWidth="2.5" />
-          <path d="M 175,98 L 225,98 L 215,190 L 185,190 Z" fill="#181818" stroke="#38BDF8" strokeWidth="2.5" />
+          <circle cx="200" cy="72" r="18" fill="#1C1C1C" stroke="#8B5CF6" strokeWidth="2.5" />
+          <path d="M 175,98 L 225,98 L 215,190 L 185,190 Z" fill="#181818" stroke="#C4B5FD" strokeWidth="2.5" />
 
           {/* Shoulders Glow */}
-          <circle cx="175" cy="104" r="8" fill="#C7FF3D" opacity="0.8" filter="url(#neon-glow)" />
-          <circle cx="225" cy="104" r="8" fill="#C7FF3D" opacity="0.8" filter="url(#neon-glow)" />
+          <circle cx="175" cy="104" r="8" fill="#8B5CF6" opacity="0.8" filter="url(#neon-glow)" />
+          <circle cx="225" cy="104" r="8" fill="#8B5CF6" opacity="0.8" filter="url(#neon-glow)" />
 
           <line x1="225" y1="104" x2="255" y2="118" stroke="#F5F5F5" strokeWidth="4" strokeLinecap="round" />
-          <line x1="255" y1="118" x2={rArmX} y2={rArmY} stroke="#C7FF3D" strokeWidth="4" strokeLinecap="round" />
-          <circle cx={rArmX} cy={rArmY} r="5" fill="#C7FF3D" />
+          <line x1="255" y1="118" x2={rArmX} y2={rArmY} stroke="#8B5CF6" strokeWidth="4" strokeLinecap="round" />
+          <circle cx={rArmX} cy={rArmY} r="5" fill="#8B5CF6" />
 
           <line x1="175" y1="104" x2="145" y2="118" stroke="#F5F5F5" strokeWidth="4" strokeLinecap="round" />
-          <line x1="145" y1="118" x2={lArmX} y2={lArmY} stroke="#C7FF3D" strokeWidth="4" strokeLinecap="round" />
-          <circle cx={lArmX} cy={lArmY} r="5" fill="#C7FF3D" />
+          <line x1="145" y1="118" x2={lArmX} y2={lArmY} stroke="#8B5CF6" strokeWidth="4" strokeLinecap="round" />
+          <circle cx={lArmX} cy={lArmY} r="5" fill="#8B5CF6" />
 
           <line x1="188" y1="190" x2="180" y2="270" stroke="#737373" strokeWidth="4.5" strokeLinecap="round" />
           <line x1="212" y1="190" x2="220" y2="270" stroke="#737373" strokeWidth="4.5" strokeLinecap="round" />
 
-          <text x="200" y="24" fill="#C7FF3D" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
+          <text x="200" y="24" fill="#8B5CF6" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
             SCAPULAR & SHOULDER ROTATION
           </text>
         </svg>
@@ -1052,7 +1052,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
           <path
             d={`M 135,145 Q 200,${155 - spineArch} 265,150`}
             fill="none"
-            stroke="#C7FF3D"
+            stroke="#8B5CF6"
             strokeWidth="6"
             strokeLinecap="round"
             filter="url(#neon-glow)"
@@ -1065,9 +1065,9 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
           })}
 
           <line x1="135" y1="145" x2="105" y2={headY} stroke="#F5F5F5" strokeWidth="4" strokeLinecap="round" />
-          <circle cx="95" cy={headY - 5} r="16" fill="#1C1C1C" stroke="#C7FF3D" strokeWidth="2.5" />
+          <circle cx="95" cy={headY - 5} r="16" fill="#1C1C1C" stroke="#8B5CF6" strokeWidth="2.5" />
 
-          <text x="200" y="30" fill={cycle > 0 ? '#FFB547' : '#C7FF3D'} textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
+          <text x="200" y="30" fill={cycle > 0 ? '#FFB547' : '#8B5CF6'} textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
             {cycle > 0 ? 'CAT: THORACIC SPINAL ARCH (EXHALE)' : 'COW: PELVIC ANTERIOR TILT (INHALE)'}
           </text>
         </svg>
@@ -1088,13 +1088,13 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
           <line x1="140" y1="50" x2="160" y2={100 + scapY} stroke="#F5F5F5" strokeWidth="4.5" strokeLinecap="round" />
           <line x1="260" y1="50" x2="240" y2={100 + scapY} stroke="#F5F5F5" strokeWidth="4.5" strokeLinecap="round" />
 
-          <circle cx="200" cy={90 + scapY} r="17" fill="#1C1C1C" stroke="#C7FF3D" strokeWidth="2" />
-          <rect x="165" y={110 + scapY} width="70" height="95" rx="10" fill="#181818" stroke="#38BDF8" strokeWidth="2.5" />
+          <circle cx="200" cy={90 + scapY} r="17" fill="#1C1C1C" stroke="#8B5CF6" strokeWidth="2" />
+          <rect x="165" y={110 + scapY} width="70" height="95" rx="10" fill="#181818" stroke="#C4B5FD" strokeWidth="2.5" />
 
-          <circle cx="185" cy={135 + scapY} r="7" fill="#C7FF3D" opacity="0.8" filter="url(#neon-glow)" />
-          <circle cx="215" cy={135 + scapY} r="7" fill="#C7FF3D" opacity="0.8" filter="url(#neon-glow)" />
+          <circle cx="185" cy={135 + scapY} r="7" fill="#8B5CF6" opacity="0.8" filter="url(#neon-glow)" />
+          <circle cx="215" cy={135 + scapY} r="7" fill="#8B5CF6" opacity="0.8" filter="url(#neon-glow)" />
 
-          <text x="200" y="25" fill="#C7FF3D" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
+          <text x="200" y="25" fill="#8B5CF6" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
             ISOLATED SCAPULAR RETRACTION (ARMS STRAIGHT)
           </text>
         </svg>
@@ -1112,13 +1112,13 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
         <svg viewBox="0 0 400 300" className="w-full h-full select-none">
           {commonDefs}
           <rect x="90" y="40" width="20" height="230" fill="#222" stroke="#404040" strokeWidth="2" />
-          <line x1="110" y1="110" x2="110" y2="155" stroke="#38BDF8" strokeWidth="6" strokeLinecap="round" />
+          <line x1="110" y1="110" x2="110" y2="155" stroke="#C4B5FD" strokeWidth="6" strokeLinecap="round" />
           <line x1="110" y1="155" x2={165 - stretchOffset} y2="155" stroke="#F5F5F5" strokeWidth="5" strokeLinecap="round" />
 
           <path
             d="M 165,145 Q 190,155 205,160"
             fill="none"
-            stroke="#C7FF3D"
+            stroke="#8B5CF6"
             strokeWidth="8"
             opacity="0.85"
             strokeLinecap="round"
@@ -1126,9 +1126,9 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
           />
 
           <rect x={180 - stretchOffset} y="130" width="55" height="85" rx="8" fill="#181818" stroke="#F5F5F5" strokeWidth="2.5" transform="rotate(10, 205, 170)" />
-          <circle cx={205 - stretchOffset} cy="95" r="16" fill="#1C1C1C" stroke="#C7FF3D" strokeWidth="2" />
+          <circle cx={205 - stretchOffset} cy="95" r="16" fill="#1C1C1C" stroke="#8B5CF6" strokeWidth="2" />
 
-          <text x="200" y="25" fill="#C7FF3D" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
+          <text x="200" y="25" fill="#8B5CF6" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
             FOREARM AT 90° • STEP THROUGH & ROTATE AWAY
           </text>
         </svg>
@@ -1145,15 +1145,15 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
         <svg viewBox="0 0 400 300" className="w-full h-full select-none">
           {commonDefs}
           <line x1="100" y1="270" x2="300" y2="270" stroke="#262626" strokeWidth="2" />
-          <circle cx="200" cy="85" r="17" fill="#1C1C1C" stroke="#C7FF3D" strokeWidth="2" />
+          <circle cx="200" cy="85" r="17" fill="#1C1C1C" stroke="#8B5CF6" strokeWidth="2" />
 
           <path d="M 185,110 Q 180,150 185,195 L 220,195 Q 225,150 215,110 Z" fill="#181818" stroke="#F5F5F5" strokeWidth="2.5" />
-          <path d="M 215,115 Q 228,150 220,190" fill="none" stroke="#C7FF3D" strokeWidth="7" opacity="0.8" filter="url(#neon-glow)" />
+          <path d="M 215,115 Q 228,150 220,190" fill="none" stroke="#8B5CF6" strokeWidth="7" opacity="0.8" filter="url(#neon-glow)" />
 
           <line x1="215" y1="110" x2={220 + breath} y2="55" stroke="#F5F5F5" strokeWidth="4.5" strokeLinecap="round" />
           <line x1={220 + breath} y1="55" x2="195" y2="85" stroke="#F5F5F5" strokeWidth="4" strokeLinecap="round" />
 
-          <text x="200" y="25" fill="#C7FF3D" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
+          <text x="200" y="25" fill="#8B5CF6" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
             GENTLE OVERHEAD ELBOW GUIDE • LENGTHEN LAT
           </text>
         </svg>
@@ -1170,14 +1170,14 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
           <line x1="80" y1="270" x2="320" y2="270" stroke="#262626" strokeWidth="2" />
           <line x1="120" y1="60" x2="120" y2="270" stroke="#333" strokeWidth="4" />
 
-          <circle cx="195" cy="80" r="17" fill="#1C1C1C" stroke="#C7FF3D" strokeWidth="2" />
+          <circle cx="195" cy="80" r="17" fill="#1C1C1C" stroke="#8B5CF6" strokeWidth="2" />
           <rect x="180" y="100" width="35" height="85" rx="8" fill="#181818" stroke="#F5F5F5" strokeWidth="2.5" />
 
           <line x1="190" y1="185" x2="190" y2="270" stroke="#F5F5F5" strokeWidth="4.5" strokeLinecap="round" />
-          <line x1="205" y1="185" x2="205" y2="235" stroke="#C7FF3D" strokeWidth="6" strokeLinecap="round" filter="url(#neon-glow)" />
+          <line x1="205" y1="185" x2="205" y2="235" stroke="#8B5CF6" strokeWidth="6" strokeLinecap="round" filter="url(#neon-glow)" />
           <line x1="205" y1="235" x2="235" y2="185" stroke="#F5F5F5" strokeWidth="4" strokeLinecap="round" />
 
-          <text x="200" y="25" fill="#C7FF3D" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
+          <text x="200" y="25" fill="#8B5CF6" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
             KNEES ALIGNED TOGETHER • TUCK PELVIS
           </text>
         </svg>
@@ -1195,21 +1195,21 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
         <svg viewBox="0 0 400 300" className="w-full h-full select-none">
           {commonDefs}
           <rect x="60" y="235" width="280" height="8" rx="4" fill="#1C1C1C" stroke="#2E2E2E" strokeWidth="1.5" />
-          <circle cx="255" cy="205" r="14" fill="#262626" stroke="#38BDF8" strokeWidth="2" />
+          <circle cx="255" cy="205" r="14" fill="#262626" stroke="#C4B5FD" strokeWidth="2" />
 
           <path
             d={`M 255,200 Q 200,${165 - ribExpansion} 150,210`}
             fill="none"
-            stroke="#C7FF3D"
+            stroke="#8B5CF6"
             strokeWidth="5"
             strokeLinecap="round"
             filter="url(#neon-glow)"
           />
 
-          <circle cx="135" cy="225" r="14" fill="#1C1C1C" stroke="#C7FF3D" strokeWidth="2" />
+          <circle cx="135" cy="225" r="14" fill="#1C1C1C" stroke="#8B5CF6" strokeWidth="2" />
           <line x1="165" y1="190" x2="90" y2="235" stroke="#F5F5F5" strokeWidth="4" strokeLinecap="round" />
 
-          <text x="200" y="25" fill="#C7FF3D" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
+          <text x="200" y="25" fill="#8B5CF6" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
             PARASYMPATHETIC RECOVERY • 4s INHALE / 6s EXHALE
           </text>
         </svg>
@@ -1221,9 +1221,9 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
       <svg viewBox="0 0 400 300" className="w-full h-full select-none">
         {commonDefs}
         <line x1="80" y1="260" x2="320" y2="260" stroke="#262626" strokeWidth="2" />
-        <circle cx="200" cy="90" r="18" fill="#1C1C1C" stroke="#C7FF3D" strokeWidth="2" />
-        <rect x="180" y="115" width="40" height="70" rx="6" fill="#1A1A1A" stroke="#38BDF8" strokeWidth="2" />
-        <text x="200" y="30" fill="#C7FF3D" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
+        <circle cx="200" cy="90" r="18" fill="#1C1C1C" stroke="#8B5CF6" strokeWidth="2" />
+        <rect x="180" y="115" width="40" height="70" rx="6" fill="#1A1A1A" stroke="#C4B5FD" strokeWidth="2" />
+        <text x="200" y="30" fill="#8B5CF6" textAnchor="middle" fontSize="11" fontWeight="800" letterSpacing="1">
           BIOMECHANICAL FORM GUIDE
         </text>
       </svg>
@@ -1233,18 +1233,18 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
   return (
     <div
       ref={containerRef}
-      className="flex flex-col bg-[#101010] border border-[#262626] rounded-2xl overflow-hidden shadow-2xl relative"
+      className="flex flex-col bg-[#0B0D14] border border-[#2A2F3F] rounded-2xl overflow-hidden shadow-2xl relative"
     >
       {/* Top Bar with Badge & View Tabs */}
-      <div className="flex items-center justify-between px-3.5 py-2.5 bg-[#141414] border-b border-[#262626] z-10">
+      <div className="flex items-center justify-between px-3.5 py-2.5 bg-[#0B0D14] border-b border-[#2A2F3F] z-10">
         <div className="flex items-center gap-2">
           <span
             className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-md flex items-center gap-1 ${
               exercise.phase === 'warmup'
-                ? 'bg-[#FFB547]/20 text-[#FFB547] border border-[#FFB547]/30'
+                ? 'bg-[#F59E0B]/20 text-[#F59E0B] border border-[#F59E0B]/30'
                 : exercise.phase === 'stretch'
-                ? 'bg-[#A78BFA]/20 text-[#A78BFA] border border-[#A78BFA]/30'
-                : 'bg-[#C7FF3D]/20 text-[#C7FF3D] border border-[#C7FF3D]/30'
+                ? 'bg-[#818CF8]/20 text-[#818CF8] border border-[#818CF8]/30'
+                : 'bg-[#8B5CF6]/20 text-[#8B5CF6] border border-[#8B5CF6]/30'
             }`}
           >
             {hasVideo ? <Film className="w-3 h-3" /> : <Compass className="w-3 h-3" />}
@@ -1255,20 +1255,20 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
                 ? 'COOL-DOWN STRETCH'
                 : 'MAIN COMPOUND')}
           </span>
-          <span className="text-[11px] font-semibold text-[#8A8A8A] truncate max-w-[130px] hidden xs:inline">
+          <span className="text-[11px] font-semibold text-[#A1A8B8] truncate max-w-[130px] hidden xs:inline">
             {exercise.category}
           </span>
         </div>
 
         {/* View Switcher Tabs */}
-        <div className="flex bg-[#1E1E1E] p-0.5 rounded-lg border border-[#2E2E2E]">
+        <div className="flex bg-[#131826] p-0.5 rounded-lg border border-[#2A2F3F]">
           {hasVideo && (
             <button
               onClick={() => setActiveTab('video')}
               className={`px-2.5 py-1 text-xs font-semibold rounded-md transition-all flex items-center gap-1.5 ${
                 activeTab === 'video'
-                  ? 'bg-[#C7FF3D] text-black shadow-sm font-bold'
-                  : 'text-[#8A8A8A] hover:text-[#F5F5F5]'
+                  ? 'bg-[#8B5CF6] text-white shadow-sm font-bold'
+                  : 'text-[#A1A8B8] hover:text-[#FFFFFF]'
               }`}
             >
               <Film className="w-3.5 h-3.5" />
@@ -1280,8 +1280,8 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
             onClick={() => setActiveTab('biomechanical')}
             className={`px-2.5 py-1 text-xs font-semibold rounded-md transition-all flex items-center gap-1.5 ${
               activeTab === 'biomechanical'
-                ? 'bg-[#C7FF3D] text-black shadow-sm font-bold'
-                : 'text-[#8A8A8A] hover:text-[#F5F5F5]'
+                ? 'bg-[#8B5CF6] text-white shadow-sm font-bold'
+                : 'text-[#A1A8B8] hover:text-[#FFFFFF]'
             }`}
           >
             <Layers className="w-3.5 h-3.5" />
@@ -1292,8 +1292,8 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
             onClick={() => setActiveTab('muscles')}
             className={`px-2.5 py-1 text-xs font-semibold rounded-md transition-all flex items-center gap-1.5 ${
               activeTab === 'muscles'
-                ? 'bg-[#C7FF3D] text-black shadow-sm font-bold'
-                : 'text-[#8A8A8A] hover:text-[#F5F5F5]'
+                ? 'bg-[#8B5CF6] text-white shadow-sm font-bold'
+                : 'text-[#A1A8B8] hover:text-[#FFFFFF]'
             }`}
           >
             <Activity className="w-3.5 h-3.5" />
@@ -1304,8 +1304,8 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
             onClick={() => setActiveTab('technique')}
             className={`px-2.5 py-1 text-xs font-semibold rounded-md transition-all flex items-center gap-1.5 ${
               activeTab === 'technique'
-                ? 'bg-[#C7FF3D] text-black shadow-sm font-bold'
-                : 'text-[#8A8A8A] hover:text-[#F5F5F5]'
+                ? 'bg-[#8B5CF6] text-white shadow-sm font-bold'
+                : 'text-[#A1A8B8] hover:text-[#FFFFFF]'
             }`}
           >
             <Info className="w-3.5 h-3.5" />
@@ -1335,11 +1335,11 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
               />
             ) : (
               <div className="flex flex-col items-center justify-center text-center p-6 text-neutral-400">
-                <Film className="w-10 h-10 text-[#C7FF3D] mb-2 opacity-60" />
+                <Film className="w-10 h-10 text-[#8B5CF6] mb-2 opacity-60" />
                 <p className="text-sm font-medium text-white mb-1">Switch to Biomechanical Guide</p>
                 <button
                   onClick={() => setActiveTab('biomechanical')}
-                  className="px-3 py-1.5 rounded-lg bg-[#C7FF3D] text-black text-xs font-bold mt-2"
+                  className="px-3 py-1.5 rounded-lg bg-[#8B5CF6] text-white text-xs font-bold mt-2"
                 >
                   View Biomechanical Simulation
                 </button>
@@ -1354,8 +1354,8 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
             <div className="absolute top-3 left-3 flex flex-col gap-1 pointer-events-none z-10">
               <div className="flex items-center gap-2 bg-black/75 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 shadow-lg">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C7FF3D] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#C7FF3D]"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#8B5CF6] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#8B5CF6]"></span>
                 </span>
                 <span className={`text-[10px] font-black tracking-wider uppercase ${phaseInfo.color}`}>
                   {phaseInfo.label}
@@ -1369,7 +1369,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
             {/* Top-Right: Form Quality & Breathing Cadence */}
             <div className="absolute top-3 right-3 flex items-center gap-1.5 z-10">
               <div className="flex items-center gap-1.5 bg-black/75 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 shadow-lg">
-                <Wind className="w-3 h-3 text-[#C7FF3D]" />
+                <Wind className="w-3 h-3 text-[#8B5CF6]" />
                 <span className="text-[10px] font-medium text-neutral-200">
                   {phaseInfo.breath}
                 </span>
@@ -1380,22 +1380,22 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
             {!isPlaying && (
               <button
                 onClick={togglePlayPause}
-                className="absolute inset-0 m-auto w-14 h-14 rounded-full bg-black/70 backdrop-blur-md border border-[#C7FF3D]/50 flex items-center justify-center text-[#C7FF3D] hover:scale-105 transition-transform shadow-2xl z-10"
+                className="absolute inset-0 m-auto w-14 h-14 rounded-full bg-black/70 backdrop-blur-md border border-[#8B5CF6]/50 flex items-center justify-center text-[#8B5CF6] hover:scale-105 transition-transform shadow-2xl z-10"
               >
-                <Play className="w-7 h-7 ml-1 fill-[#C7FF3D]" />
+                <Play className="w-7 h-7 ml-1 fill-[#8B5CF6]" />
               </button>
             )}
 
             {/* Bottom Form Tip Ribbon */}
             <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10">
               <div className="flex items-center gap-1.5 bg-black/80 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10 max-w-[85%] truncate">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#C7FF3D] shrink-0" />
+                <ShieldCheck className="w-3.5 h-3.5 text-[#8B5CF6] shrink-0" />
                 <span className="text-[11px] font-medium text-neutral-200 truncate">
-                  <strong className="text-[#C7FF3D] mr-1">Cue:</strong>
+                  <strong className="text-[#8B5CF6] mr-1">Cue:</strong>
                   {exercise.formTip}
                 </span>
               </div>
-              <span className="text-[9px] font-bold uppercase tracking-wider bg-[#C7FF3D]/20 text-[#C7FF3D] border border-[#C7FF3D]/40 px-2 py-0.5 rounded-md shrink-0">
+              <span className="text-[9px] font-bold uppercase tracking-wider bg-[#8B5CF6]/20 text-[#8B5CF6] border border-[#8B5CF6]/40 px-2 py-0.5 rounded-md shrink-0">
                 PRO DEMO
               </span>
             </div>
@@ -1404,7 +1404,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
 
         {/* TAB 2: Biomechanical Motion Model (Kinetic Simulation for all exercises) */}
         {activeTab === 'biomechanical' && (
-          <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-b from-[#121212] via-[#0E0E0E] to-[#0A0A0A]">
+          <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-b from-[#0B0D14] via-[#0D121F] to-[#131826]">
             {/* Real Biomechanical Kinetic Canvas */}
             <div className="w-full h-full max-w-[420px] flex items-center justify-center p-2">
               {renderBiomechanicalVisual()}
@@ -1414,8 +1414,8 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
             <div className="absolute top-3 left-3 flex flex-col gap-1 pointer-events-none z-10">
               <div className="flex items-center gap-2 bg-black/85 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 shadow-lg">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C7FF3D] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#C7FF3D]"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#8B5CF6] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#8B5CF6]"></span>
                 </span>
                 <span className={`text-[10px] font-black tracking-wider uppercase ${phaseInfo.color}`}>
                   {phaseInfo.label}
@@ -1429,17 +1429,17 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
             {/* Top-Right: Joint Degree Gauge Card */}
             <div className="absolute top-3 right-3 flex flex-col items-end gap-1.5 z-10">
               {phaseInfo.elbowAngle && (
-                <div className="flex items-center gap-1.5 bg-black/85 backdrop-blur-md px-2.5 py-1 rounded-full border border-[#38BDF8]/40 shadow-lg">
-                  <Gauge className="w-3 h-3 text-[#38BDF8]" />
-                  <span className="text-[10px] font-mono font-bold text-[#38BDF8]">
+                <div className="flex items-center gap-1.5 bg-black/85 backdrop-blur-md px-2.5 py-1 rounded-full border border-[#C4B5FD]/40 shadow-lg">
+                  <Gauge className="w-3 h-3 text-[#C4B5FD]" />
+                  <span className="text-[10px] font-mono font-bold text-[#C4B5FD]">
                     {phaseInfo.jointName}: {phaseInfo.elbowAngle}
                   </span>
                 </div>
               )}
               {phaseInfo.kneeAngle && (
-                <div className="flex items-center gap-1.5 bg-black/85 backdrop-blur-md px-2.5 py-1 rounded-full border border-[#38BDF8]/40 shadow-lg">
-                  <Gauge className="w-3 h-3 text-[#38BDF8]" />
-                  <span className="text-[10px] font-mono font-bold text-[#38BDF8]">
+                <div className="flex items-center gap-1.5 bg-black/85 backdrop-blur-md px-2.5 py-1 rounded-full border border-[#C4B5FD]/40 shadow-lg">
+                  <Gauge className="w-3 h-3 text-[#C4B5FD]" />
+                  <span className="text-[10px] font-mono font-bold text-[#C4B5FD]">
                     {phaseInfo.jointName}: {phaseInfo.kneeAngle}
                   </span>
                 </div>
@@ -1450,9 +1450,9 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
             {!isPlaying && (
               <button
                 onClick={togglePlayPause}
-                className="absolute inset-0 m-auto w-14 h-14 rounded-full bg-black/70 backdrop-blur-md border border-[#C7FF3D]/50 flex items-center justify-center text-[#C7FF3D] hover:scale-105 transition-transform shadow-2xl z-10"
+                className="absolute inset-0 m-auto w-14 h-14 rounded-full bg-black/70 backdrop-blur-md border border-[#8B5CF6]/50 flex items-center justify-center text-[#8B5CF6] hover:scale-105 transition-transform shadow-2xl z-10"
               >
-                <Play className="w-7 h-7 ml-1 fill-[#C7FF3D]" />
+                <Play className="w-7 h-7 ml-1 fill-[#8B5CF6]" />
               </button>
             )}
 
@@ -1463,7 +1463,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
                   onClick={() => setShowJointAngles(!showJointAngles)}
                   className={`px-2 py-0.5 rounded-lg text-[10px] font-bold flex items-center gap-1 transition-colors ${
                     showJointAngles
-                      ? 'bg-[#38BDF8]/20 text-[#38BDF8] border border-[#38BDF8]/40'
+                      ? 'bg-[#C4B5FD]/20 text-[#C4B5FD] border border-[#C4B5FD]/40'
                       : 'text-neutral-400 hover:text-white'
                   }`}
                   title="Toggle Joint Angle Gauges"
@@ -1476,7 +1476,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
                   onClick={() => setShowBarPath(!showBarPath)}
                   className={`px-2 py-0.5 rounded-lg text-[10px] font-bold flex items-center gap-1 transition-colors ${
                     showBarPath
-                      ? 'bg-[#C7FF3D]/20 text-[#C7FF3D] border border-[#C7FF3D]/40'
+                      ? 'bg-[#8B5CF6]/20 text-[#8B5CF6] border border-[#8B5CF6]/40'
                       : 'text-neutral-400 hover:text-white'
                   }`}
                   title="Toggle Bar Path Trajectory"
@@ -1499,7 +1499,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
                 </button>
               </div>
 
-              <span className="text-[9px] font-mono font-bold uppercase tracking-wider bg-[#38BDF8]/20 text-[#38BDF8] border border-[#38BDF8]/40 px-2 py-1 rounded-md shrink-0 backdrop-blur-md">
+              <span className="text-[9px] font-mono font-bold uppercase tracking-wider bg-[#C4B5FD]/20 text-[#C4B5FD] border border-[#C4B5FD]/40 px-2 py-1 rounded-md shrink-0 backdrop-blur-md">
                 60 FPS KINETICS
               </span>
             </div>
@@ -1508,44 +1508,44 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
 
         {/* TAB 3: Muscles Activation Tab */}
         {activeTab === 'muscles' && (
-          <div className="w-full h-full p-5 flex flex-col justify-between bg-gradient-to-b from-[#121212] to-[#0A0A0A] overflow-y-auto">
+          <div className="w-full h-full p-5 flex flex-col justify-between bg-gradient-to-b from-[#0B0D14] to-[#131826] overflow-y-auto">
             <div>
-              <div className="text-xs font-bold text-[#8A8A8A] uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                <Activity className="w-3.5 h-3.5 text-[#C7FF3D]" />
+              <div className="text-xs font-bold text-[#A1A8B8] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                <Activity className="w-3.5 h-3.5 text-[#8B5CF6]" />
                 Target Muscle Activation Map
               </div>
               <div className="flex flex-wrap gap-2 mb-4">
                 {exercise.targetMuscles.map((muscle, idx) => (
                   <span
                     key={idx}
-                    className="px-3 py-1.5 rounded-xl bg-[#C7FF3D]/15 border border-[#C7FF3D]/30 text-[#C7FF3D] font-bold text-xs flex items-center gap-2 shadow-sm"
+                    className="px-3 py-1.5 rounded-xl bg-[#8B5CF6]/15 border border-[#8B5CF6]/30 text-[#8B5CF6] font-bold text-xs flex items-center gap-2 shadow-sm"
                   >
-                    <span className="w-2 h-2 rounded-full bg-[#C7FF3D] animate-pulse" />
+                    <span className="w-2 h-2 rounded-full bg-[#8B5CF6] animate-pulse" />
                     {muscle}
                   </span>
                 ))}
               </div>
 
               <div className="space-y-2 mt-2">
-                <div className="bg-[#181818] p-3 rounded-xl border border-[#2B2B2B] text-xs">
-                  <span className="text-[#F5F5F5] font-semibold block mb-0.5">
+                <div className="bg-[#131826] p-3 rounded-xl border border-[#2A2F3F] text-xs">
+                  <span className="text-[#FFFFFF] font-semibold block mb-0.5">
                     Mind-Muscle Connection:
                   </span>
-                  <span className="text-[#A3A3A3]">
+                  <span className="text-[#A1A8B8]">
                     Focus on initiating the movement strictly with your{' '}
-                    <strong className="text-[#C7FF3D]">{exercise.targetMuscles[0]}</strong> before
+                    <strong className="text-[#8B5CF6]">{exercise.targetMuscles[0]}</strong> before
                     engaging secondary stabilizers.
                   </span>
                 </div>
               </div>
             </div>
 
-            <div className="bg-[#141414] p-3 rounded-xl border border-[#262626] text-xs text-[#A3A3A3] flex items-center justify-between mt-3">
+            <div className="bg-[#131826] p-3 rounded-xl border border-[#2A2F3F] text-xs text-[#A1A8B8] flex items-center justify-between mt-3">
               <div>
-                <span className="text-[#F5F5F5] font-semibold">Equipment: </span>
+                <span className="text-[#FFFFFF] font-semibold">Equipment: </span>
                 <span>{exercise.equipmentNeeded}</span>
               </div>
-              <span className="text-[10px] bg-[#222] text-[#C7FF3D] px-2 py-0.5 rounded font-mono">
+              <span className="text-[10px] bg-[#222] text-[#8B5CF6] px-2 py-0.5 rounded font-mono">
                 {exercise.category}
               </span>
             </div>
@@ -1554,22 +1554,22 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
 
         {/* TAB 4: Technique & Steps Tab */}
         {activeTab === 'technique' && (
-          <div className="w-full h-full p-4 overflow-y-auto space-y-2.5 bg-gradient-to-b from-[#121212] to-[#0A0A0A]">
-            <div className="text-xs font-bold text-[#F5F5F5] flex items-center justify-between mb-1">
+          <div className="w-full h-full p-4 overflow-y-auto space-y-2.5 bg-gradient-to-b from-[#0B0D14] to-[#131826]">
+            <div className="text-xs font-bold text-[#FFFFFF] flex items-center justify-between mb-1">
               <span className="flex items-center gap-1.5">
-                <Info className="w-3.5 h-3.5 text-[#C7FF3D]" />
+                <Info className="w-3.5 h-3.5 text-[#8B5CF6]" />
                 Step-by-Step Technique Breakdown
               </span>
-              <span className="text-[10px] text-[#8A8A8A] font-mono">
+              <span className="text-[10px] text-[#A1A8B8] font-mono">
                 {exercise.steps.length} Steps
               </span>
             </div>
             {exercise.steps.map((step, idx) => (
               <div
                 key={idx}
-                className="flex items-start gap-3 text-xs text-[#D1D5DB] bg-[#161616] p-2.5 rounded-xl border border-[#262626]"
+                className="flex items-start gap-3 text-xs text-[#D1D5DB] bg-[#0B0D14] p-2.5 rounded-xl border border-[#2A2F3F]"
               >
-                <span className="w-5 h-5 rounded-md bg-[#222] border border-[#3A3A3A] text-[#C7FF3D] font-black flex items-center justify-center shrink-0 text-[10px]">
+                <span className="w-5 h-5 rounded-md bg-[#222] border border-[#2A2F3F] text-[#8B5CF6] font-black flex items-center justify-center shrink-0 text-[10px]">
                   0{idx + 1}
                 </span>
                 <p className="leading-relaxed pt-0.5 text-neutral-300">{step}</p>
@@ -1577,12 +1577,12 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
             ))}
 
             {exercise.alternative && (
-              <div className="bg-[#181818] p-3 rounded-xl border border-[#C7FF3D]/25 mt-2">
-                <div className="text-[11px] font-bold text-[#C7FF3D] flex items-center gap-1.5 mb-1">
+              <div className="bg-[#131826] p-3 rounded-xl border border-[#8B5CF6]/25 mt-2">
+                <div className="text-[11px] font-bold text-[#8B5CF6] flex items-center gap-1.5 mb-1">
                   <Sparkles className="w-3 h-3" />
                   Beginner Modification / Alternative: {exercise.alternative.name}
                 </div>
-                <p className="text-[11px] text-[#A3A3A3] leading-snug">
+                <p className="text-[11px] text-[#A1A8B8] leading-snug">
                   {exercise.alternative.reason}
                 </p>
               </div>
@@ -1593,11 +1593,11 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
 
       {/* Playback & Slow-Mo Controls */}
       {(activeTab === 'video' || activeTab === 'biomechanical') && (
-        <div className="px-3.5 py-2.5 bg-[#141414] border-t border-[#262626] flex flex-col gap-2">
+        <div className="px-3.5 py-2.5 bg-[#131826] border-t border-[#2A2F3F] flex flex-col gap-2">
           {/* Seek Scrubber (For Video mode) */}
           {activeTab === 'video' && hasVideo && (
             <div className="flex items-center gap-2">
-              <span className="text-[10px] font-mono text-[#8A8A8A] w-8">
+              <span className="text-[10px] font-mono text-[#A1A8B8] w-8">
                 {currentTime.toFixed(1)}s
               </span>
               <input
@@ -1607,10 +1607,10 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
                 step="0.05"
                 value={currentTime}
                 onChange={handleSeek}
-                className="flex-1 h-1.5 bg-[#262626] rounded-lg appearance-none cursor-pointer accent-[#C7FF3D]"
+                className="flex-1 h-1.5 bg-[#262626] rounded-lg appearance-none cursor-pointer accent-[#8B5CF6]"
                 aria-label="Seek Video Timeline"
               />
-              <span className="text-[10px] font-mono text-[#8A8A8A] w-8 text-right">
+              <span className="text-[10px] font-mono text-[#A1A8B8] w-8 text-right">
                 {duration ? `${duration.toFixed(1)}s` : '0.0s'}
               </span>
             </div>
@@ -1622,20 +1622,20 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
               {/* Play/Pause Button */}
               <button
                 onClick={togglePlayPause}
-                className="p-1.5 rounded-lg bg-[#1F1F1F] hover:bg-[#2A2A2A] text-[#F5F5F5] transition-colors"
+                className="p-1.5 rounded-lg bg-[#131826] hover:bg-[#2A2A2A] text-[#FFFFFF] transition-colors"
                 aria-label={isPlaying ? 'Pause demonstration' : 'Play demonstration'}
               >
                 {isPlaying ? (
                   <Pause className="w-4 h-4" />
                 ) : (
-                  <Play className="w-4 h-4 text-[#C7FF3D] fill-[#C7FF3D]" />
+                  <Play className="w-4 h-4 text-[#8B5CF6] fill-[#8B5CF6]" />
                 )}
               </button>
 
               {/* Replay Button */}
               <button
                 onClick={handleRestart}
-                className="p-1.5 rounded-lg bg-[#1F1F1F] hover:bg-[#2A2A2A] text-[#8A8A8A] hover:text-[#F5F5F5] transition-colors"
+                className="p-1.5 rounded-lg bg-[#131826] hover:bg-[#2A2A2A] text-[#A1A8B8] hover:text-[#FFFFFF] transition-colors"
                 title="Restart Demonstration"
                 aria-label="Restart Demonstration"
               >
@@ -1645,7 +1645,7 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
               {/* Speed Switcher (Slow-Mo Form Study) */}
               <button
                 onClick={cycleSpeed}
-                className="px-2 py-1 rounded-lg bg-[#1F1F1F] text-[11px] font-bold text-[#C7FF3D] hover:bg-[#2A2A2A] border border-[#2E2E2E]"
+                className="px-2 py-1 rounded-lg bg-[#131826] text-[11px] font-bold text-[#8B5CF6] hover:bg-[#2A2A2A] border border-[#2A2F3F]"
                 title="Toggle Slow-Mo Form Study"
               >
                 {playbackRate}x {playbackRate < 1.0 && '(Slow-Mo)'}
@@ -1657,17 +1657,17 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
               {activeTab === 'video' && hasVideo && (
                 <button
                   onClick={toggleMute}
-                  className="p-1.5 rounded-lg bg-[#1F1F1F] hover:bg-[#2A2A2A] text-[#8A8A8A] hover:text-[#F5F5F5] transition-colors"
+                  className="p-1.5 rounded-lg bg-[#131826] hover:bg-[#2A2A2A] text-[#A1A8B8] hover:text-[#FFFFFF] transition-colors"
                   title={isMuted ? 'Unmute' : 'Mute'}
                   aria-label={isMuted ? 'Unmute video' : 'Mute video'}
                 >
-                  {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5 text-[#C7FF3D]" />}
+                  {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5 text-[#8B5CF6]" />}
                 </button>
               )}
 
               <button
                 onClick={handleFullscreen}
-                className="p-1.5 rounded-lg bg-[#1F1F1F] hover:bg-[#2A2A2A] text-[#8A8A8A] hover:text-[#F5F5F5] transition-colors"
+                className="p-1.5 rounded-lg bg-[#131826] hover:bg-[#2A2A2A] text-[#A1A8B8] hover:text-[#FFFFFF] transition-colors"
                 title="Expand Fullscreen"
                 aria-label="Expand Fullscreen"
               >
@@ -1679,24 +1679,24 @@ export const ExerciseVisualizer: React.FC<ExerciseVisualizerProps> = ({
       )}
 
       {/* Form Tip & Common Mistake Bottom Cards */}
-      <div className="p-3 bg-[#141414] border-t border-[#262626] space-y-2">
-        <div className="flex items-start gap-2 bg-[#191919] p-2.5 rounded-xl border border-[#2B2B2B]">
-          <ShieldCheck className="w-4 h-4 text-[#C7FF3D] shrink-0 mt-0.5" />
+      <div className="p-3 bg-[#131826] border-t border-[#2A2F3F] space-y-2">
+        <div className="flex items-start gap-2 bg-[#0B0D14] p-2.5 rounded-xl border border-[#2A2F3F]">
+          <ShieldCheck className="w-4 h-4 text-[#8B5CF6] shrink-0 mt-0.5" />
           <div className="text-xs">
-            <span className="font-black text-[#C7FF3D] mr-1.5 uppercase text-[10px] tracking-wide">
+            <span className="font-black text-[#8B5CF6] mr-1.5 uppercase text-[10px] tracking-wide">
               KEY FORM CUE:
             </span>
-            <span className="text-[#D4D4D4] leading-relaxed">{exercise.formTip}</span>
+            <span className="text-[#FFFFFF] leading-relaxed">{exercise.formTip}</span>
           </div>
         </div>
 
-        <div className="flex items-start gap-2 bg-[#191919] p-2.5 rounded-xl border border-[#2B2B2B]">
+        <div className="flex items-start gap-2 bg-[#0B0D14] p-2.5 rounded-xl border border-[#2A2F3F]">
           <AlertTriangle className="w-4 h-4 text-[#FF5C5C] shrink-0 mt-0.5" />
           <div className="text-xs">
             <span className="font-black text-[#FF5C5C] mr-1.5 uppercase text-[10px] tracking-wide">
               COMMON MISTAKE TO AVOID:
             </span>
-            <span className="text-[#D4D4D4] leading-relaxed">{exercise.commonMistake}</span>
+            <span className="text-[#FFFFFF] leading-relaxed">{exercise.commonMistake}</span>
           </div>
         </div>
       </div>

@@ -10,12 +10,11 @@ export interface LogoProps {
 }
 
 /**
- * Official GymBuddy Logo & Emblem
- * Faithfully matches the user's uploaded official graphic:
- * - White muscular flexing bicep & clenched fist forming the upper & left contour of 'G'
- * - Electric lime (#C7FF3D) kinetic shelf/hook forming the dynamic lower arrow of 'G'
- * - Modern sans-serif "Gym" (Pure White) + "Buddy" (Electric Neon Lime)
- * - Tracked "AI FITNESS COMPANION" subtitle
+ * GymBuddy Logo & Emblem
+ * Faithfully matches the exact purple & lavender aesthetic from the uploaded design:
+ * - Stylized athletic emblem with energetic top head dot (#C4B5FD) and dynamic sweeping 'G' body (#8B5CF6)
+ * - Modern typography: "Gym" (#FFFFFF) + "Buddy" (#8B5CF6)
+ * - Tagline: "Your AI Fitness Companion" (#A1A8B8)
  */
 export const Logo: React.FC<LogoProps> = ({
   size = 'md',
@@ -45,12 +44,12 @@ export const Logo: React.FC<LogoProps> = ({
   };
 
   const taglineSizeMap: Record<NonNullable<LogoProps['size']>, string> = {
-    xs: 'text-[7px] tracking-[0.2em]',
-    sm: 'text-[9px] tracking-[0.22em]',
-    md: 'text-[10px] tracking-[0.25em]',
-    lg: 'text-xs tracking-[0.28em]',
-    xl: 'text-sm tracking-[0.3em]',
-    '2xl': 'text-base tracking-[0.32em]'
+    xs: 'text-[8px] tracking-normal',
+    sm: 'text-[10px] tracking-normal',
+    md: 'text-[11px] tracking-normal',
+    lg: 'text-sm tracking-normal',
+    xl: 'text-base tracking-normal',
+    '2xl': 'text-lg tracking-normal'
   };
 
   // The Emblem SVG
@@ -59,85 +58,53 @@ export const Logo: React.FC<LogoProps> = ({
       className={`relative flex-shrink-0 flex items-center justify-center ${iconSizeMap[size]} transition-transform duration-200 hover:scale-105`}
     >
       <svg
-        viewBox="0 0 200 200"
+        viewBox="0 0 100 100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="w-full h-full drop-shadow-md"
       >
         <defs>
+          <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#C4B5FD" />
+            <stop offset="100%" stopColor="#8B5CF6" />
+          </linearGradient>
           {glow && (
             <filter id={`emblem-glow-${size}`} x="-20%" y="-20%" width="140%" height="140%">
-              <feDropShadow dx="0" dy="0" stdDeviation="4" floodColor="#C7FF3D" floodOpacity="0.45" />
+              <feDropShadow dx="0" dy="0" stdDeviation="3" floodColor="#8B5CF6" floodOpacity="0.6" />
             </filter>
           )}
         </defs>
 
-        {/* --- 1. Stylized Muscular Arm & Flexed Bicep (Pure Crisp White) --- */}
-        {/* Forms the upper shoulder, bicep flex peak, and clenched fist top contour of 'G' */}
-        <path
-          d="M 68 142
-             C 48 122, 38 92, 44 65
-             C 50 38, 74 22, 104 22
-             C 126 22, 146 32, 156 46
-             C 160 52, 157 59, 149 61
-             C 140 64, 134 58, 126 53
-             C 118 47, 108 44, 98 46
-             C 80 50, 68 66, 68 84
-             C 68 96, 74 108, 84 116
-             C 96 98, 114 86, 136 82
-             C 146 80, 154 86, 154 94
-             C 154 102, 146 109, 136 112
-             C 118 117, 104 128, 94 144
-             C 88 153, 76 151, 68 142
-             Z"
-          fill="#FFFFFF"
-        />
-
-        {/* Inner Bicep Peak Muscle Contour Definition */}
-        <path
-          d="M 102 28
-             C 80 28, 56 46, 50 72
-             C 44 98, 54 124, 72 140
-             C 58 122, 54 96, 62 72
-             C 70 48, 88 38, 108 38
-             C 124 38, 138 44, 148 54
-             C 154 60, 158 56, 156 48
-             C 146 35, 126 28, 102 28
-             Z"
-          fill="#FFFFFF"
-          opacity="0.9"
-        />
-
-        {/* --- 2. Dynamic Kinetic Arrow & Shelf (Vibrant Electric Lime #C7FF3D) --- */}
-        {/* Forms the bottom curve of 'G' and shoots inwards as the kinetic horizontal shelf */}
-        <path
-          d="M 92 152
-             C 112 160, 134 158, 150 144
-             C 166 130, 172 108, 172 88
-             C 172 80, 165 75, 156 75
-             C 148 75, 142 80, 142 88
-             C 142 100, 136 112, 126 120
-             C 116 128, 104 130, 92 128
-             L 86 142
-             C 88 146, 90 149, 92 152
-             Z"
-          fill="#C7FF3D"
+        {/* Head circle dot of the athletic figure */}
+        <circle
+          cx="50"
+          cy="18"
+          r="9.5"
+          fill="url(#purpleGrad)"
           filter={glow ? `url(#emblem-glow-${size})` : undefined}
         />
 
-        {/* The Crossbar Arrow Head */}
+        {/* Stylized 'G' dynamic athlete body */}
         <path
-          d="M 166 84
-             L 118 84
-             C 110 84, 104 90, 104 98
-             C 104 106, 110 112, 118 112
-             L 148 112
-             C 142 126, 130 136, 116 140
-             C 108 143, 108 152, 115 155
-             C 138 150, 158 132, 166 104
-             C 168 96, 168 90, 166 84
+          d="M 50 35
+             C 33 35 20 48 20 65
+             C 20 82 33 95 50 95
+             C 66 95 78 83 78 67
+             L 78 63
+             C 78 60 76 58 73 58
+             L 50 58
+             C 47 58 45 60 45 63
+             C 45 66 47 68 50 68
+             L 68 68
+             C 66 77 59 84 50 84
+             C 39 84 31 75 31 65
+             C 31 54 39 46 50 46
+             C 56 46 62 49 66 54
+             C 68 56 71 56 73 54
+             C 75 52 75 49 73 47
+             C 67 40 59 35 50 35
              Z"
-          fill="#C7FF3D"
+          fill="url(#purpleGrad)"
           filter={glow ? `url(#emblem-glow-${size})` : undefined}
         />
       </svg>
@@ -153,7 +120,7 @@ export const Logo: React.FC<LogoProps> = ({
     );
   }
 
-  // Stacked variant (Matching the 512px / 1024px logo files uploaded by the user)
+  // Stacked variant
   if (variant === 'stacked') {
     return (
       <div className={`flex flex-col items-center text-center select-none ${className}`}>
@@ -161,13 +128,13 @@ export const Logo: React.FC<LogoProps> = ({
         <div className="mt-3 flex flex-col items-center">
           <div className="flex items-center leading-none">
             <span className={`${titleSizeMap[size]} text-[#FFFFFF]`}>Gym</span>
-            <span className={`${titleSizeMap[size]} text-[#C7FF3D]`}>Buddy</span>
+            <span className={`${titleSizeMap[size]} text-[#8B5CF6]`}>Buddy</span>
           </div>
           {(showTagline || size === 'lg' || size === 'xl' || size === '2xl') && (
             <span
-              className={`font-semibold uppercase text-[#D4D4D4] mt-1.5 opacity-90 ${taglineSizeMap[size]}`}
+              className={`font-medium text-[#A1A8B8] mt-1 ${taglineSizeMap[size]}`}
             >
-              AI FITNESS COMPANION
+              Your AI Fitness Companion
             </span>
           )}
         </div>
@@ -175,20 +142,20 @@ export const Logo: React.FC<LogoProps> = ({
     );
   }
 
-  // Default: Horizontal variant (Ideal for top navigation bar & compact headers)
+  // Default: Horizontal variant
   return (
     <div className={`flex items-center gap-2.5 select-none ${className}`}>
       {Emblem}
       <div className="flex flex-col justify-center">
         <div className="flex items-center leading-none">
           <span className={`${titleSizeMap[size]} text-[#FFFFFF]`}>Gym</span>
-          <span className={`${titleSizeMap[size]} text-[#C7FF3D]`}>Buddy</span>
+          <span className={`${titleSizeMap[size]} text-[#8B5CF6]`}>Buddy</span>
         </div>
         {showTagline && (
           <span
-            className={`font-medium uppercase text-[#A3A3A3] mt-0.5 tracking-wider ${taglineSizeMap[size]}`}
+            className={`font-medium text-[#A1A8B8] mt-0.5 ${taglineSizeMap[size]}`}
           >
-            AI FITNESS COMPANION
+            Your AI Fitness Companion
           </span>
         )}
       </div>
