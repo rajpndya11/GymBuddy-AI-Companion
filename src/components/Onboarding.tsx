@@ -10,13 +10,13 @@ interface OnboardingProps {
 export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
   const [step, setStep] = useState(1); // 1 to 10, then 11 is Personalisation Summary
 
-  // Form states
-  const [name, setName] = useState('Raj');
+  // Form states - empty default name for first-time onboarding
+  const [name, setName] = useState('');
   const [age, setAge] = useState<number>(24);
   const [gender, setGender] = useState('Male');
   const [height, setHeight] = useState<number>(175);
   const [heightUnit, setHeightUnit] = useState<'cm' | 'ft'>('cm');
-  const [weight, setWeight] = useState<number>(64);
+  const [weight, setWeight] = useState<number>(65);
   const [weightUnit, setWeightUnit] = useState<'kg' | 'lb'>('kg');
   const [goal, setGoal] = useState<FitnessGoal>('Build Muscle');
   const [experience, setExperience] = useState<ExperienceLevel>('Complete Beginner');
@@ -27,6 +27,9 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
   const totalQuestions = 10;
 
   const handleNext = () => {
+    if (step === 1 && !name.trim()) {
+      return; // Require name on step 1
+    }
     if (step < totalQuestions + 1) {
       setStep((s) => s + 1);
     }
@@ -45,7 +48,7 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
       gender,
       height: height || 175,
       heightUnit,
-      weight: weight || 64,
+      weight: weight || 65,
       weightUnit,
       goal,
       experience,
@@ -53,14 +56,25 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
       duration,
       equipment,
       onboarded: true,
-      streakCount: 3,
-      completedWorkoutsCount: 8,
-      cohort: 'returning',
+      streakCount: 0,
+      completedWorkoutsCount: 0,
+      cohort: 'new',
       dietPreference: 'veg',
       dailyBudget: 200,
       allergies: []
     };
 
+    // Initialize fresh weight log with user's baseline weight
+    const baselineWeightLog = [
+      {
+        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
+        weight: weight || 65,
+        note: 'Starting onboarding baseline'
+      }
+    ];
+
+    localStorage.setItem('gymbuddy_weight_logs', JSON.stringify(baselineWeightLog));
+    localStorage.setItem('gymbuddy_workout_history', JSON.stringify([]));
     localStorage.setItem('gymbuddy_profile', JSON.stringify(finalProfile));
     onComplete(finalProfile);
   };
@@ -106,10 +120,20 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Enter your name"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && name.trim()) {
+                  handleNext();
+                }
+              }}
+              placeholder="e.g. Alex, Sam, Jordan..."
               autoFocus
-              className="w-full bg-[#121212] border border-[#2A2A2A] focus:border-[#C7FF3D] rounded-2xl p-4 text-xl font-bold text-[#F5F5F5] focus:outline-none transition-colors"
+              className="w-full bg-[#121212] border border-[#2A2A2A] focus:border-[#C7FF3D] rounded-2xl p-4 text-xl font-bold text-[#F5F5F5] placeholder-[#555] focus:outline-none transition-colors"
             />
+            {step === 1 && !name.trim() && (
+              <p className="text-[11px] text-[#888] mt-2 italic">
+                Please type your name or nickname to personalize your companion.
+              </p>
+            )}
           </div>
         )}
 
@@ -522,9 +546,14 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
         {step <= totalQuestions ? (
           <button
             onClick={handleNext}
-            className="flex-1 py-4 px-6 rounded-2xl bg-[#C7FF3D] hover:bg-[#b8f52c] text-black font-extrabold text-sm flex items-center justify-center gap-2 shadow-lg transition-all btn-press"
+            disabled={step === 1 && !name.trim()}
+            className={`flex-1 py-4 px-6 rounded-2xl font-extrabold text-sm flex items-center justify-center gap-2 shadow-lg transition-all btn-press ${
+              step === 1 && !name.trim()
+                ? 'bg-[#222] text-[#666] cursor-not-allowed border border-[#333]'
+                : 'bg-[#C7FF3D] hover:bg-[#b8f52c] text-black'
+            }`}
           >
-            <span>Continue</span>
+            <span>{step === 1 && !name.trim() ? 'Enter Name to Continue' : 'Continue'}</span>
             <ArrowRight className="w-4 h-4 stroke-[3]" />
           </button>
         ) : (

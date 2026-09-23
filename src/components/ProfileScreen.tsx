@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { UserProfile, FitnessGoal, EquipmentAccess } from '../types';
+import { UserProfile, FitnessGoal, EquipmentAccess, ExperienceLevel } from '../types';
 import {
   User,
   Settings,
@@ -30,6 +30,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({
   onRestartOnboarding
 }) => {
   const [showEditModal, setShowEditModal] = useState(false);
+  const [showResetConfirmModal, setShowResetConfirmModal] = useState(false);
   const [showV2Roadmap, setShowV2Roadmap] = useState(false);
   const [showLogoGuide, setShowLogoGuide] = useState(false);
   const [previewSize, setPreviewSize] = useState<'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'>('lg');
@@ -38,16 +39,24 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({
 
   // Edit draft states
   const [draftName, setDraftName] = useState(userProfile.name);
+  const [draftAge, setDraftAge] = useState(userProfile.age);
   const [draftGoal, setDraftGoal] = useState<FitnessGoal>(userProfile.goal);
   const [draftWeight, setDraftWeight] = useState(userProfile.weight);
+  const [draftHeight, setDraftHeight] = useState(userProfile.height);
+  const [draftExperience, setDraftExperience] = useState<ExperienceLevel>(userProfile.experience);
   const [draftEquipment, setDraftEquipment] = useState<EquipmentAccess>(userProfile.equipment);
+  const [draftScheduleDays, setDraftScheduleDays] = useState(userProfile.scheduleDays);
 
   const saveProfileEdits = () => {
     onUpdateProfile({
-      name: draftName,
+      name: draftName.trim() || userProfile.name,
+      age: draftAge || userProfile.age,
       goal: draftGoal,
-      weight: draftWeight,
-      equipment: draftEquipment
+      weight: draftWeight || userProfile.weight,
+      height: draftHeight || userProfile.height,
+      experience: draftExperience,
+      equipment: draftEquipment,
+      scheduleDays: draftScheduleDays
     });
     setShowEditModal(false);
   };
@@ -85,11 +94,11 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({
       {/* User Card */}
       <div className="bg-gradient-to-br from-[#171717] to-[#121212] border border-[#262626] rounded-3xl p-5 shadow-xl flex items-center gap-4">
         <div className="w-16 h-16 rounded-2xl bg-[#1F1F1F] border-2 border-[#C7FF3D] flex items-center justify-center font-black text-2xl text-[#C7FF3D] shadow-md">
-          {userProfile.name.charAt(0) || 'R'}
+          {userProfile.name ? userProfile.name.charAt(0).toUpperCase() : 'A'}
         </div>
 
         <div className="flex-1">
-          <h2 className="text-xl font-bold text-[#F5F5F5]">{userProfile.name}</h2>
+          <h2 className="text-xl font-bold text-[#F5F5F5]">{userProfile.name || 'Athlete'}</h2>
           <p className="text-xs text-[#8A8A8A] mt-0.5">
             {userProfile.age} yrs · {userProfile.height} {userProfile.heightUnit} · {userProfile.weight}{' '}
             {userProfile.weightUnit}
@@ -216,27 +225,65 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({
       <div className="space-y-2.5 pt-2">
         <button
           onClick={() => setShowEditModal(true)}
-          className="w-full py-3.5 px-4 rounded-xl bg-[#1C1C1C] hover:bg-[#242424] border border-[#2E2E2E] text-xs font-bold text-[#F5F5F5] transition-colors btn-press"
+          className="w-full py-3.5 px-4 rounded-xl bg-[#1C1C1C] hover:bg-[#242424] border border-[#2E2E2E] text-xs font-bold text-[#F5F5F5] transition-colors btn-press flex items-center justify-center gap-2"
         >
-          Edit Profile Details
+          <span>Edit Profile & Preferences</span>
         </button>
 
         <button
-          onClick={onRestartOnboarding}
+          onClick={() => setShowResetConfirmModal(true)}
           className="w-full py-3 px-4 rounded-xl bg-transparent hover:bg-[#1A1A1A] text-xs font-semibold text-[#8A8A8A] hover:text-[#FF5C5C] transition-colors flex items-center justify-center gap-1.5"
         >
           <RotateCcw className="w-3.5 h-3.5" />
-          <span>Reset All & Retake Onboarding</span>
+          <span>Reset Profile & Start Fresh</span>
         </button>
       </div>
 
+      {/* RESET CONFIRMATION MODAL */}
+      {showResetConfirmModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm animate-fade-in">
+          <div className="w-full max-w-sm bg-[#161616] border border-[#2E2E2E] rounded-3xl p-5 shadow-2xl space-y-4">
+            <div className="w-12 h-12 rounded-2xl bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center mx-auto">
+              <RotateCcw className="w-6 h-6" />
+            </div>
+
+            <div className="text-center">
+              <h3 className="text-base font-black text-[#F5F5F5]">
+                Reset Profile & Retake Onboarding?
+              </h3>
+              <p className="text-xs text-[#8A8A8A] mt-1.5 leading-relaxed">
+                This will clear your saved settings and data. You will be taken to the fresh interactive onboarding flow to set up your profile from scratch.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-2.5 pt-1">
+              <button
+                onClick={() => setShowResetConfirmModal(false)}
+                className="py-2.5 rounded-xl bg-[#222] hover:bg-[#2A2A2A] text-xs font-bold text-[#A3A3A3] transition-colors"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={() => {
+                  setShowResetConfirmModal(false);
+                  onRestartOnboarding();
+                }}
+                className="py-2.5 rounded-xl bg-red-600 hover:bg-red-500 text-xs font-bold text-white shadow-lg transition-colors btn-press"
+              >
+                Yes, Reset All
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* EDIT MODAL */}
       {showEditModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm animate-fade-in">
-          <div className="w-full max-w-sm bg-[#141414] border border-[#2E2E2E] rounded-3xl p-5 shadow-2xl">
-            <h3 className="text-base font-bold text-[#F5F5F5] mb-4">Edit Profile</h3>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm animate-fade-in overflow-y-auto">
+          <div className="w-full max-w-sm bg-[#141414] border border-[#2E2E2E] rounded-3xl p-5 shadow-2xl my-6">
+            <h3 className="text-base font-bold text-[#F5F5F5] mb-4">Edit Profile & Plan</h3>
 
-            <div className="space-y-3 mb-5">
+            <div className="space-y-3 mb-5 max-h-[65vh] overflow-y-auto pr-1">
               <div>
                 <label className="text-[10px] uppercase font-bold text-[#8A8A8A] block mb-1">
                   Name
@@ -245,25 +292,50 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({
                   type="text"
                   value={draftName}
                   onChange={(e) => setDraftName(e.target.value)}
+                  placeholder="Your Name"
                   className="w-full bg-[#1C1C1C] border border-[#333] rounded-xl px-3 py-2 text-xs text-[#F5F5F5] focus:outline-none focus:border-[#C7FF3D]"
                 />
               </div>
 
-              <div>
-                <label className="text-[10px] uppercase font-bold text-[#8A8A8A] block mb-1">
-                  Weight ({userProfile.weightUnit})
-                </label>
-                <input
-                  type="number"
-                  value={draftWeight}
-                  onChange={(e) => setDraftWeight(parseInt(e.target.value, 10) || 0)}
-                  className="w-full bg-[#1C1C1C] border border-[#333] rounded-xl px-3 py-2 text-xs text-[#F5F5F5] focus:outline-none focus:border-[#C7FF3D]"
-                />
+              <div className="grid grid-cols-3 gap-2">
+                <div>
+                  <label className="text-[10px] uppercase font-bold text-[#8A8A8A] block mb-1">
+                    Age
+                  </label>
+                  <input
+                    type="number"
+                    value={draftAge}
+                    onChange={(e) => setDraftAge(parseInt(e.target.value, 10) || 0)}
+                    className="w-full bg-[#1C1C1C] border border-[#333] rounded-xl px-3 py-2 text-xs text-[#F5F5F5] focus:outline-none focus:border-[#C7FF3D]"
+                  />
+                </div>
+                <div>
+                  <label className="text-[10px] uppercase font-bold text-[#8A8A8A] block mb-1">
+                    Weight ({userProfile.weightUnit})
+                  </label>
+                  <input
+                    type="number"
+                    value={draftWeight}
+                    onChange={(e) => setDraftWeight(parseInt(e.target.value, 10) || 0)}
+                    className="w-full bg-[#1C1C1C] border border-[#333] rounded-xl px-3 py-2 text-xs text-[#F5F5F5] focus:outline-none focus:border-[#C7FF3D]"
+                  />
+                </div>
+                <div>
+                  <label className="text-[10px] uppercase font-bold text-[#8A8A8A] block mb-1">
+                    Height ({userProfile.heightUnit})
+                  </label>
+                  <input
+                    type="number"
+                    value={draftHeight}
+                    onChange={(e) => setDraftHeight(parseInt(e.target.value, 10) || 0)}
+                    className="w-full bg-[#1C1C1C] border border-[#333] rounded-xl px-3 py-2 text-xs text-[#F5F5F5] focus:outline-none focus:border-[#C7FF3D]"
+                  />
+                </div>
               </div>
 
               <div>
                 <label className="text-[10px] uppercase font-bold text-[#8A8A8A] block mb-1">
-                  Goal
+                  Primary Fitness Goal
                 </label>
                 <select
                   value={draftGoal}
@@ -275,6 +347,54 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({
                   <option value="Get Stronger">Get Stronger</option>
                   <option value="Improve Fitness">Improve Fitness</option>
                   <option value="Stay Active">Stay Active</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="text-[10px] uppercase font-bold text-[#8A8A8A] block mb-1">
+                  Experience Level
+                </label>
+                <select
+                  value={draftExperience}
+                  onChange={(e) => setDraftExperience(e.target.value as ExperienceLevel)}
+                  className="w-full bg-[#1C1C1C] border border-[#333] rounded-xl px-3 py-2 text-xs text-[#F5F5F5] focus:outline-none focus:border-[#C7FF3D]"
+                >
+                  <option value="Complete Beginner">Complete Beginner</option>
+                  <option value="Some Experience">Some Experience</option>
+                  <option value="Experienced">Experienced</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="text-[10px] uppercase font-bold text-[#8A8A8A] block mb-1">
+                  Equipment Access
+                </label>
+                <select
+                  value={draftEquipment}
+                  onChange={(e) => setDraftEquipment(e.target.value as EquipmentAccess)}
+                  className="w-full bg-[#1C1C1C] border border-[#333] rounded-xl px-3 py-2 text-xs text-[#F5F5F5] focus:outline-none focus:border-[#C7FF3D]"
+                >
+                  <option value="Full Gym">Full Gym</option>
+                  <option value="Basic Gym">Basic Gym</option>
+                  <option value="Home Equipment">Home Equipment</option>
+                  <option value="Bodyweight Only">Bodyweight Only</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="text-[10px] uppercase font-bold text-[#8A8A8A] block mb-1">
+                  Schedule (Days Per Week)
+                </label>
+                <select
+                  value={draftScheduleDays}
+                  onChange={(e) => setDraftScheduleDays(parseInt(e.target.value, 10) || 3)}
+                  className="w-full bg-[#1C1C1C] border border-[#333] rounded-xl px-3 py-2 text-xs text-[#F5F5F5] focus:outline-none focus:border-[#C7FF3D]"
+                >
+                  <option value={2}>2 Days / Week</option>
+                  <option value={3}>3 Days / Week</option>
+                  <option value={4}>4 Days / Week</option>
+                  <option value={5}>5 Days / Week</option>
+                  <option value={6}>6 Days / Week</option>
                 </select>
               </div>
             </div>
@@ -290,7 +410,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({
                 onClick={saveProfileEdits}
                 className="flex-1 py-2.5 rounded-xl bg-[#C7FF3D] text-black text-xs font-bold btn-press"
               >
-                Save
+                Save Changes
               </button>
             </div>
           </div>

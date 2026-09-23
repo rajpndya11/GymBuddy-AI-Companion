@@ -17,40 +17,22 @@ import { BuddyAIChat } from './components/BuddyAIChat';
 import { Logo } from './components/Logo';
 import { Home, Dumbbell, Utensils, TrendingUp, User, Sparkles } from 'lucide-react';
 
-const DEFAULT_PROFILE: UserProfile = {
-  name: 'Raj',
-  age: 24,
-  gender: 'Male',
-  height: 175,
-  heightUnit: 'cm',
-  weight: 64,
-  weightUnit: 'kg',
-  goal: 'Build Muscle',
-  experience: 'Complete Beginner',
-  scheduleDays: 4,
-  duration: '45–60 min',
-  equipment: 'Full Gym',
-  onboarded: true,
-  streakCount: 3,
-  completedWorkoutsCount: 8,
-  cohort: 'returning',
-  dietPreference: 'veg',
-  dailyBudget: 200,
-  allergies: []
-};
-
 export default function App() {
-  // Profile State with localStorage persistence
-  const [userProfile, setUserProfile] = useState<UserProfile>(() => {
+  // Profile State: null by default for new browsers / first-time visitors
+  const [userProfile, setUserProfile] = useState<UserProfile | null>(() => {
     const saved = localStorage.getItem('gymbuddy_profile');
     if (saved) {
       try {
-        return JSON.parse(saved);
+        const parsed = JSON.parse(saved);
+        // Exclude legacy demo data ("Raj") and ensure user has completed onboarding
+        if (parsed && parsed.onboarded && parsed.name && parsed.name !== 'Raj') {
+          return parsed;
+        }
       } catch {
-        return DEFAULT_PROFILE;
+        return null;
       }
     }
-    return DEFAULT_PROFILE;
+    return null;
   });
 
   // Current active navigation tab
@@ -68,13 +50,15 @@ export default function App() {
   // Buddy AI floating chat state
   const [isBuddyChatOpen, setIsBuddyChatOpen] = useState(false);
 
-  // Persist profile updates
+  // Persist profile updates only when onboarded
   useEffect(() => {
-    localStorage.setItem('gymbuddy_profile', JSON.stringify(userProfile));
+    if (userProfile && userProfile.onboarded) {
+      localStorage.setItem('gymbuddy_profile', JSON.stringify(userProfile));
+    }
   }, [userProfile]);
 
   const handleUpdateProfile = (updated: Partial<UserProfile>) => {
-    setUserProfile((prev) => ({ ...prev, ...updated }));
+    setUserProfile((prev) => (prev ? { ...prev, ...updated } : null));
   };
 
   const handleStartWorkout = () => {
@@ -86,11 +70,12 @@ export default function App() {
     setIsInWorkoutSession(false);
     setCompletedSummary(summary);
     // Increment completed workouts count
-    setUserProfile((prev) => ({
+    setUserProfile((prev) => (prev ? {
       ...prev,
       completedWorkoutsCount: prev.completedWorkoutsCount + 1,
-      streakCount: prev.streakCount + 1
-    }));
+      streakCount: prev.streakCount + 1,
+      cohort: 'returning'
+    } : null));
     // Also save to gymbuddy_workout_history
     try {
       const savedHistory = localStorage.getItem('gymbuddy_workout_history');
@@ -117,18 +102,25 @@ export default function App() {
   };
 
   const handleRestartOnboarding = () => {
-    setUserProfile((prev) => ({ ...prev, onboarded: false }));
+    // Clear all existing storage for a pristine restart
+    localStorage.removeItem('gymbuddy_profile');
+    localStorage.removeItem('gymbuddy_workout_history');
+    localStorage.removeItem('gymbuddy_weight_logs');
+    localStorage.removeItem('gymbuddy_strength_lifts');
+    setUserProfile(null);
     setIsInWorkoutSession(false);
     setCompletedSummary(null);
+    setActiveTab('home');
   };
 
-  // 1. If not onboarded, show interactive onboarding flow
-  if (!userProfile.onboarded) {
+  // 1. If not onboarded or no profile exists, immediately present interactive onboarding flow
+  if (!userProfile || !userProfile.onboarded) {
     return (
       <div className="min-h-screen bg-[#050505] text-[#F5F5F5] flex justify-center">
         <Onboarding
           onComplete={(newProfile) => {
             setUserProfile(newProfile);
+            localStorage.setItem('gymbuddy_profile', JSON.stringify(newProfile));
             setActiveTab('home');
           }}
         />

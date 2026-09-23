@@ -68,19 +68,6 @@ export const ProgressScreen: React.FC<ProgressScreenProps> = ({
     const saved = localStorage.getItem('gymbuddy_weight_logs');
     if (saved) {
       try {
-        return JSON.parse(saved);
-      } catch {
-        return INITIAL_BODY_WEIGHT_LOGS;
-      }
-    }
-    return INITIAL_BODY_WEIGHT_LOGS;
-  });
-
-  // Workout sessions history
-  const [allWorkouts, setAllWorkouts] = useState<CompletedWorkoutSummary[]>(() => {
-    const saved = localStorage.getItem('gymbuddy_workout_history');
-    if (saved) {
-      try {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length > 0) {
           return parsed;
@@ -89,7 +76,30 @@ export const ProgressScreen: React.FC<ProgressScreenProps> = ({
         // fallback
       }
     }
-    return INITIAL_WORKOUT_HISTORY;
+    // For fresh users, create a single baseline entry with their registered weight
+    return [
+      {
+        date: 'Day 1 Baseline',
+        weight: userProfile.weight || 65,
+        note: 'Starting onboarding baseline'
+      }
+    ];
+  });
+
+  // Workout sessions history
+  const [allWorkouts, setAllWorkouts] = useState<CompletedWorkoutSummary[]>(() => {
+    const saved = localStorage.getItem('gymbuddy_workout_history');
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed)) {
+          return parsed;
+        }
+      } catch {
+        // fallback
+      }
+    }
+    return [];
   });
 
   // Sync passed history if present
@@ -135,11 +145,11 @@ export const ProgressScreen: React.FC<ProgressScreenProps> = ({
   );
 
   const totalVolumeLifted = allWorkouts.reduce((acc, curr) => {
-    return acc + (curr.totalVolumeKg || 3200);
+    return acc + (curr.totalVolumeKg || 0);
   }, 0);
 
   const totalTrainingMinutes = allWorkouts.reduce((acc, curr) => {
-    return acc + (curr.durationMinutes || 45);
+    return acc + (curr.durationMinutes || 0);
   }, 0);
 
   const totalTrainingHours = (totalTrainingMinutes / 60).toFixed(1);
@@ -410,8 +420,14 @@ export const ProgressScreen: React.FC<ProgressScreenProps> = ({
             <span className="text-xs text-[#8A8A8A] font-medium">completed</span>
           </div>
           <div className="mt-2 flex items-center gap-1.5 text-[10px] font-bold text-[#C7FF3D]">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#C7FF3D] animate-ping" />
-            <span>3-Week Active Streak 🔥</span>
+            {userProfile.streakCount > 0 ? (
+              <>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#C7FF3D] animate-ping" />
+                <span>{userProfile.streakCount}-Week Active Streak 🔥</span>
+              </>
+            ) : (
+              <span>Ready for Day 1 🚀</span>
+            )}
           </div>
         </div>
 
@@ -427,12 +443,14 @@ export const ProgressScreen: React.FC<ProgressScreenProps> = ({
           </div>
           <div className="mt-2 flex items-baseline gap-1.5">
             <span className="text-3xl font-black font-mono text-[#F5F5F5]">
-              {(totalVolumeLifted / 1000).toFixed(1)}k
+              {totalVolumeLifted > 0 ? `${(totalVolumeLifted / 1000).toFixed(1)}k` : '0'}
             </span>
             <span className="text-xs text-[#8A8A8A] font-medium">kg total</span>
           </div>
           <div className="mt-2 text-[10px] font-semibold text-[#8A8A8A]">
-            ~{Math.round(totalVolumeLifted / Math.max(1, totalCompletedWorkouts))} kg / session
+            {totalCompletedWorkouts > 0
+              ? `~${Math.round(totalVolumeLifted / totalCompletedWorkouts)} kg / session`
+              : 'Awaiting 1st session'}
           </div>
         </div>
 
@@ -453,7 +471,9 @@ export const ProgressScreen: React.FC<ProgressScreenProps> = ({
             <span className="text-xs text-[#8A8A8A] font-medium">hrs in gym</span>
           </div>
           <div className="mt-2 text-[10px] font-semibold text-[#8A8A8A]">
-            Avg 46 min / session
+            {totalCompletedWorkouts > 0
+              ? `Avg ${Math.round(totalTrainingMinutes / totalCompletedWorkouts)} min / session`
+              : 'Awaiting 1st session'}
           </div>
         </div>
 
@@ -825,87 +845,99 @@ export const ProgressScreen: React.FC<ProgressScreenProps> = ({
           </span>
         </div>
 
-        <div className="space-y-3">
-          {allWorkouts.slice(0, 5).map((session) => {
-            const isExpanded = expandedSessionId === session.id;
-            return (
-              <div
-                key={session.id}
-                className="bg-[#171717] border border-[#262626] rounded-2xl p-4 transition-all"
-              >
-                <div className="flex items-start justify-between">
-                  <div>
-                    <span className="text-[10px] font-mono font-bold text-[#C7FF3D]">
-                      {session.date}
-                    </span>
-                    <h4 className="text-sm font-bold text-[#F5F5F5] mt-0.5">
-                      {session.routineTitle}
-                    </h4>
-                  </div>
-
-                  <div className="text-right">
-                    <span className="text-xs font-mono font-bold text-[#F5F5F5]">
-                      {session.durationMinutes} min
-                    </span>
-                    <span className="block text-[10px] text-[#8A8A8A]">
-                      {session.totalSetsLogged} sets · ~{session.totalVolumeKg || 3200}kg
-                    </span>
-                  </div>
-                </div>
-
-                {/* Highlight progression */}
-                <div className="mt-3 bg-[#111] border border-[#222] rounded-xl p-2.5 flex items-center justify-between text-xs">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#C7FF3D]" />
-                    <span className="text-[#D1D5DB] font-medium">
-                      {session.highlightProgression?.exercise || 'Exercise'}:
-                    </span>
-                  </div>
-                  <span className="font-mono font-bold text-[#C7FF3D]">
-                    {session.highlightProgression?.to || 'Progressed'}
-                  </span>
-                </div>
-
-                {/* Expand toggle for exercise breakdown */}
-                {session.exerciseDetails && session.exerciseDetails.length > 0 && (
-                  <div className="mt-2 pt-2 border-t border-[#222]">
-                    <button
-                      onClick={() =>
-                        setExpandedSessionId(isExpanded ? null : session.id)
-                      }
-                      className="w-full flex items-center justify-between text-[11px] text-[#8A8A8A] hover:text-[#C7FF3D] font-bold"
-                    >
-                      <span>
-                        {isExpanded ? 'Hide Lifts Breakdown' : 'View Exercises & Sets'}
+        {allWorkouts.length === 0 ? (
+          <div className="bg-[#171717] border border-[#262626] rounded-2xl p-6 text-center">
+            <div className="w-10 h-10 rounded-full bg-[#C7FF3D]/10 text-[#C7FF3D] flex items-center justify-center mx-auto mb-2.5">
+              <Dumbbell className="w-5 h-5" />
+            </div>
+            <h4 className="text-sm font-bold text-[#F5F5F5] mb-1">No Completed Sessions Yet</h4>
+            <p className="text-xs text-[#8A8A8A] max-w-xs mx-auto mb-2">
+              Finish your first workout session to unlock your lift logs, training volume, and progression analytics.
+            </p>
+          </div>
+        ) : (
+          <div className="space-y-3">
+            {allWorkouts.slice(0, 5).map((session) => {
+              const isExpanded = expandedSessionId === session.id;
+              return (
+                <div
+                  key={session.id}
+                  className="bg-[#171717] border border-[#262626] rounded-2xl p-4 transition-all"
+                >
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <span className="text-[10px] font-mono font-bold text-[#C7FF3D]">
+                        {session.date}
                       </span>
-                      {isExpanded ? (
-                        <ChevronUp className="w-3.5 h-3.5" />
-                      ) : (
-                        <ChevronDown className="w-3.5 h-3.5" />
-                      )}
-                    </button>
+                      <h4 className="text-sm font-bold text-[#F5F5F5] mt-0.5">
+                        {session.routineTitle}
+                      </h4>
+                    </div>
 
-                    {isExpanded && (
-                      <div className="mt-2 space-y-1.5 pt-1">
-                        {session.exerciseDetails.map((ex, exIdx) => (
-                          <div
-                            key={exIdx}
-                            className="flex items-center justify-between text-xs p-1.5 bg-[#121212] rounded-lg"
-                          >
-                            <span className="text-[#E5E5E5] font-medium">{ex.name}</span>
-                            <span className="font-mono font-bold text-[#A3A3A3]">
-                              {ex.setsCount} sets × {ex.weight}kg ({ex.reps} reps)
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    )}
+                    <div className="text-right">
+                      <span className="text-xs font-mono font-bold text-[#F5F5F5]">
+                        {session.durationMinutes} min
+                      </span>
+                      <span className="block text-[10px] text-[#8A8A8A]">
+                        {session.totalSetsLogged} sets · ~{session.totalVolumeKg || 0}kg
+                      </span>
+                    </div>
                   </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
+
+                  {/* Highlight progression */}
+                  <div className="mt-3 bg-[#111] border border-[#222] rounded-xl p-2.5 flex items-center justify-between text-xs">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#C7FF3D]" />
+                      <span className="text-[#D1D5DB] font-medium">
+                        {session.highlightProgression?.exercise || 'Exercise'}:
+                      </span>
+                    </div>
+                    <span className="font-mono font-bold text-[#C7FF3D]">
+                      {session.highlightProgression?.to || 'Progressed'}
+                    </span>
+                  </div>
+
+                  {/* Expand toggle for exercise breakdown */}
+                  {session.exerciseDetails && session.exerciseDetails.length > 0 && (
+                    <div className="mt-2 pt-2 border-t border-[#222]">
+                      <button
+                        onClick={() =>
+                          setExpandedSessionId(isExpanded ? null : session.id)
+                        }
+                        className="w-full flex items-center justify-between text-[11px] text-[#8A8A8A] hover:text-[#C7FF3D] font-bold"
+                      >
+                        <span>
+                          {isExpanded ? 'Hide Lifts Breakdown' : 'View Exercises & Sets'}
+                        </span>
+                        {isExpanded ? (
+                          <ChevronUp className="w-3.5 h-3.5" />
+                        ) : (
+                          <ChevronDown className="w-3.5 h-3.5" />
+                        )}
+                      </button>
+
+                      {isExpanded && (
+                        <div className="mt-2 space-y-1.5 pt-1">
+                          {session.exerciseDetails.map((ex, exIdx) => (
+                            <div
+                              key={exIdx}
+                              className="flex items-center justify-between text-xs p-1.5 bg-[#121212] rounded-lg"
+                            >
+                              <span className="text-[#E5E5E5] font-medium">{ex.name}</span>
+                              <span className="font-mono font-bold text-[#A3A3A3]">
+                                {ex.setsCount} sets × {ex.weight}kg ({ex.reps} reps)
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
 
       {/* MILESTONE BADGES & AWARDS */}
